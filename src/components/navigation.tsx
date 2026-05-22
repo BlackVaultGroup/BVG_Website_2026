@@ -116,7 +116,7 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
             onClick={openModal}
             className="inline-block rounded-sm border border-bv-accent bg-transparent px-6 py-2 font-body text-sm font-medium tracking-[0.06em] text-bv-accent transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent hover:text-bv-bg-primary active:translate-y-0 cursor-pointer"
           >
-            Schedule a Call
+            Start Now
           </button>
         </div>
 
