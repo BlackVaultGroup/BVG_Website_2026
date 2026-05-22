@@ -36,12 +36,12 @@ export function Services({ onNavigate }: ServicesProps) {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <Reveal>
           <p className="mb-3 font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">
-            WHAT WE DO
+            Capabilities
           </p>
         </Reveal>
         <Reveal delay={100}>
           <h2 className="m-0 mb-10 font-display text-[clamp(2rem,4vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.01em] text-bv-text-primary">
-            Four disciplines. One firm.
+            Designed to improve how businesses operate.
           </h2>
         </Reveal>
 
