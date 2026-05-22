@@ -192,7 +192,7 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
           onClick={() => { setMenuOpen(false); openModal() }}
           className="mt-4 inline-block self-start rounded-sm border border-bv-accent bg-transparent px-6 py-2 font-body text-sm font-medium tracking-[0.06em] text-bv-accent transition-all duration-200 hover:bg-bv-accent hover:text-bv-bg-primary cursor-pointer"
         >
-          Schedule a Call
+          Start Now
         </button>
       </div>
     </nav>
