@@ -33,7 +33,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What size businesses do you work with?",
-    a: "We work with businesses generating between $5M and $500M in annual revenue. Our engagements are not suited for pre-revenue companies. We build on existing operations, not speculation.",
+    a: "We worked with businesses generating between $5M and $100M in annual revenue. Our engagements are not suited for pre-revenue companies. We build on existing operations, not speculation.",
   },
 ]
 
