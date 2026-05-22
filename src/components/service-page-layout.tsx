@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { useScheduleCall } from "@/components/schedule-call-provider"
 
 function useInView(ref: React.RefObject<Element | null>, threshold = 0.15) {
   const [inView, setInView] = useState(false)
@@ -335,6 +336,7 @@ function WhatsIncluded({ items }: { items: { title: string; description: string 
 }
 
 function ClosingCTA({ headline, subtext }: { headline: string; subtext: string }) {
+  const { openModal } = useScheduleCall()
   return (
     <RevealBlock>
       <div
@@ -375,8 +377,8 @@ function ClosingCTA({ headline, subtext }: { headline: string; subtext: string }
           >
             {subtext}
           </p>
-          <a
-            href="#contact"
+          <button
+            onClick={openModal}
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontSize: "0.875rem",
@@ -387,7 +389,7 @@ function ClosingCTA({ headline, subtext }: { headline: string; subtext: string }
               border: "none",
               borderRadius: "2px",
               padding: "14px 32px",
-              textDecoration: "none",
+              cursor: "pointer",
               display: "inline-block",
               transition: "opacity 0.2s, background-color 0.2s",
             }}
@@ -395,7 +397,7 @@ function ClosingCTA({ headline, subtext }: { headline: string; subtext: string }
             onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#B8861A" }}
           >
             Schedule a Strategy Call
-          </a>
+          </button>
           <div style={{ height: "1px", backgroundColor: "rgba(184,134,26,0.2)", marginTop: "3rem" }} />
         </div>
       </div>

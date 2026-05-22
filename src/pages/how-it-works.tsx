@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Footer } from "@/components/sections/footer"
 import { Navigation } from "@/components/navigation"
+import { useScheduleCall } from "@/components/schedule-call-provider"
 
 type PageId = "home" | "how-it-works" | "ai-strategy" | "workflow-automation" | "custom-integration" | "executive-advisory"
 
@@ -77,6 +78,7 @@ interface HowItWorksPageProps {
 }
 
 export function HowItWorksPage({ onBack, onNavigate }: HowItWorksPageProps) {
+  const { openModal } = useScheduleCall()
   const heroRef = useRef<HTMLDivElement>(null)
   const heroInView = useInView(heroRef, 0.1)
 
@@ -250,6 +252,7 @@ export function HowItWorksPage({ onBack, onNavigate }: HowItWorksPageProps) {
             We take on a limited number of engagements each quarter.
           </p>
           <button
+            onClick={openModal}
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontSize: "0.875rem",
@@ -307,6 +310,7 @@ function ServicesGrid() {
 }
 
 function ServiceCard({ service }: { service: typeof SERVICES[0] }) {
+  const { openModal } = useScheduleCall()
   return (
     <div
       style={{
@@ -368,8 +372,8 @@ function ServiceCard({ service }: { service: typeof SERVICES[0] }) {
         {service.body}
       </p>
 
-      <a
-        href="#contact"
+      <button
+        onClick={openModal}
         style={{
           fontFamily: "'Outfit', sans-serif",
           fontSize: "0.8125rem",
@@ -377,19 +381,20 @@ function ServiceCard({ service }: { service: typeof SERVICES[0] }) {
           letterSpacing: "0.06em",
           color: "#0F0F0F",
           backgroundColor: "#C4B19C",
-          textDecoration: "none",
+          border: "none",
           display: "inline-block",
           textAlign: "center",
-          padding: "0.875rem 0.634rem",
+          padding: "0.875rem 1.25rem",
           minWidth: "84.5px",
           borderRadius: "2px",
+          cursor: "pointer",
           transition: "opacity 0.2s",
         }}
         onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85" }}
         onMouseLeave={(e) => { e.currentTarget.style.opacity = "1" }}
       >
         {service.cta}
-      </a>
+      </button>
     </div>
   )
 }

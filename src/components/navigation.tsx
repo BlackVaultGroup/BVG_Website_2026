@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
+import { useScheduleCall } from "@/components/schedule-call-provider"
 
 type PageId = "home" | "how-it-works" | "ai-strategy" | "workflow-automation" | "custom-integration" | "executive-advisory"
 
@@ -63,6 +64,7 @@ function ServicesDropdown({ onNavigate }: { onNavigate?: (page: PageId) => void 
 }
 
 export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
+  const { openModal } = useScheduleCall()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
@@ -110,12 +112,12 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
           >
             Contact
           </a>
-          <a
-            href="#contact"
-            className="inline-block rounded-sm border border-bv-accent bg-transparent px-6 py-2 font-body text-sm font-medium tracking-[0.06em] text-bv-accent no-underline transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent hover:text-bv-bg-primary active:translate-y-0"
+          <button
+            onClick={openModal}
+            className="inline-block rounded-sm border border-bv-accent bg-transparent px-6 py-2 font-body text-sm font-medium tracking-[0.06em] text-bv-accent transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent hover:text-bv-bg-primary active:translate-y-0 cursor-pointer"
           >
             Schedule a Call
-          </a>
+          </button>
         </div>
 
         <button
@@ -186,13 +188,12 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
         >
           Contact
         </a>
-        <a
-          href="#contact"
-          onClick={() => setMenuOpen(false)}
-          className="mt-4 inline-block self-start rounded-sm border border-bv-accent bg-transparent px-6 py-2 font-body text-sm font-medium tracking-[0.06em] text-bv-accent no-underline transition-all duration-200 hover:bg-bv-accent hover:text-bv-bg-primary"
+        <button
+          onClick={() => { setMenuOpen(false); openModal() }}
+          className="mt-4 inline-block self-start rounded-sm border border-bv-accent bg-transparent px-6 py-2 font-body text-sm font-medium tracking-[0.06em] text-bv-accent transition-all duration-200 hover:bg-bv-accent hover:text-bv-bg-primary cursor-pointer"
         >
           Schedule a Call
-        </a>
+        </button>
       </div>
     </nav>
   )

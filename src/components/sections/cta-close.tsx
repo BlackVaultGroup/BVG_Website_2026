@@ -1,6 +1,9 @@
 import { Reveal } from "@/components/reveal"
+import { useScheduleCall } from "@/components/schedule-call-provider"
 
 export function CTAClose() {
+  const { openModal } = useScheduleCall()
+
   return (
     <section
       id="contact"
@@ -18,12 +21,12 @@ export function CTAClose() {
           </p>
         </Reveal>
         <Reveal delay={200}>
-          <a
-            href="#contact"
-            className="inline-block rounded-sm bg-bv-accent px-6 py-4 font-body text-sm font-medium tracking-[0.06em] text-bv-bg-primary no-underline transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent-hover active:translate-y-0"
+          <button
+            onClick={openModal}
+            className="inline-block rounded-sm bg-bv-accent px-6 py-4 font-body text-sm font-medium tracking-[0.06em] text-bv-bg-primary transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent-hover active:translate-y-0 cursor-pointer border-none"
           >
             Schedule a Strategy Call
-          </a>
+          </button>
         </Reveal>
       </div>
     </section>
