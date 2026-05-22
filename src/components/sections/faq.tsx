@@ -9,7 +9,7 @@ import { Reveal } from "@/components/reveal"
 const FAQ_ITEMS = [
   {
     q: "How is BlackVault different from other AI agencies?",
-    a: "We are not an agency. We are a strategic consultancy. We do not sell tools or templates. We architect custom systems around your specific business problems and revenue goals.",
+    a: "We are a strategic consultancy. We do not sell tools or templates. We architect custom systems around your specific business problems and revenue goals.",
   },
   {
     q: "How long does it take to see results?",
