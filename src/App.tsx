@@ -51,7 +51,7 @@ export function App() {
         onNavigate={(p) => setPage(p as PageId)}
       />
       <Hero />
-      <WindowReveal />
+      <WindowReveal onHowItWorks={() => setPage("how-it-works")} />
       <SectionSeparator />
       <Services onNavigate={(p) => setPage(p as PageId)} />
       <SectionSeparator />

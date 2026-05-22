@@ -29,7 +29,11 @@ const fadeIn = (inView: boolean, delay: number): React.CSSProperties => ({
   transition: `opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
 })
 
-export function WindowReveal() {
+interface WindowRevealProps {
+  onHowItWorks?: () => void
+}
+
+export function WindowReveal({ onHowItWorks }: WindowRevealProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
   const inView = useInView(sectionRef, 0.15)
 
@@ -111,6 +115,45 @@ export function WindowReveal() {
               >
                 BlackVault Group helps businesses improve operations, reduce wasted time, and implement systems that scale efficiently.
               </p>
+            </div>
+
+            {/* Learn More button */}
+            <div style={{ ...fadeIn(inView, 300) }}>
+              <button
+                onClick={onHowItWorks}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  backgroundColor: "transparent",
+                  border: "1px solid rgba(193,154,107,0.35)",
+                  borderRadius: "2px",
+                  padding: "0.6875rem 1.5rem",
+                  fontFamily: "'Jost', sans-serif",
+                  fontSize: "0.75rem",
+                  fontWeight: 500,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "rgba(193,154,107,0.8)",
+                  cursor: "pointer",
+                  transition: "border-color 0.2s, color 0.2s, transform 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(193,154,107,0.7)"
+                  e.currentTarget.style.color = "#C19A6B"
+                  e.currentTarget.style.transform = "translateY(-1px)"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(193,154,107,0.35)"
+                  e.currentTarget.style.color = "rgba(193,154,107,0.8)"
+                  e.currentTarget.style.transform = "translateY(0)"
+                }}
+              >
+                Learn More
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2.5 6H9.5M6.5 3L9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
