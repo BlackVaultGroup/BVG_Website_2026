@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/hero"
 import { WindowReveal } from "@/components/sections/window-reveal"
 import { Services } from "@/components/sections/services"
 import { RevenueOps } from "@/components/sections/revenue-ops"
-import { Outcomes } from "@/components/sections/outcomes"
 import { FAQ } from "@/components/sections/faq"
 import { CTAClose } from "@/components/sections/cta-close"
 import { Footer } from "@/components/sections/footer"
@@ -56,8 +55,6 @@ export function App() {
       <Services onNavigate={(p) => setPage(p as PageId)} />
       <SectionSeparator />
       <RevenueOps />
-      <SectionSeparator />
-      <Outcomes />
       <SectionSeparator />
       <FAQ />
       <CTAClose />
