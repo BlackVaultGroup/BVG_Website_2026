@@ -10,8 +10,8 @@ const content: ServicePageContent = {
   headlineLine2: "itself.",
   subtext: "We redesign how work moves through your business so your team stops managing processes and starts driving outcomes.",
   paragraphs: [
-    "Most operational drag does not come from a lack of tools — it comes from how work moves between them. Approval chains that stall. Data that has to be re-entered manually. Decisions that get made the same way hundreds of times a week by people who should be focused on something else.",
-    "We map every handoff, trigger, and decision point in your critical workflows, then design the logic that eliminates the manual steps. The result is not just automation — it is a fundamentally leaner operation where execution happens at the speed of the trigger, not the speed of whoever is available.",
+    "Most operational drag does not come from a lack of tools. It comes from how work moves between them. Approval chains that stall. Data that has to be re-entered manually. Decisions that get made the same way hundreds of times a week by people who should be focused on something else.",
+    "We map every handoff, trigger, and decision point in your critical workflows, then design the logic that eliminates the manual steps. The result is not just automation. It is a fundamentally leaner operation where execution happens at the speed of the trigger, not the speed of whoever is available.",
     "We build for durability. Every workflow we design is documented, monitored after deployment, and iterated as your operation evolves. No black boxes. No fragile dependencies.",
   ],
   leftCaption: "Process mapping and bottleneck analysis",
@@ -30,7 +30,7 @@ const content: ServicePageContent = {
     },
     {
       title: "Automation Build",
-      description: "We build and deploy the workflow systems — not just design them. Your team receives working solutions, not blueprints.",
+      description: "We build and deploy the workflow systems, not just design them. Your team receives working solutions, not blueprints.",
     },
     {
       title: "Monitoring and Iteration",
@@ -46,7 +46,7 @@ export function IntelligentWorkflowsPage() {
     <>
       <PageSEO
         title="Intelligent Workflows — BlackVault Group"
-        description="We redesign how work moves through your business — mapping bottlenecks, automating decisions, and deploying workflow systems that eliminate execution lag permanently."
+        description="We redesign how work moves through your business by mapping bottlenecks, automating decisions, and deploying workflow systems that eliminate execution lag permanently."
         canonicalPath="/intelligent-workflows"
       />
       <Navigation />

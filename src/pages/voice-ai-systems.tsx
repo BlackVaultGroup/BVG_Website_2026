@@ -22,7 +22,7 @@ const content: ServicePageContent = {
   includedItems: [
     {
       title: "Call Flow Architecture",
-      description: "A structured design of how inbound calls are handled — from greeting through qualification, scheduling, and escalation.",
+      description: "A structured design of how inbound calls are handled, from greeting through qualification, scheduling, and escalation.",
     },
     {
       title: "Voice Agent Training",
@@ -30,7 +30,7 @@ const content: ServicePageContent = {
     },
     {
       title: "Escalation and Handoff Logic",
-      description: "Clear rules for when the agent transfers to a live team member — so high-value situations always get a human response.",
+      description: "Clear rules for when the agent transfers to a live team member, so high-value situations always get a human response.",
     },
     {
       title: "Analytics and Optimization",
@@ -46,7 +46,7 @@ export function VoiceAISystemsPage() {
     <>
       <PageSEO
         title="Voice AI Systems — BlackVault Group"
-        description="AI voice agents trained on your business that answer inbound calls, qualify leads, and book appointments automatically — 24/7, without adding staff."
+        description="AI voice agents trained on your business that answer inbound calls, qualify leads, and book appointments automatically, 24/7, without adding staff."
         canonicalPath="/voice-ai-systems"
       />
       <Navigation />

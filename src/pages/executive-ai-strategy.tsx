@@ -10,8 +10,8 @@ const content: ServicePageContent = {
   headlineLine2: "Every time.",
   subtext: "We assess your operation before recommending anything. No vendor agenda. No generic playbook.",
   paragraphs: [
-    "Most businesses approach AI backwards — they adopt tools first and figure out the fit afterward. The result is fragmented systems, redundant subscriptions, and an operation that is more complex than it was before.",
-    "We start with a precise diagnosis of your business: where revenue leaks, where decisions stall, where your team spends time on work that should not require them. Every recommendation comes out of that audit — not a template, not a trend.",
+    "Most businesses approach AI backwards. They adopt tools first and figure out the fit afterward. The result is fragmented systems, redundant subscriptions, and an operation that is more complex than it was before.",
+    "We start with a precise diagnosis of your business: where revenue leaks, where decisions stall, where your team spends time on work that should not require them. Every recommendation comes out of that audit, not a template, not a trend.",
     "Whether you need a clear 90-day roadmap, guidance on a high-stakes AI investment, or a senior partner to advise your leadership team, this engagement gives you the strategic clarity that most operators only get by making expensive mistakes first.",
   ],
   leftCaption: "Operational audit and gap analysis",

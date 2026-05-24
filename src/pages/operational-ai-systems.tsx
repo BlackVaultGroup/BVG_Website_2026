@@ -11,8 +11,8 @@ const content: ServicePageContent = {
   subtext: "We build AI infrastructure designed around how your business actually works. Not how a generic platform assumes it does.",
   paragraphs: [
     "Off-the-shelf AI tools are engineered for the average business. If your operation has specific data flows, non-standard processes, or a stack that predates the AI wave, generic solutions will either underperform or layer more complexity on top of what already exists.",
-    "We analyze your entire operational structure — tools, data, handoffs, and decision logic — before designing anything. The result is AI infrastructure that integrates cleanly into your existing environment, accelerates the work your team already does, and scales without becoming a liability.",
-    "Every system we build is documented, handed off with full context, and designed to be owned by your team — not dependent on a vendor relationship to keep running.",
+    "We analyze your entire operational structure: tools, data, handoffs, and decision logic, before designing anything. The result is AI infrastructure that integrates cleanly into your existing environment, accelerates the work your team already does, and scales without becoming a liability.",
+    "Every system we build is documented, handed off with full context, and designed to be owned by your team. It will not depend on a vendor relationship to keep running.",
   ],
   leftCaption: "Stack analysis and integration planning",
   rightCaption: "Custom build and operational deployment",

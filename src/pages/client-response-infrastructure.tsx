@@ -22,7 +22,7 @@ const content: ServicePageContent = {
   includedItems: [
     {
       title: "Response Workflow Audit",
-      description: "A full review of how leads and client inquiries currently move through your business — where they come from, where they stall, and what it costs you.",
+      description: "A full review of how leads and client inquiries currently move through your business: where they come from, where they stall, and what it costs you.",
     },
     {
       title: "Intake Automation",
@@ -46,7 +46,7 @@ export function ClientResponseInfrastructurePage() {
     <>
       <PageSEO
         title="Client Response Systems — BlackVault Group"
-        description="AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response — without adding headcount or manual work to your team."
+        description="AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response, without adding headcount or manual work to your team."
         canonicalPath="/client-response-infrastructure"
       />
       <Navigation />
