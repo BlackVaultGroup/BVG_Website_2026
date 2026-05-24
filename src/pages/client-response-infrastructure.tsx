@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
-import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -38,7 +38,7 @@ const content: ServicePageContent = {
   subtext: "AI-driven systems that handle client communication, intake, and follow-up without adding headcount or slowing your team down.",
   paragraphs: [
     "Slow follow-up is a revenue problem. A lead that does not hear back within minutes is a lead that has already moved on. Most businesses lose deals not because of their product or pricing, but because their response infrastructure is not built to keep up with demand.",
-    "We design and deploy the systems that close that gap, AI-powered intake flows, automated follow-up sequences, and intelligent routing logic that ensures every inquiry gets a qualified, timely response, regardless of when it arrives or how many come in at once.",
+    "We design and deploy the systems that close that gap — AI-powered intake flows, automated follow-up sequences, and intelligent routing logic that ensures every inquiry gets a qualified, timely response, regardless of when it arrives or how many come in at once.",
     "The result is a client-facing operation that feels premium and responsive at scale, without the staffing overhead. Your team engages when it matters. The system handles everything else.",
   ],
   leftCaption: "Response workflow audit and intake mapping",
@@ -68,6 +68,12 @@ const content: ServicePageContent = {
   ctaSubtext: "We build the infrastructure that keeps your pipeline moving.",
 }
 
+const linkStyle: React.CSSProperties = {
+  color: "#9A8E7E",
+  textDecoration: "none",
+  borderBottom: "1px solid rgba(184,134,26,0.25)",
+}
+
 export function ClientResponseInfrastructurePage() {
   return (
     <>
@@ -80,26 +86,35 @@ export function ClientResponseInfrastructurePage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <RelatedSystems
-          heading="RELATED COMMUNICATION SYSTEMS"
-          items={[
-            {
-              label: "Voice AI Systems",
-              description: "Extends your client response infrastructure to inbound calls — every call answered, qualified, and routed without live staff intervention.",
-              path: "/voice-ai-systems",
-            },
-            {
-              label: "Intelligent Workflows",
-              description: "The workflow automation layer that powers your intake sequences, follow-up logic, and CRM routing from first contact to closed deal.",
-              path: "/intelligent-workflows",
-            },
-            {
-              label: "Operational AI Systems",
-              description: "When client response infrastructure is part of a larger operational build, we design and integrate all components as a unified system.",
-              path: "/operational-ai-systems",
-            },
-          ]}
-        />
+        <div
+          style={{
+            backgroundColor: "#0C0A08",
+            maxWidth: "860px",
+            margin: "0 auto",
+            padding: "0 1.25rem 4rem",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: "1.1rem",
+              fontWeight: 300,
+              lineHeight: 1.8,
+              color: "#9A8E7E",
+              margin: 0,
+            }}
+          >
+            Client response infrastructure is often paired with{" "}
+            <Link to="/voice-ai-systems" style={linkStyle}>
+              voice AI systems
+            </Link>{" "}
+            to cover inbound calls alongside digital channels, and with{" "}
+            <Link to="/intelligent-workflows" style={linkStyle}>
+              intelligent workflow automation
+            </Link>{" "}
+            to handle the steps between first contact and closed deal without manual intervention.
+          </p>
+        </div>
         <Footer />
       </div>
     </>

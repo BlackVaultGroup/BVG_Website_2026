@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
-import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -68,6 +68,12 @@ const content: ServicePageContent = {
   ctaSubtext: "We build the systems that give your team their time back.",
 }
 
+const linkStyle: React.CSSProperties = {
+  color: "#9A8E7E",
+  textDecoration: "none",
+  borderBottom: "1px solid rgba(184,134,26,0.25)",
+}
+
 export function IntelligentWorkflowsPage() {
   return (
     <>
@@ -80,26 +86,35 @@ export function IntelligentWorkflowsPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <RelatedSystems
-          heading="RELATED SYSTEMS"
-          items={[
-            {
-              label: "Operational AI Systems",
-              description: "The infrastructure layer your workflow automation runs on. Custom-built, documented, and designed to scale with your operation.",
-              path: "/operational-ai-systems",
-            },
-            {
-              label: "Client Response Infrastructure",
-              description: "Automated intake and follow-up workflows that ensure every inbound inquiry moves through your pipeline without manual handling.",
-              path: "/client-response-infrastructure",
-            },
-            {
-              label: "Voice AI Systems",
-              description: "Inbound call automation that qualifies, routes, and schedules without live staff — an extension of your workflow architecture.",
-              path: "/voice-ai-systems",
-            },
-          ]}
-        />
+        <div
+          style={{
+            backgroundColor: "#0C0A08",
+            maxWidth: "860px",
+            margin: "0 auto",
+            padding: "0 1.25rem 4rem",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: "1.1rem",
+              fontWeight: 300,
+              lineHeight: 1.8,
+              color: "#9A8E7E",
+              margin: 0,
+            }}
+          >
+            Workflow automation is frequently paired with{" "}
+            <Link to="/client-response-infrastructure" style={linkStyle}>
+              client response infrastructure
+            </Link>{" "}
+            — together they remove the manual steps between inbound inquiry and qualified follow-up. Both are built as part of a broader{" "}
+            <Link to="/operational-ai-systems" style={linkStyle}>
+              operational AI system
+            </Link>{" "}
+            when your needs extend beyond a single process.
+          </p>
+        </div>
         <Footer />
       </div>
     </>

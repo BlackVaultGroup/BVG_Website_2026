@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
-import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -76,6 +76,12 @@ const content: ServicePageContent = {
   ctaSubtext: "We start every engagement with strategy. No exceptions.",
 }
 
+const linkStyle: React.CSSProperties = {
+  color: "#9A8E7E",
+  textDecoration: "none",
+  borderBottom: "1px solid rgba(184,134,26,0.25)",
+}
+
 export function ExecutiveAIStrategyPage() {
   return (
     <>
@@ -88,31 +94,39 @@ export function ExecutiveAIStrategyPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <RelatedSystems
-          heading="SYSTEMS WE BUILD FROM STRATEGY"
-          items={[
-            {
-              label: "Operational AI Systems",
-              description: "The most common outcome of a strategy engagement: custom AI infrastructure scoped and built around your specific operational requirements.",
-              path: "/operational-ai-systems",
-            },
-            {
-              label: "Intelligent Workflows",
-              description: "Workflow automation is often the highest-leverage recommendation from an operational audit. We build those systems end-to-end.",
-              path: "/intelligent-workflows",
-            },
-            {
-              label: "Client Response Infrastructure",
-              description: "Response latency is a revenue problem most audits surface. We build the communication automation systems that close that gap.",
-              path: "/client-response-infrastructure",
-            },
-            {
-              label: "Voice AI Systems",
-              description: "For businesses where inbound call volume creates bottlenecks, voice AI becomes a core operational system — not a peripheral tool.",
-              path: "/voice-ai-systems",
-            },
-          ]}
-        />
+        <div
+          style={{
+            backgroundColor: "#0C0A08",
+            maxWidth: "860px",
+            margin: "0 auto",
+            padding: "0 1.25rem 4rem",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: "1.1rem",
+              fontWeight: 300,
+              lineHeight: 1.8,
+              color: "#9A8E7E",
+              margin: 0,
+            }}
+          >
+            Most strategy engagements lead directly to implementation. The systems we build most often include{" "}
+            <Link to="/operational-ai-systems" style={linkStyle}>
+              operational AI infrastructure
+            </Link>
+            ,{" "}
+            <Link to="/intelligent-workflows" style={linkStyle}>
+              intelligent workflow automation
+            </Link>
+            , and{" "}
+            <Link to="/client-response-infrastructure" style={linkStyle}>
+              client response systems
+            </Link>{" "}
+            — sequenced and scoped from the audit findings.
+          </p>
+        </div>
         <Footer />
       </div>
     </>

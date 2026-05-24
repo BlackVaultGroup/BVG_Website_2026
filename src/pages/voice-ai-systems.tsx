@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
-import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -38,7 +38,7 @@ const content: ServicePageContent = {
   subtext: "AI voice agents trained on your business that handle inbound calls, qualify leads, and run appointment workflows without live staff intervention.",
   paragraphs: [
     "Inbound call volume is a bottleneck that grows with your business. Every missed call is a missed opportunity and hiring staff to answer phones, qualify callers, and schedule appointments is expensive, inconsistent, and does not scale.",
-    "We build voice AI agents trained specifically on your business: your services, your qualification criteria, your scheduling logic, and your escalation rules. The agent answers every call, gathers the right information, and routes or books based on the outcome 24 hours a day, without supervision.",
+    "We build voice AI agents trained specifically on your business — your services, your qualification criteria, your scheduling logic, and your escalation rules. The agent answers every call, gathers the right information, and routes or books based on the outcome, 24 hours a day, without supervision.",
     "Every voice system we deploy includes full analytics on call volume, qualification rates, conversion, and drop-off. You see exactly how the system performs and where to optimize.",
   ],
   leftCaption: "Call flow architecture and agent training",
@@ -68,6 +68,12 @@ const content: ServicePageContent = {
   ctaSubtext: "We build voice AI systems that work every hour your business is open.",
 }
 
+const linkStyle: React.CSSProperties = {
+  color: "#9A8E7E",
+  textDecoration: "none",
+  borderBottom: "1px solid rgba(184,134,26,0.25)",
+}
+
 export function VoiceAISystemsPage() {
   return (
     <>
@@ -80,26 +86,35 @@ export function VoiceAISystemsPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <RelatedSystems
-          heading="RELATED COMMUNICATION INFRASTRUCTURE"
-          items={[
-            {
-              label: "Client Response Infrastructure",
-              description: "Complements voice AI with automated digital intake, follow-up sequences, and CRM routing — so no inquiry goes unhandled regardless of channel.",
-              path: "/client-response-infrastructure",
-            },
-            {
-              label: "Intelligent Workflows",
-              description: "The workflow automation systems that handle everything after the call ends: scheduling confirmations, CRM updates, and follow-up triggers.",
-              path: "/intelligent-workflows",
-            },
-            {
-              label: "Operational AI Systems",
-              description: "Voice AI is one layer of a broader operational system. We design the full architecture when your needs extend beyond a single channel.",
-              path: "/operational-ai-systems",
-            },
-          ]}
-        />
+        <div
+          style={{
+            backgroundColor: "#0C0A08",
+            maxWidth: "860px",
+            margin: "0 auto",
+            padding: "0 1.25rem 4rem",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: "1.1rem",
+              fontWeight: 300,
+              lineHeight: 1.8,
+              color: "#9A8E7E",
+              margin: 0,
+            }}
+          >
+            Voice AI is most effective when paired with{" "}
+            <Link to="/client-response-infrastructure" style={linkStyle}>
+              client response infrastructure
+            </Link>{" "}
+            for digital channels and{" "}
+            <Link to="/intelligent-workflows" style={linkStyle}>
+              intelligent workflow automation
+            </Link>{" "}
+            for everything that happens after the call — confirmations, CRM updates, and follow-up sequences.
+          </p>
+        </div>
         <Footer />
       </div>
     </>
