@@ -217,7 +217,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
                       onChange={(e) => handleChange("full_name", e.target.value)}
                       onFocus={() => setFocused("full_name")}
                       onBlur={() => setFocused(null)}
-                      placeholder="Jane Smith"
+                      placeholder="John Smith"
                       style={{ ...inputStyle, ...getFocusStyle("full_name") }}
                       required
                     />
