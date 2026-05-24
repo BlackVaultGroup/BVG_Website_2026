@@ -230,7 +230,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
                       onChange={(e) => handleChange("business_name", e.target.value)}
                       onFocus={() => setFocused("business_name")}
                       onBlur={() => setFocused(null)}
-                      placeholder="Acme Corp"
+                      placeholder="BlackVault Group"
                       style={{ ...inputStyle, ...getFocusStyle("business_name") }}
                       required
                     />
