@@ -11,7 +11,7 @@ const content: ServicePageContent = {
   subtext: "AI-driven systems that handle client communication, intake, and follow-up without adding headcount or slowing your team down.",
   paragraphs: [
     "Slow follow-up is a revenue problem. A lead that does not hear back within minutes is a lead that has already moved on. Most businesses lose deals not because of their product or pricing, but because their response infrastructure is not built to keep up with demand.",
-    "We design and deploy the systems that close that gap — AI-powered intake flows, automated follow-up sequences, and intelligent routing logic that ensures every inquiry gets a qualified, timely response, regardless of when it arrives or how many come in at once.",
+    "We design and deploy the systems that close that gap, AI-powered intake flows, automated follow-up sequences, and intelligent routing logic that ensures every inquiry gets a qualified, timely response, regardless of when it arrives or how many come in at once.",
     "The result is a client-facing operation that feels premium and responsive at scale, without the staffing overhead. Your team engages when it matters. The system handles everything else.",
   ],
   leftCaption: "Response workflow audit and intake mapping",
