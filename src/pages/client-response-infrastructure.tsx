@@ -5,7 +5,7 @@ import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 
 const content: ServicePageContent = {
-  eyebrow: "CLIENT RESPONSE INFRASTRUCTURE",
+  eyebrow: "CLIENT RESPONSE SYSTEMS",
   headlineLine1: "Faster response.",
   headlineLine2: "No added overhead.",
   subtext: "AI-driven systems that handle client communication, intake, and follow-up without adding headcount or slowing your team down.",
