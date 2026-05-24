@@ -150,6 +150,7 @@
   }
   html {
     scroll-behavior: smooth;
+    font-size: 112.5%;
   }
   ::selection {
     background-color: rgba(193, 154, 107, 0.3);
