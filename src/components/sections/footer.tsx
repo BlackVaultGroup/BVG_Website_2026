@@ -1,10 +1,5 @@
+import { useNavigate } from "react-router-dom"
 import { Separator } from "@/components/ui/separator"
-
-type PageId = "home" | "how-it-works" | "ai-strategy" | "workflow-automation" | "custom-integration" | "executive-advisory"
-
-interface FooterProps {
-  onNavigate?: (page: PageId) => void
-}
 
 const NAV_LINKS = [
   { label: "About", sectionId: "about" },
@@ -13,11 +8,11 @@ const NAV_LINKS = [
   { label: "Contact", sectionId: "contact" },
 ]
 
-const SERVICE_LINKS: { label: string; page: PageId }[] = [
-  { label: "AI Strategy", page: "ai-strategy" },
-  { label: "Automation", page: "workflow-automation" },
-  { label: "Integration", page: "custom-integration" },
-  { label: "Advisory", page: "executive-advisory" },
+const SERVICE_LINKS = [
+  { label: "AI Strategy", path: "/ai-strategy" },
+  { label: "Automation", path: "/workflow-automation" },
+  { label: "Integration", path: "/custom-ai-integration" },
+  { label: "Advisory", path: "/strategic-ai-partnership" },
 ]
 
 function scrollToSection(id: string) {
@@ -27,7 +22,9 @@ function scrollToSection(id: string) {
   }
 }
 
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer() {
+  const navigate = useNavigate()
+
   return (
     <footer className="bg-bv-bg-primary">
       <Separator className="bg-border" />
@@ -70,8 +67,8 @@ export function Footer({ onNavigate }: FooterProps) {
             <nav className="flex flex-col gap-2.5">
               {SERVICE_LINKS.map((link) => (
                 <button
-                  key={link.page}
-                  onClick={() => onNavigate?.(link.page)}
+                  key={link.path}
+                  onClick={() => navigate(link.path)}
                   className="w-fit cursor-pointer border-none bg-transparent p-0 text-left font-body text-sm font-light text-bv-text-muted transition-colors duration-200 hover:text-bv-text-secondary"
                 >
                   {link.label}

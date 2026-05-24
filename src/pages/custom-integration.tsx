@@ -39,17 +39,10 @@ const content: ServicePageContent = {
   ctaSubtext: "We build what fits. Nothing extra.",
 }
 
-interface CustomIntegrationPageProps {
-  onNavigate: (page: string) => void
-}
-
-export function CustomIntegrationPage({ onNavigate }: CustomIntegrationPageProps) {
+export function CustomIntegrationPage() {
   return (
     <>
-      <Navigation
-        onHowItWorks={() => onNavigate("how-it-works")}
-        onNavigate={onNavigate}
-      />
+      <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
         <Footer />

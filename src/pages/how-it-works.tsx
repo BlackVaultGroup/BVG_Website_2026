@@ -3,8 +3,6 @@ import { Footer } from "@/components/sections/footer"
 import { Navigation } from "@/components/navigation"
 import { useScheduleCall } from "@/components/schedule-call-provider"
 
-type PageId = "home" | "how-it-works" | "ai-strategy" | "workflow-automation" | "custom-integration" | "executive-advisory"
-
 function useInView(ref: React.RefObject<Element | null>, threshold = 0.15) {
   const [inView, setInView] = useState(false)
   useEffect(() => {
@@ -72,30 +70,14 @@ const SERVICES = [
   },
 ]
 
-interface HowItWorksPageProps {
-  onBack: () => void
-  onNavigate?: (page: PageId) => void
-}
-
-export function HowItWorksPage({ onBack, onNavigate }: HowItWorksPageProps) {
+export function HowItWorksPage() {
   const { openModal } = useScheduleCall()
   const heroRef = useRef<HTMLDivElement>(null)
   const heroInView = useInView(heroRef, 0.1)
 
-  function handleNavigate(page: PageId) {
-    if (page === "home") {
-      onBack()
-    } else {
-      onNavigate?.(page)
-    }
-  }
-
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#0F0F0F", color: "#fff" }}>
-      <Navigation
-        onHowItWorks={() => {}}
-        onNavigate={handleNavigate}
-      />
+      <Navigation />
 
       <div
         ref={heroRef}

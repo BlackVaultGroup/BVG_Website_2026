@@ -1,22 +1,17 @@
 import { useState, useEffect, useRef } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { cn } from "@/lib/utils"
 import { useScheduleCall } from "@/components/schedule-call-provider"
 
-type PageId = "home" | "how-it-works" | "ai-strategy" | "workflow-automation" | "custom-integration" | "executive-advisory"
-
-interface NavigationProps {
-  onHowItWorks?: () => void
-  onNavigate?: (page: PageId) => void
-}
-
 const SERVICE_DROPDOWN_ITEMS = [
-  { label: "AI Strategy & Roadmapping", page: "ai-strategy" as PageId },
-  { label: "Workflow Automation", page: "workflow-automation" as PageId },
-  { label: "Custom AI Integration", page: "custom-integration" as PageId },
-  { label: "Strategic AI Partnership", page: "executive-advisory" as PageId },
+  { label: "AI Strategy & Roadmapping", path: "/ai-strategy" },
+  { label: "Workflow Automation", path: "/workflow-automation" },
+  { label: "Custom AI Integration", path: "/custom-ai-integration" },
+  { label: "Strategic AI Partnership", path: "/strategic-ai-partnership" },
 ]
 
-function ServicesDropdown({ onNavigate }: { onNavigate?: (page: PageId) => void }) {
+function ServicesDropdown() {
+  const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -44,12 +39,12 @@ function ServicesDropdown({ onNavigate }: { onNavigate?: (page: PageId) => void 
       >
         <div className="w-[220px] rounded-sm border border-[rgba(184,134,26,0.15)] bg-[#1A1510] py-2 shadow-[0_16px_40px_rgba(0,0,0,0.8)]" style={{ backgroundColor: "#1A1510" }}>
           {SERVICE_DROPDOWN_ITEMS.map((item, i) => (
-            <div key={item.page}>
+            <div key={item.path}>
               {i > 0 && <div className="mx-0 my-0 h-px bg-[rgba(255,255,255,0.05)]" />}
               <button
                 onClick={() => {
                   setOpen(false)
-                  onNavigate?.(item.page)
+                  navigate(item.path)
                 }}
                 className="block w-full cursor-pointer border-none bg-transparent px-5 py-2.5 text-left font-body text-[0.8125rem] font-light text-[#F2EDE6] transition-all duration-150 hover:bg-[rgba(184,134,26,0.08)] hover:text-[#B8861A]"
               >
@@ -63,11 +58,12 @@ function ServicesDropdown({ onNavigate }: { onNavigate?: (page: PageId) => void 
   )
 }
 
-export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
+export function Navigation() {
   const { openModal } = useScheduleCall()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     function handleScroll() {
@@ -91,23 +87,23 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
       )}
     >
       <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-6">
-        <button
-          onClick={() => onNavigate?.("home")}
-          className="cursor-pointer border-none bg-transparent font-body text-[0.8125rem] font-medium tracking-[0.08em] text-bv-text-primary hover:opacity-85 p-0"
+        <Link
+          to="/"
+          className="cursor-pointer border-none bg-transparent font-body text-[0.8125rem] font-medium tracking-[0.08em] text-bv-text-primary hover:opacity-85 p-0 no-underline"
         >
           BLACKVAULT GROUP
-        </button>
+        </Link>
 
         <div className="hidden items-center gap-10 md:flex">
-          <button
-            onClick={onHowItWorks}
-            className="border-none bg-transparent font-body text-sm font-normal tracking-[0.04em] text-bv-text-secondary transition-colors duration-200 hover:text-bv-text-primary cursor-pointer p-0"
+          <Link
+            to="/how-it-works"
+            className="font-body text-sm font-normal tracking-[0.04em] text-bv-text-secondary no-underline transition-colors duration-200 hover:text-bv-text-primary"
           >
             How it Works
-          </button>
-          <ServicesDropdown onNavigate={onNavigate} />
+          </Link>
+          <ServicesDropdown />
           <a
-            href="#contact"
+            href="/#contact"
             className="font-body text-sm font-normal tracking-[0.04em] text-bv-text-secondary no-underline transition-colors duration-200 hover:text-bv-text-primary"
           >
             Contact
@@ -152,12 +148,13 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
           menuOpen ? "flex opacity-100 pointer-events-auto" : "hidden opacity-0 pointer-events-none"
         )}
       >
-        <button
-          onClick={() => { setMenuOpen(false); onHowItWorks?.() }}
-          className="border-none bg-transparent font-body text-lg font-normal text-bv-text-secondary text-left transition-colors duration-200 hover:text-bv-text-primary cursor-pointer p-0"
+        <Link
+          to="/how-it-works"
+          onClick={() => setMenuOpen(false)}
+          className="font-body text-lg font-normal text-bv-text-secondary no-underline transition-colors duration-200 hover:text-bv-text-primary"
         >
           How it Works
-        </button>
+        </Link>
 
         <div>
           <button
@@ -170,8 +167,8 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
             <div className="mt-4 flex flex-col gap-3 pl-4 border-l border-[rgba(184,134,26,0.15)]">
               {SERVICE_DROPDOWN_ITEMS.map((item) => (
                 <button
-                  key={item.page}
-                  onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); onNavigate?.(item.page) }}
+                  key={item.path}
+                  onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); navigate(item.path) }}
                   className="border-none bg-transparent font-body text-base font-light text-[#F2EDE6] text-left transition-colors duration-150 hover:text-[#B8861A] cursor-pointer p-0"
                 >
                   {item.label}
@@ -182,7 +179,7 @@ export function Navigation({ onHowItWorks, onNavigate }: NavigationProps) {
         </div>
 
         <a
-          href="#contact"
+          href="/#contact"
           onClick={() => setMenuOpen(false)}
           className="font-body text-lg font-normal text-bv-text-secondary no-underline transition-colors duration-200 hover:text-bv-text-primary"
         >

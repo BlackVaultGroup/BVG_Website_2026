@@ -39,17 +39,10 @@ const content: ServicePageContent = {
   ctaSubtext: "We build the systems that give your team their time back.",
 }
 
-interface WorkflowAutomationPageProps {
-  onNavigate: (page: string) => void
-}
-
-export function WorkflowAutomationPage({ onNavigate }: WorkflowAutomationPageProps) {
+export function WorkflowAutomationPage() {
   return (
     <>
-      <Navigation
-        onHowItWorks={() => onNavigate("how-it-works")}
-        onNavigate={onNavigate}
-      />
+      <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
         <Footer />

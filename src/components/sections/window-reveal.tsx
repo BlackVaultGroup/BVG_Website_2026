@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 function useInView(ref: React.RefObject<Element | null>, threshold = 0.25) {
@@ -29,11 +30,8 @@ const fadeIn = (inView: boolean, delay: number): React.CSSProperties => ({
   transition: `opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
 })
 
-interface WindowRevealProps {
-  onHowItWorks?: () => void
-}
-
-export function WindowReveal({ onHowItWorks }: WindowRevealProps) {
+export function WindowReveal() {
+  const navigate = useNavigate()
   const sectionRef = useRef<HTMLDivElement>(null)
   const inView = useInView(sectionRef, 0.15)
 
@@ -120,7 +118,7 @@ export function WindowReveal({ onHowItWorks }: WindowRevealProps) {
             {/* Learn More button */}
             <div style={{ ...fadeIn(inView, 300) }}>
               <button
-                onClick={onHowItWorks}
+                onClick={() => navigate("/how-it-works")}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",

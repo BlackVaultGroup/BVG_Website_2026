@@ -39,17 +39,10 @@ const content: ServicePageContent = {
   ctaSubtext: "We take on a limited number of advisory engagements each quarter.",
 }
 
-interface ExecutiveAdvisoryPageProps {
-  onNavigate: (page: string) => void
-}
-
-export function ExecutiveAdvisoryPage({ onNavigate }: ExecutiveAdvisoryPageProps) {
+export function ExecutiveAdvisoryPage() {
   return (
     <>
-      <Navigation
-        onHowItWorks={() => onNavigate("how-it-works")}
-        onNavigate={onNavigate}
-      />
+      <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
         <Footer />

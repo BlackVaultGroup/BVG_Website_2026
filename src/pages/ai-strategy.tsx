@@ -39,17 +39,10 @@ const content: ServicePageContent = {
   ctaSubtext: "We start every engagement with strategy. No exceptions.",
 }
 
-interface AIStrategyPageProps {
-  onNavigate: (page: string) => void
-}
-
-export function AIStrategyPage({ onNavigate }: AIStrategyPageProps) {
+export function AIStrategyPage() {
   return (
     <>
-      <Navigation
-        onHowItWorks={() => onNavigate("how-it-works")}
-        onNavigate={onNavigate}
-      />
+      <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
         <Footer />

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import { Navigation } from "@/components/navigation"
 import { Hero } from "@/components/sections/hero"
 import { WindowReveal } from "@/components/sections/window-reveal"
@@ -14,52 +15,45 @@ import { WorkflowAutomationPage } from "@/pages/workflow-automation"
 import { CustomIntegrationPage } from "@/pages/custom-integration"
 import { ExecutiveAdvisoryPage } from "@/pages/executive-advisory"
 
-type PageId = "home" | "how-it-works" | "ai-strategy" | "workflow-automation" | "custom-integration" | "executive-advisory"
-
-export function App() {
-  const [page, setPage] = useState<PageId>("home")
-
+function ScrollToTop() {
+  const { pathname } = useLocation()
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [page])
+  }, [pathname])
+  return null
+}
 
-  if (page === "how-it-works") {
-    return <HowItWorksPage onBack={() => setPage("home")} onNavigate={(p) => setPage(p as PageId)} />
-  }
-
-  if (page === "ai-strategy") {
-    return <AIStrategyPage onNavigate={(p) => setPage(p as PageId)} />
-  }
-
-  if (page === "workflow-automation") {
-    return <WorkflowAutomationPage onNavigate={(p) => setPage(p as PageId)} />
-  }
-
-  if (page === "custom-integration") {
-    return <CustomIntegrationPage onNavigate={(p) => setPage(p as PageId)} />
-  }
-
-  if (page === "executive-advisory") {
-    return <ExecutiveAdvisoryPage onNavigate={(p) => setPage(p as PageId)} />
-  }
-
+function HomePage() {
   return (
     <>
-      <Navigation
-        onHowItWorks={() => setPage("how-it-works")}
-        onNavigate={(p) => setPage(p as PageId)}
-      />
+      <Navigation />
       <Hero />
-      <WindowReveal onHowItWorks={() => setPage("how-it-works")} />
+      <WindowReveal />
       <SectionSeparator />
-      <Services onNavigate={(p) => setPage(p as PageId)} />
+      <Services />
       <SectionSeparator />
       <RevenueOps />
       <SectionSeparator />
       <FAQ />
       <CTAClose />
-      <Footer onNavigate={(p) => setPage(p as PageId)} />
+      <Footer />
     </>
+  )
+}
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/ai-strategy" element={<AIStrategyPage />} />
+        <Route path="/workflow-automation" element={<WorkflowAutomationPage />} />
+        <Route path="/custom-ai-integration" element={<CustomIntegrationPage />} />
+        <Route path="/strategic-ai-partnership" element={<ExecutiveAdvisoryPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
