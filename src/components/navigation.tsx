@@ -4,10 +4,11 @@ import { cn } from "@/lib/utils"
 import { useScheduleCall } from "@/components/schedule-call-provider"
 
 const SERVICE_DROPDOWN_ITEMS = [
-  { label: "AI Strategy & Roadmapping", path: "/ai-strategy" },
-  { label: "Workflow Automation", path: "/workflow-automation" },
-  { label: "Custom AI Integration", path: "/custom-ai-integration" },
-  { label: "Strategic AI Partnership", path: "/strategic-ai-partnership" },
+  { label: "Operational AI Systems", path: "/operational-ai-systems" },
+  { label: "Client Response Infrastructure", path: "/client-response-infrastructure" },
+  { label: "Intelligent Workflows", path: "/intelligent-workflows" },
+  { label: "Voice AI Systems", path: "/voice-ai-systems" },
+  { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
 ]
 
 function ServicesDropdown() {
@@ -37,7 +38,7 @@ function ServicesDropdown() {
           open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
         )}
       >
-        <div className="w-[220px] rounded-sm border border-[rgba(184,134,26,0.15)] bg-[#1A1510] py-2 shadow-[0_16px_40px_rgba(0,0,0,0.8)]" style={{ backgroundColor: "#1A1510" }}>
+        <div className="w-[270px] rounded-sm border border-[rgba(184,134,26,0.15)] bg-[#1A1510] py-2 shadow-[0_16px_40px_rgba(0,0,0,0.8)]" style={{ backgroundColor: "#1A1510" }}>
           {SERVICE_DROPDOWN_ITEMS.map((item, i) => (
             <div key={item.path}>
               {i > 0 && <div className="mx-0 my-0 h-px bg-[rgba(255,255,255,0.05)]" />}

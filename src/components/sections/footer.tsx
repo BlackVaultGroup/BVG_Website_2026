@@ -9,10 +9,11 @@ const NAV_LINKS = [
 ]
 
 const SERVICE_LINKS = [
-  { label: "AI Strategy", path: "/ai-strategy" },
-  { label: "Automation", path: "/workflow-automation" },
-  { label: "Integration", path: "/custom-ai-integration" },
-  { label: "Advisory", path: "/strategic-ai-partnership" },
+  { label: "Operational AI", path: "/operational-ai-systems" },
+  { label: "Client Response", path: "/client-response-infrastructure" },
+  { label: "Workflows", path: "/intelligent-workflows" },
+  { label: "Voice AI", path: "/voice-ai-systems" },
+  { label: "AI Strategy", path: "/executive-ai-strategy" },
 ]
 
 function scrollToSection(id: string) {

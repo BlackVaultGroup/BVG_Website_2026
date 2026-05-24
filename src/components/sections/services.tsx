@@ -4,24 +4,29 @@ import { ArrowRight } from "lucide-react"
 
 const SERVICES = [
   {
-    name: "AI Strategy & Roadmapping",
-    desc: "Clarity before commitment. We map your AI opportunity before a single line of code is written.",
-    path: "/ai-strategy",
+    name: "Operational AI Systems",
+    desc: "We rebuild the systems your operation actually runs on — designed around your data, stack, and workflows.",
+    path: "/operational-ai-systems",
   },
   {
-    name: "Workflow Automation",
-    desc: "Manual processes are a liability. We eliminate them with precision-built automation systems.",
-    path: "/workflow-automation",
+    name: "Client Response Infrastructure",
+    desc: "Never lose a lead to slow follow-up again. AI-driven intake and response systems that work around the clock.",
+    path: "/client-response-infrastructure",
   },
   {
-    name: "Custom AI Integration",
-    desc: "Your existing stack, made intelligent. Seamless integration with no disruption to operations.",
-    path: "/custom-ai-integration",
+    name: "Intelligent Workflows",
+    desc: "Eliminate the manual work between your tools and your team. Logic-driven automation that runs without supervision.",
+    path: "/intelligent-workflows",
   },
   {
-    name: "Strategic AI Partnership",
-    desc: "Direct access to senior AI strategy for leadership teams making high-stakes decisions.",
-    path: "/strategic-ai-partnership",
+    name: "Voice AI Systems",
+    desc: "Every inbound call answered, qualified, and routed automatically — without adding staff.",
+    path: "/voice-ai-systems",
+  },
+  {
+    name: "Executive AI Strategy",
+    desc: "A clear picture of where AI fits your business before a single dollar is committed.",
+    path: "/executive-ai-strategy",
   },
 ]
 
