@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
@@ -68,12 +67,6 @@ const content: ServicePageContent = {
   ctaSubtext: "We build what fits your operation. Nothing extra.",
 }
 
-const linkStyle: React.CSSProperties = {
-  color: "#9A8E7E",
-  textDecoration: "none",
-  borderBottom: "1px solid rgba(184,134,26,0.25)",
-}
-
 export function OperationalAISystemsPage() {
   return (
     <>
@@ -86,39 +79,6 @@ export function OperationalAISystemsPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <div
-          style={{
-            backgroundColor: "#0C0A08",
-            maxWidth: "860px",
-            margin: "0 auto",
-            padding: "0 1.25rem 4rem",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontSize: "1.1rem",
-              fontWeight: 300,
-              lineHeight: 1.8,
-              color: "#9A8E7E",
-              margin: 0,
-            }}
-          >
-            For teams where strategy comes before build,{" "}
-            <Link to="/executive-ai-strategy" style={linkStyle}>
-              executive AI strategy
-            </Link>{" "}
-            is where every operational system engagement begins. For teams ready to move,{" "}
-            <Link to="/intelligent-workflows" style={linkStyle}>
-              intelligent workflow automation
-            </Link>{" "}
-            and{" "}
-            <Link to="/client-response-infrastructure" style={linkStyle}>
-              client response infrastructure
-            </Link>{" "}
-            are the most common systems we build alongside operational AI.
-          </p>
-        </div>
         <Footer />
       </div>
     </>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
@@ -68,12 +67,6 @@ const content: ServicePageContent = {
   ctaSubtext: "We build the infrastructure that keeps your pipeline moving.",
 }
 
-const linkStyle: React.CSSProperties = {
-  color: "#9A8E7E",
-  textDecoration: "none",
-  borderBottom: "1px solid rgba(184,134,26,0.25)",
-}
-
 export function ClientResponseInfrastructurePage() {
   return (
     <>
@@ -86,35 +79,6 @@ export function ClientResponseInfrastructurePage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <div
-          style={{
-            backgroundColor: "#0C0A08",
-            maxWidth: "860px",
-            margin: "0 auto",
-            padding: "0 1.25rem 4rem",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontSize: "1.1rem",
-              fontWeight: 300,
-              lineHeight: 1.8,
-              color: "#9A8E7E",
-              margin: 0,
-            }}
-          >
-            Client response infrastructure is often paired with{" "}
-            <Link to="/voice-ai-systems" style={linkStyle}>
-              voice AI systems
-            </Link>{" "}
-            to cover inbound calls alongside digital channels, and with{" "}
-            <Link to="/intelligent-workflows" style={linkStyle}>
-              intelligent workflow automation
-            </Link>{" "}
-            to handle the steps between first contact and closed deal without manual intervention.
-          </p>
-        </div>
         <Footer />
       </div>
     </>

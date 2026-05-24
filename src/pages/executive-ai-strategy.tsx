@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
@@ -76,12 +75,6 @@ const content: ServicePageContent = {
   ctaSubtext: "We start every engagement with strategy. No exceptions.",
 }
 
-const linkStyle: React.CSSProperties = {
-  color: "#9A8E7E",
-  textDecoration: "none",
-  borderBottom: "1px solid rgba(184,134,26,0.25)",
-}
-
 export function ExecutiveAIStrategyPage() {
   return (
     <>
@@ -94,39 +87,6 @@ export function ExecutiveAIStrategyPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <div
-          style={{
-            backgroundColor: "#0C0A08",
-            maxWidth: "860px",
-            margin: "0 auto",
-            padding: "0 1.25rem 4rem",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontSize: "1.1rem",
-              fontWeight: 300,
-              lineHeight: 1.8,
-              color: "#9A8E7E",
-              margin: 0,
-            }}
-          >
-            Most strategy engagements lead directly to implementation. The systems we build most often include{" "}
-            <Link to="/operational-ai-systems" style={linkStyle}>
-              operational AI infrastructure
-            </Link>
-            ,{" "}
-            <Link to="/intelligent-workflows" style={linkStyle}>
-              intelligent workflow automation
-            </Link>
-            , and{" "}
-            <Link to="/client-response-infrastructure" style={linkStyle}>
-              client response systems
-            </Link>{" "}
-            — sequenced and scoped from the audit findings.
-          </p>
-        </div>
         <Footer />
       </div>
     </>
