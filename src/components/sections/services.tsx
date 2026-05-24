@@ -9,7 +9,7 @@ const SERVICES = [
     path: "/operational-ai-systems",
   },
   {
-    name: "Client Response Infrastructure",
+    name: "Client Response Systems",
     desc: "Never lose a lead to slow follow-up again. AI-driven intake and response systems that work around the clock.",
     path: "/client-response-infrastructure",
   },
