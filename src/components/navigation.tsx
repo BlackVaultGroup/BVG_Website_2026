@@ -5,7 +5,7 @@ import { useScheduleCall } from "@/components/schedule-call-provider"
 
 const SERVICE_DROPDOWN_ITEMS = [
   { label: "Operational AI Systems", path: "/operational-ai-systems" },
-  { label: "Client Response Infrastructure", path: "/client-response-systems" },
+  { label: "Client Response Infrastructure", path: "/client-response-infrastructure" },
   { label: "Intelligent Workflows", path: "/intelligent-workflows" },
   { label: "Voice AI Systems", path: "/voice-ai-systems" },
   { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
@@ -29,6 +29,8 @@ function ServicesDropdown() {
     <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
       <button
         className="border-none bg-transparent font-body text-sm font-normal tracking-[0.04em] text-bv-text-secondary transition-colors duration-200 hover:text-bv-text-primary cursor-pointer p-0"
+        aria-expanded={open}
+        aria-haspopup="true"
       >
         Services
       </button>
@@ -120,7 +122,9 @@ export function Navigation() {
         <button
           className="flex flex-col gap-[5px] border-none bg-none p-2 md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           <span
             className={cn(
@@ -144,6 +148,9 @@ export function Navigation() {
       </div>
 
       <div
+        id="mobile-menu"
+        role="dialog"
+        aria-label="Navigation menu"
         className={cn(
           "fixed inset-0 top-[72px] z-90 flex-col gap-8 border-t border-[rgba(255,255,255,0.06)] bg-bv-bg-primary px-6 pt-12 transition-opacity duration-200",
           menuOpen ? "flex opacity-100 pointer-events-auto" : "hidden opacity-0 pointer-events-none"
@@ -160,6 +167,8 @@ export function Navigation() {
         <div>
           <button
             onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            aria-expanded={mobileServicesOpen}
+            aria-haspopup="true"
             className="border-none bg-transparent font-body text-lg font-normal text-bv-text-secondary text-left transition-colors duration-200 hover:text-bv-text-primary cursor-pointer p-0"
           >
             Services {mobileServicesOpen ? "-" : "+"}

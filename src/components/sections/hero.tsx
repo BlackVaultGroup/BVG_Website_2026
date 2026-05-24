@@ -109,7 +109,7 @@ export function Hero() {
           transitionDelay: "300ms",
         }}
       >
-        <div
+        <h1
           style={{
             fontFamily: "'Bodoni Moda', serif",
             fontWeight: 300,
@@ -118,11 +118,12 @@ export function Hero() {
             letterSpacing: "-0.02em",
             lineHeight: "1.0",
             whiteSpace: "nowrap",
+            margin: 0,
           }}
         >
-          <div>BlackVault</div>
-          <div>Group</div>
-        </div>
+          <span style={{ display: "block" }}>BlackVault</span>
+          <span style={{ display: "block" }}>Group</span>
+        </h1>
       </div>
 
       <div

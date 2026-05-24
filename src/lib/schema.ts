@@ -103,6 +103,53 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
   }
 }
 
+const FAQ_ITEMS = [
+  {
+    q: "How is BlackVault different from other AI agencies?",
+    a: "We are a strategic consultancy. We do not sell tools or templates. We architect custom systems around your specific business problems and revenue goals.",
+  },
+  {
+    q: "How long does it take to see results?",
+    a: "Depending on scope, most clients see measurable operational impact within 30 to 60 days of deployment. We define what success looks like before we start, so there is no ambiguity.",
+  },
+  {
+    q: "Do you work with businesses that have never used AI before?",
+    a: "Yes. In fact, most of our most impactful engagements start from zero. A clean foundation often produces better results than inheriting a poorly implemented system.",
+  },
+  {
+    q: "Will this disrupt our current operations?",
+    a: "No. Our integration methodology is designed around your existing stack and workflows. Disruption is a sign of poor planning. We plan precisely.",
+  },
+  {
+    q: "How do you handle data security and confidentiality?",
+    a: "Every engagement is covered by a mutual NDA before any information is shared. Your data is yours. We never train on client data or share it with third parties.",
+  },
+  {
+    q: "What if the system doesn\u2019t perform as expected?",
+    a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
+  },
+  {
+    q: "What size businesses do you work with?",
+    a: "We work with businesses generating between $5M and $70M in annual revenue. Our engagements are not suited for pre-revenue companies. We build on existing operations, not speculation.",
+  },
+]
+
+export function buildFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${BASE_URL}/#faq`,
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  }
+}
+
 export function buildWebPageSchema(opts: {
   name: string
   description: string

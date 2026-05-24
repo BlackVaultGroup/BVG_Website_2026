@@ -51,13 +51,13 @@ export interface ServicePageContent {
 
 export function ServicePageLayout({ content }: { content: ServicePageContent }) {
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0C0A08", color: "#F2EDE6" }}>
+    <main style={{ minHeight: "100vh", backgroundColor: "#0C0A08", color: "#F2EDE6" }}>
       <HeroBanner content={content} />
       <DescriptionBlock paragraphs={content.paragraphs} />
       <FeatureImages leftCaption={content.leftCaption} rightCaption={content.rightCaption} leftImage={content.leftImage} rightImage={content.rightImage} />
       <WhatsIncluded items={content.includedItems} />
       <ClosingCTA headline={content.ctaHeadline} subtext={content.ctaSubtext} />
-    </div>
+    </main>
   )
 }
 
@@ -89,7 +89,12 @@ function HeroBanner({ content }: { content: ServicePageContent }) {
       {content.heroImage && (
         <img
           src={content.heroImage}
+          alt=""
           aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          width="1400"
+          height="840"
           style={{
             position: "absolute",
             inset: 0,
@@ -218,6 +223,10 @@ function FeatureImages({ leftCaption, rightCaption, leftImage, rightImage }: { l
             <img
               src={leftImage}
               alt={leftCaption}
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="533"
               style={{ width: "100%", display: "block", aspectRatio: "3/2", objectFit: "cover" }}
             />
             <p
@@ -237,6 +246,10 @@ function FeatureImages({ leftCaption, rightCaption, leftImage, rightImage }: { l
             <img
               src={rightImage}
               alt={rightCaption}
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="533"
               style={{ width: "100%", display: "block", aspectRatio: "3/2", objectFit: "cover" }}
             />
             <p

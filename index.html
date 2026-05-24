@@ -4,15 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BlackVault Group - Strategic AI consulting for operators who think in outcomes." />
-    <title>BlackVault Group  Strategic AI Consulting</title>
+    <meta name="description" content="BlackVault Group — Strategic AI consulting for operators who think in outcomes. We design and deploy operational AI systems for founders and executives." />
+    <title>BlackVault Group — Strategic AI Consulting</title>
+
+    <!-- Font preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <meta property="og:image" content="https://bolt.new/static/og_default.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
-</head>
+
+    <!-- Non-blocking font load -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Default OG / social meta (overridden per-route by PageSEO component) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BlackVault Group" />
+    <meta property="og:title" content="BlackVault Group — Strategic AI Consulting" />
+    <meta property="og:description" content="BlackVault Group designs and deploys operational AI systems for founders and operators. Workflow automation, client response infrastructure, voice AI, and executive AI strategy." />
+    <meta property="og:image" content="https://blackvaultgroup.com/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@BlackVaultGroup" />
+    <meta name="twitter:title" content="BlackVault Group — Strategic AI Consulting" />
+    <meta name="twitter:description" content="BlackVault Group designs and deploys operational AI systems for founders and operators." />
+    <meta name="twitter:image" content="https://blackvaultgroup.com/og-image.webp" />
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#0C0A08" />
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

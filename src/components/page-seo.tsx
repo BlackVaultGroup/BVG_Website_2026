@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async"
 
 const BASE_URL = "https://blackvaultgroup.com"
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.webp`
 
 interface PageSEOProps {
   title: string

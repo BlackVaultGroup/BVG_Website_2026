@@ -194,6 +194,10 @@ export function WindowReveal() {
           <img
             src="/vault-hero.webp"
             alt="BlackVault secure foundations"
+            loading="lazy"
+            decoding="async"
+            width="1400"
+            height="900"
             style={{
               position: "absolute",
               inset: 0,

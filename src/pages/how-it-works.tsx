@@ -97,7 +97,7 @@ export function HowItWorksPage() {
   const heroInView = useInView(heroRef, 0.1)
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0F0F0F", color: "#fff" }}>
+    <>
       <PageSEO
         title="How BlackVault Group Works — Process and Methodology"
         description="BlackVault Group begins every engagement with an operational audit before recommending anything. Learn how we assess, design, build, and deploy AI systems for founders and operators."
@@ -105,6 +105,7 @@ export function HowItWorksPage() {
       />
       <JsonLd schema={howItWorksSchemas} />
       <Navigation />
+      <main style={{ minHeight: "100vh", backgroundColor: "#0F0F0F", color: "#fff" }}>
 
       <div
         ref={heroRef}
@@ -130,6 +131,10 @@ export function HowItWorksPage() {
           src="/how-it-works-hero.webp"
           alt=""
           aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          width="1400"
+          height="840"
           style={{
             position: "absolute",
             inset: 0,
@@ -283,8 +288,9 @@ export function HowItWorksPage() {
         </div>
       </RevealSection>
 
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }
 
@@ -330,6 +336,10 @@ function ServiceCard({ service }: { service: typeof SERVICES[0] }) {
       <img
         src={service.image}
         alt={service.heading}
+        loading="lazy"
+        decoding="async"
+        width="600"
+        height="450"
         style={{
           width: "100%",
           aspectRatio: "4/3",
