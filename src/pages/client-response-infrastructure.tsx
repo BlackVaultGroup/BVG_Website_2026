@@ -45,7 +45,7 @@ export function ClientResponseInfrastructurePage() {
   return (
     <>
       <PageSEO
-        title="Client Response Infrastructure — BlackVault Group"
+        title="Client Response Systems — BlackVault Group"
         description="AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response — without adding headcount or manual work to your team."
         canonicalPath="/client-response-infrastructure"
       />
