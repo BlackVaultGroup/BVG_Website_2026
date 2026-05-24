@@ -6,7 +6,7 @@ const STEPS = [
   {
     number: "01",
     name: "Discover",
-    desc: "We audit your workflows, data systems, and revenue gaps before recommending anything. Every engagement starts with a precise diagnosis -- not a pitch deck.",
+    desc: "We assess your workflows, data systems, and revenue gaps before recommending anything. Every engagement starts with a precise diagnosis -- not a pitch deck.",
   },
   {
     number: "02",
