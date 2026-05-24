@@ -11,7 +11,7 @@ const content: ServicePageContent = {
   subtext: "AI voice agents trained on your business that handle inbound calls, qualify leads, and run appointment workflows without live staff intervention.",
   paragraphs: [
     "Inbound call volume is a bottleneck that grows with your business. Every missed call is a missed opportunity and hiring staff to answer phones, qualify callers, and schedule appointments is expensive, inconsistent, and does not scale.",
-    "We build voice AI agents trained specifically on your business: your services, your qualification criteria, your scheduling logic, and your escalation rules. The agent answers every call, gathers the right information, and routes or books based on the outcome — 24 hours a day, without supervision.",
+    "We build voice AI agents trained specifically on your business: your services, your qualification criteria, your scheduling logic, and your escalation rules. The agent answers every call, gathers the right information, and routes or books based on the outcome 24 hours a day, without supervision.",
     "Every voice system we deploy includes full analytics on call volume, qualification rates, conversion, and drop-off. You see exactly how the system performs and where to optimize.",
   ],
   leftCaption: "Call flow architecture and agent training",
