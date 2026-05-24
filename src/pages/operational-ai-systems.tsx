@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
+import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -80,22 +80,26 @@ export function OperationalAISystemsPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <div
-          style={{
-            backgroundColor: "#0C0A08",
-            padding: "2rem 1.25rem 3rem",
-            maxWidth: "860px",
-            margin: "0 auto",
-          }}
-        >
-          <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8861A", marginBottom: "1rem" }}>
-            RELATED SERVICES
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            <Link to="/intelligent-workflows" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Intelligent Workflows</Link>
-            <Link to="/executive-ai-strategy" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Executive AI Strategy</Link>
-          </div>
-        </div>
+        <RelatedSystems
+          heading="RELATED INFRASTRUCTURE"
+          items={[
+            {
+              label: "Intelligent Workflows",
+              description: "Once your operational systems are in place, intelligent workflow automation removes the manual steps that slow execution between them.",
+              path: "/intelligent-workflows",
+            },
+            {
+              label: "Client Response Infrastructure",
+              description: "AI-driven intake and follow-up systems that connect your operational backbone directly to your client-facing pipeline.",
+              path: "/client-response-infrastructure",
+            },
+            {
+              label: "Executive AI Strategy",
+              description: "Before any system is built, an operational audit and AI strategy engagement ensures every decision is deliberate and sequenced correctly.",
+              path: "/executive-ai-strategy",
+            },
+          ]}
+        />
         <Footer />
       </div>
     </>

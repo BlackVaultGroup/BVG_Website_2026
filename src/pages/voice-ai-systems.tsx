@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
+import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -80,22 +80,26 @@ export function VoiceAISystemsPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <div
-          style={{
-            backgroundColor: "#0C0A08",
-            padding: "2rem 1.25rem 3rem",
-            maxWidth: "860px",
-            margin: "0 auto",
-          }}
-        >
-          <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8861A", marginBottom: "1rem" }}>
-            RELATED SERVICES
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            <Link to="/client-response-systems" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Client Response Infrastructure</Link>
-            <Link to="/intelligent-workflows" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Intelligent Workflows</Link>
-          </div>
-        </div>
+        <RelatedSystems
+          heading="RELATED COMMUNICATION INFRASTRUCTURE"
+          items={[
+            {
+              label: "Client Response Infrastructure",
+              description: "Complements voice AI with automated digital intake, follow-up sequences, and CRM routing — so no inquiry goes unhandled regardless of channel.",
+              path: "/client-response-infrastructure",
+            },
+            {
+              label: "Intelligent Workflows",
+              description: "The workflow automation systems that handle everything after the call ends: scheduling confirmations, CRM updates, and follow-up triggers.",
+              path: "/intelligent-workflows",
+            },
+            {
+              label: "Operational AI Systems",
+              description: "Voice AI is one layer of a broader operational system. We design the full architecture when your needs extend beyond a single channel.",
+              path: "/operational-ai-systems",
+            },
+          ]}
+        />
         <Footer />
       </div>
     </>

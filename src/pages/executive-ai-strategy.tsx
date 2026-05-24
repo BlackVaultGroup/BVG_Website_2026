@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
+import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -88,23 +88,31 @@ export function ExecutiveAIStrategyPage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <div
-          style={{
-            backgroundColor: "#0C0A08",
-            padding: "2rem 1.25rem 3rem",
-            maxWidth: "860px",
-            margin: "0 auto",
-          }}
-        >
-          <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8861A", marginBottom: "1rem" }}>
-            RELATED SERVICES
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            <Link to="/operational-ai-systems" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Operational AI Systems</Link>
-            <Link to="/intelligent-workflows" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Intelligent Workflows</Link>
-            <Link to="/voice-ai-systems" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Voice AI Systems</Link>
-          </div>
-        </div>
+        <RelatedSystems
+          heading="SYSTEMS WE BUILD FROM STRATEGY"
+          items={[
+            {
+              label: "Operational AI Systems",
+              description: "The most common outcome of a strategy engagement: custom AI infrastructure scoped and built around your specific operational requirements.",
+              path: "/operational-ai-systems",
+            },
+            {
+              label: "Intelligent Workflows",
+              description: "Workflow automation is often the highest-leverage recommendation from an operational audit. We build those systems end-to-end.",
+              path: "/intelligent-workflows",
+            },
+            {
+              label: "Client Response Infrastructure",
+              description: "Response latency is a revenue problem most audits surface. We build the communication automation systems that close that gap.",
+              path: "/client-response-infrastructure",
+            },
+            {
+              label: "Voice AI Systems",
+              description: "For businesses where inbound call volume creates bottlenecks, voice AI becomes a core operational system — not a peripheral tool.",
+              path: "/voice-ai-systems",
+            },
+          ]}
+        />
         <Footer />
       </div>
     </>

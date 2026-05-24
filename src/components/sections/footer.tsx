@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Separator } from "@/components/ui/separator"
 
 const NAV_LINKS = [
@@ -9,11 +9,11 @@ const NAV_LINKS = [
 ]
 
 const SERVICE_LINKS = [
-  { label: "Operational AI", path: "/operational-ai-systems" },
-  { label: "Client Response", path: "/client-response-infrastructure" },
-  { label: "Workflows", path: "/intelligent-workflows" },
-  { label: "Voice AI", path: "/voice-ai-systems" },
-  { label: "AI Strategy", path: "/executive-ai-strategy" },
+  { label: "Operational AI Systems", path: "/operational-ai-systems" },
+  { label: "Client Response Infrastructure", path: "/client-response-infrastructure" },
+  { label: "Intelligent Workflows", path: "/intelligent-workflows" },
+  { label: "Voice AI Systems", path: "/voice-ai-systems" },
+  { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
 ]
 
 function scrollToSection(id: string) {
@@ -24,8 +24,6 @@ function scrollToSection(id: string) {
 }
 
 export function Footer() {
-  const navigate = useNavigate()
-
   return (
     <footer className="bg-bv-bg-primary">
       <Separator className="bg-border" />
@@ -38,7 +36,7 @@ export function Footer() {
               BlackVault Group
             </p>
             <p className="max-w-[28ch] font-body text-sm font-light leading-relaxed text-bv-text-muted">
-              Strategic AI consulting for operators who think in outcomes.
+              Operational AI systems for founders and operators who build to scale.
             </p>
           </div>
 
@@ -47,7 +45,7 @@ export function Footer() {
             <h3 className="font-body text-[0.7rem] font-medium uppercase tracking-[0.16em] text-bv-accent">
               Navigate
             </h3>
-            <nav className="flex flex-col gap-2.5">
+            <nav className="flex flex-col gap-2.5" aria-label="Site navigation">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.sectionId}
@@ -65,15 +63,15 @@ export function Footer() {
             <h3 className="font-body text-[0.7rem] font-medium uppercase tracking-[0.16em] text-bv-accent">
               Services
             </h3>
-            <nav className="flex flex-col gap-2.5">
+            <nav className="flex flex-col gap-2.5" aria-label="Services navigation">
               {SERVICE_LINKS.map((link) => (
-                <button
+                <Link
                   key={link.path}
-                  onClick={() => navigate(link.path)}
-                  className="w-fit cursor-pointer border-none bg-transparent p-0 text-left font-body text-sm font-light text-bv-text-muted transition-colors duration-200 hover:text-bv-text-secondary"
+                  to={link.path}
+                  className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary"
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
             </nav>
           </div>

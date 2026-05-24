@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
 import { ServicePageLayout, type ServicePageContent } from "@/components/service-page-layout"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
+import { RelatedSystems } from "@/components/related-systems"
 import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 
 const pageSchemas = [
@@ -80,23 +80,26 @@ export function ClientResponseInfrastructurePage() {
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
-        <div
-          style={{
-            backgroundColor: "#0C0A08",
-            padding: "2rem 1.25rem 3rem",
-            maxWidth: "860px",
-            margin: "0 auto",
-          }}
-        >
-          <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B8861A", marginBottom: "1rem" }}>
-            RELATED SERVICES
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            <Link to="/intelligent-workflows" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Intelligent Workflows</Link>
-            <Link to="/operational-ai-systems" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Operational AI Systems</Link>
-            <Link to="/voice-ai-systems" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.875rem", color: "#9A8E7E", textDecoration: "none", borderBottom: "1px solid rgba(184,134,26,0.3)", paddingBottom: "2px" }}>Voice AI Systems</Link>
-          </div>
-        </div>
+        <RelatedSystems
+          heading="RELATED COMMUNICATION SYSTEMS"
+          items={[
+            {
+              label: "Voice AI Systems",
+              description: "Extends your client response infrastructure to inbound calls — every call answered, qualified, and routed without live staff intervention.",
+              path: "/voice-ai-systems",
+            },
+            {
+              label: "Intelligent Workflows",
+              description: "The workflow automation layer that powers your intake sequences, follow-up logic, and CRM routing from first contact to closed deal.",
+              path: "/intelligent-workflows",
+            },
+            {
+              label: "Operational AI Systems",
+              description: "When client response infrastructure is part of a larger operational build, we design and integrate all components as a unified system.",
+              path: "/operational-ai-systems",
+            },
+          ]}
+        />
         <Footer />
       </div>
     </>
