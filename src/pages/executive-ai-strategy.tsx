@@ -54,7 +54,7 @@ export function ExecutiveAIStrategyPage() {
     <>
       <PageSEO
         title="Executive AI Strategy — BlackVault Group"
-        description="Senior AI strategy for founders and operators making high-stakes decisions. We audit your operation and map exactly where AI creates leverage before a single dollar is committed."
+        description="Senior AI strategy for founders and operators making high-stakes decisions. We assess your operation and map exactly where AI creates leverage before a single dollar is committed."
         canonicalPath="/executive-ai-strategy"
       />
       <Navigation />
