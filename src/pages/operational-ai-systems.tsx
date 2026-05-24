@@ -8,7 +8,7 @@ const content: ServicePageContent = {
   eyebrow: "OPERATIONAL AI SYSTEMS",
   headlineLine1: "Systems that run",
   headlineLine2: "your operation.",
-  subtext: "We build AI infrastructure designed around how your business actually works — not how a generic platform assumes it does.",
+  subtext: "We build AI infrastructure designed around how your business actually works. Not how a generic platform assumes it does.",
   paragraphs: [
     "Off-the-shelf AI tools are engineered for the average business. If your operation has specific data flows, non-standard processes, or a stack that predates the AI wave, generic solutions will either underperform or layer more complexity on top of what already exists.",
     "We analyze your entire operational structure — tools, data, handoffs, and decision logic — before designing anything. The result is AI infrastructure that integrates cleanly into your existing environment, accelerates the work your team already does, and scales without becoming a liability.",
