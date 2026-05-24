@@ -15,7 +15,7 @@ interface ScheduleCallModalProps {
 
 type Step = "form" | "success"
 
-const COMPANY_SIZES = ["solo", "2-10", "11-50", "51-200", "201-500", "500+"]
+const COMPANY_SIZES = ["solo", "2-10", "11-20", "21-40", "41-60", "61-80"]
 const INQUIRY_TYPES = [
   { value: "ai-strategy", label: "AI Strategy & Roadmapping" },
   { value: "workflow-automation", label: "Workflow Automation" },
