@@ -8,7 +8,7 @@ const content: ServicePageContent = {
   eyebrow: "EXECUTIVE AI STRATEGY",
   headlineLine1: "Strategy first.",
   headlineLine2: "Every time.",
-  subtext: "We audit your operation before recommending anything. No vendor agenda. No generic playbook.",
+  subtext: "We assess your operation before recommending anything. No vendor agenda. No generic playbook.",
   paragraphs: [
     "Most businesses approach AI backwards — they adopt tools first and figure out the fit afterward. The result is fragmented systems, redundant subscriptions, and an operation that is more complex than it was before.",
     "We start with a precise diagnosis of your business: where revenue leaks, where decisions stall, where your team spends time on work that should not require them. Every recommendation comes out of that audit — not a template, not a trend.",
