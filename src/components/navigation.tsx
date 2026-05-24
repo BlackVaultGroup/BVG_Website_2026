@@ -5,7 +5,7 @@ import { useScheduleCall } from "@/components/schedule-call-provider"
 
 const SERVICE_DROPDOWN_ITEMS = [
   { label: "Operational AI Systems", path: "/operational-ai-systems" },
-  { label: "Client Response Infrastructure", path: "/client-response-infrastructure" },
+  { label: "Client Response Infrastructure", path: "/client-response-systems" },
   { label: "Intelligent Workflows", path: "/intelligent-workflows" },
   { label: "Voice AI Systems", path: "/voice-ai-systems" },
   { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
