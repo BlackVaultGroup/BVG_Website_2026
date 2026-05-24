@@ -3,6 +3,33 @@ import { ServicePageLayout, type ServicePageContent } from "@/components/service
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
+
+const pageSchemas = [
+  organizationSchema,
+  buildServiceSchema({
+    name: "Intelligent Workflows",
+    description:
+      "End-to-end workflow automation that eliminates manual steps, approval delays, and repeated decisions. We map your processes, build the automation logic, and deploy systems that execute without supervision.",
+    url: "/intelligent-workflows",
+    serviceType: "Business Process Automation",
+  }),
+  buildWebPageSchema({
+    name: "Intelligent Workflows — BlackVault Group",
+    description:
+      "We redesign how work moves through your business by mapping bottlenecks, automating decisions, and deploying workflow systems that eliminate execution lag permanently.",
+    url: "/intelligent-workflows",
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "Intelligent Workflows", url: "/intelligent-workflows" },
+    ],
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Intelligent Workflows", url: "/intelligent-workflows" },
+  ]),
+]
 
 const content: ServicePageContent = {
   eyebrow: "INTELLIGENT WORKFLOWS",
@@ -49,6 +76,7 @@ export function IntelligentWorkflowsPage() {
         description="We redesign how work moves through your business by mapping bottlenecks, automating decisions, and deploying workflow systems that eliminate execution lag permanently."
         canonicalPath="/intelligent-workflows"
       />
+      <JsonLd schema={pageSchemas} />
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />

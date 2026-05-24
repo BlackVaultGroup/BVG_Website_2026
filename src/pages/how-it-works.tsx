@@ -1,7 +1,28 @@
 import { useEffect, useRef, useState } from "react"
 import { Footer } from "@/components/sections/footer"
 import { Navigation } from "@/components/navigation"
+import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { organizationSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
 import { useScheduleCall } from "@/components/schedule-call-provider"
+
+const howItWorksSchemas = [
+  organizationSchema,
+  buildWebPageSchema({
+    name: "How BlackVault Group Works — Process and Methodology",
+    description:
+      "BlackVault Group begins every engagement with an operational audit before recommending anything. Learn how we assess, design, build, and deploy AI systems for founders and operators.",
+    url: "/how-it-works",
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "How It Works", url: "/how-it-works" },
+    ],
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "How It Works", url: "/how-it-works" },
+  ]),
+]
 
 function useInView(ref: React.RefObject<Element | null>, threshold = 0.15) {
   const [inView, setInView] = useState(false)
@@ -77,6 +98,12 @@ export function HowItWorksPage() {
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#0F0F0F", color: "#fff" }}>
+      <PageSEO
+        title="How BlackVault Group Works — Process and Methodology"
+        description="BlackVault Group begins every engagement with an operational audit before recommending anything. Learn how we assess, design, build, and deploy AI systems for founders and operators."
+        canonicalPath="/how-it-works"
+      />
+      <JsonLd schema={howItWorksSchemas} />
       <Navigation />
 
       <div

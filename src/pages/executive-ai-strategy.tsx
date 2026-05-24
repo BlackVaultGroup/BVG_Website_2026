@@ -3,6 +3,33 @@ import { ServicePageLayout, type ServicePageContent } from "@/components/service
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
+
+const pageSchemas = [
+  organizationSchema,
+  buildServiceSchema({
+    name: "Executive AI Strategy",
+    description:
+      "A senior-level AI strategy engagement for founders and executives. We audit your operation, identify where AI creates real leverage, and deliver a clear roadmap before any technology is selected or budget committed.",
+    url: "/executive-ai-strategy",
+    serviceType: "AI Strategy Consulting",
+  }),
+  buildWebPageSchema({
+    name: "Executive AI Strategy — BlackVault Group",
+    description:
+      "Senior AI strategy for founders and operators making high-stakes decisions. We assess your operation and map exactly where AI creates leverage before a single dollar is committed.",
+    url: "/executive-ai-strategy",
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "Executive AI Strategy", url: "/executive-ai-strategy" },
+    ],
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Executive AI Strategy", url: "/executive-ai-strategy" },
+  ]),
+]
 
 const content: ServicePageContent = {
   eyebrow: "EXECUTIVE AI STRATEGY",
@@ -57,6 +84,7 @@ export function ExecutiveAIStrategyPage() {
         description="Senior AI strategy for founders and operators making high-stakes decisions. We assess your operation and map exactly where AI creates leverage before a single dollar is committed."
         canonicalPath="/executive-ai-strategy"
       />
+      <JsonLd schema={pageSchemas} />
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />

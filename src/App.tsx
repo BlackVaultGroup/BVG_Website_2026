@@ -10,6 +10,8 @@ import { CTAClose } from "@/components/sections/cta-close"
 import { Footer } from "@/components/sections/footer"
 import { SectionSeparator } from "@/components/section-separator"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { organizationSchema, websiteSchema, buildWebPageSchema } from "@/lib/schema"
 import { HowItWorksPage } from "@/pages/how-it-works"
 import { OperationalAISystemsPage } from "@/pages/operational-ai-systems"
 import { ClientResponseInfrastructurePage } from "@/pages/client-response-infrastructure"
@@ -25,14 +27,22 @@ function ScrollToTop() {
   return null
 }
 
+const homePageSchema = buildWebPageSchema({
+  name: "BlackVault Group — Operational AI Systems for Founders and Operators",
+  description:
+    "BlackVault Group designs and deploys operational AI systems for small and mid-size businesses. We build workflow automation, client response infrastructure, voice AI, and custom integrations that improve how operations run.",
+  url: "/",
+})
+
 function HomePage() {
   return (
     <>
       <PageSEO
-        title="BlackVault Group — AI Consulting & Operational Systems for SMBs"
-        description="BlackVault Group designs and deploys AI systems that improve how businesses operate. Strategy, automation, voice AI, and custom integration for founders and operators."
+        title="BlackVault Group — Operational AI Systems for Founders and Operators"
+        description="BlackVault Group designs and deploys operational AI systems for small and mid-size businesses. We build workflow automation, client response infrastructure, voice AI, and custom integrations that improve how operations run."
         canonicalPath="/"
       />
+      <JsonLd schema={[organizationSchema, websiteSchema, homePageSchema]} />
       <Navigation />
       <Hero />
       <WindowReveal />

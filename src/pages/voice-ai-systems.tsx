@@ -3,6 +3,33 @@ import { ServicePageLayout, type ServicePageContent } from "@/components/service
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
+
+const pageSchemas = [
+  organizationSchema,
+  buildServiceSchema({
+    name: "Voice AI Systems",
+    description:
+      "AI voice agents trained on your business that handle inbound calls, qualify leads, and run appointment scheduling without live staff. Deployed with full call analytics and escalation logic.",
+    url: "/voice-ai-systems",
+    serviceType: "Voice AI and Conversational Automation",
+  }),
+  buildWebPageSchema({
+    name: "Voice AI Systems — BlackVault Group",
+    description:
+      "AI voice agents trained on your business that answer inbound calls, qualify leads, and book appointments automatically, 24/7, without adding staff.",
+    url: "/voice-ai-systems",
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "Voice AI Systems", url: "/voice-ai-systems" },
+    ],
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Voice AI Systems", url: "/voice-ai-systems" },
+  ]),
+]
 
 const content: ServicePageContent = {
   eyebrow: "VOICE AI SYSTEMS",
@@ -49,6 +76,7 @@ export function VoiceAISystemsPage() {
         description="AI voice agents trained on your business that answer inbound calls, qualify leads, and book appointments automatically, 24/7, without adding staff."
         canonicalPath="/voice-ai-systems"
       />
+      <JsonLd schema={pageSchemas} />
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />

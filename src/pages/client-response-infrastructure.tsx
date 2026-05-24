@@ -3,6 +3,33 @@ import { ServicePageLayout, type ServicePageContent } from "@/components/service
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
+
+const pageSchemas = [
+  organizationSchema,
+  buildServiceSchema({
+    name: "Client Response Infrastructure",
+    description:
+      "AI-driven intake, follow-up automation, and routing systems that ensure every lead receives a fast, qualified response. Designed for businesses that need to scale communication without adding staff.",
+    url: "/client-response-infrastructure",
+    serviceType: "Communication Automation and Lead Response Systems",
+  }),
+  buildWebPageSchema({
+    name: "Client Response Infrastructure — BlackVault Group",
+    description:
+      "AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response, without adding headcount or manual work to your team.",
+    url: "/client-response-infrastructure",
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "Client Response Infrastructure", url: "/client-response-infrastructure" },
+    ],
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Client Response Infrastructure", url: "/client-response-infrastructure" },
+  ]),
+]
 
 const content: ServicePageContent = {
   eyebrow: "CLIENT RESPONSE SYSTEMS",
@@ -45,10 +72,11 @@ export function ClientResponseInfrastructurePage() {
   return (
     <>
       <PageSEO
-        title="Client Response Systems — BlackVault Group"
+        title="Client Response Infrastructure — BlackVault Group"
         description="AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response, without adding headcount or manual work to your team."
         canonicalPath="/client-response-infrastructure"
       />
+      <JsonLd schema={pageSchemas} />
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />

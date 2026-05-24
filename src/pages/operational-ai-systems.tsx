@@ -3,6 +3,33 @@ import { ServicePageLayout, type ServicePageContent } from "@/components/service
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadcrumbSchema } from "@/lib/schema"
+
+const pageSchemas = [
+  organizationSchema,
+  buildServiceSchema({
+    name: "Operational AI Systems",
+    description:
+      "Custom AI infrastructure built around your existing tools, data flows, and operational structure. We design, integrate, and document systems that run your operation without adding complexity or vendor dependency.",
+    url: "/operational-ai-systems",
+    serviceType: "AI System Integration and Deployment",
+  }),
+  buildWebPageSchema({
+    name: "Operational AI Systems — BlackVault Group",
+    description:
+      "AI systems designed around your actual workflows and existing stack. We build, integrate, and document custom AI infrastructure that scales with your operation.",
+    url: "/operational-ai-systems",
+    breadcrumb: [
+      { name: "Home", url: "/" },
+      { name: "Operational AI Systems", url: "/operational-ai-systems" },
+    ],
+  }),
+  buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Operational AI Systems", url: "/operational-ai-systems" },
+  ]),
+]
 
 const content: ServicePageContent = {
   eyebrow: "OPERATIONAL AI SYSTEMS",
@@ -49,6 +76,7 @@ export function OperationalAISystemsPage() {
         description="AI systems designed around your actual workflows and existing stack. We build, integrate, and document custom AI infrastructure that scales with your operation."
         canonicalPath="/operational-ai-systems"
       />
+      <JsonLd schema={pageSchemas} />
       <Navigation />
       <div style={{ paddingTop: "72px" }}>
         <ServicePageLayout content={content} />
