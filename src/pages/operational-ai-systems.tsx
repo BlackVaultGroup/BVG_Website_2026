@@ -12,7 +12,7 @@ const content: ServicePageContent = {
   paragraphs: [
     "We build custom infrastructure tailored to your workflows, communication patterns, internal processes, and operational requirements.",
     "We analyze your entire operational structure: tools, data, handoffs, and decision logic, before designing anything. The result is AI infrastructure that integrates cleanly into your existing environment, accelerates the work your team already does, and scales without becoming a liability.",
-    "Every system we build is documented, handed off with full context, and designed to be owned by your team. It will not depend on a vendor relationship to keep running.",
+    "Every build is scoped around the operational objective first, then engineered to support scalability, usability, and long-term ownership.",
   ],
   leftCaption: "Stack analysis and integration planning",
   rightCaption: "Custom build and operational deployment",
