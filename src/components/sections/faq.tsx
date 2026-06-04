@@ -8,20 +8,20 @@ import { Reveal } from "@/components/reveal"
 
 const FAQ_ITEMS = [
   {
-    q: "How is BlackVault different from other AI agencies?",
-    a: "We are a strategic consultancy. We do not sell tools or templates. We architect custom systems around your specific business problems and revenue goals.",
+    q: "How Much Does an AI Consultant Cost for Small Businesses?",
+    a: "Costs vary widely depending on the scope of service and business impact.",
   },
   {
-    q: "How long does it take to see results?",
+    q: "How Long Does It Take to See Results from AI Implementation?",
     a: "Depending on scope, most clients see measurable operational impact within 30 to 60 days of deployment. We define what success looks like before we start, so there is no ambiguity.",
   },
   {
-    q: "Do you work with businesses that have never used AI before?",
-    a: "Yes. In fact, most of our most impactful engagements start from zero. A clean foundation often produces better results than inheriting a poorly implemented system.",
+    q: "What Can an AI Consultant Actually Do for a Small Business?",
+    a: "We help businesses understand what should be improved, what should be automated, and where the greatest opportunities for growth exist.",
   },
   {
-    q: "Will this disrupt our current operations?",
-    a: "No. Our integration methodology is designed around your existing stack and workflows. Disruption is a sign of poor planning. We plan precisely.",
+    q: "Can AI Consulting Help Me Save Money?",
+    a: "Absolutely. Depending on the opportunity, AI can reduce operational costs, increase team capacity, improve response times, and help capture revenue that may otherwise be lost.",
   },
   {
     q: "How do you handle data security and confidentiality?",
@@ -32,8 +32,8 @@ const FAQ_ITEMS = [
     a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
   },
   {
-    q: "What size businesses do you work with?",
-    a: "We worked with businesses generating between $5M and $70M in annual revenue. Our engagements are not suited for pre-revenue companies. We build on existing operations, not speculation.",
+    q: "q: "How Do I Know If My Business Has Operational Bottlenecks?",
+    a: "If progress depends on specific people, leads are slipping, or teams spend significant time on manual work, operational bottlenecks may exist.",
   },
 ]
 
