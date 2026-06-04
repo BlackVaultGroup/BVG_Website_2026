@@ -109,7 +109,7 @@ const FAQ_ITEMS = [
     a: "Costs vary widely depending on the scope of service and business impact.",
   },
   {
-    q: "How Long Does It Take to See Results from AI Implementation??",
+    q: "How Long Does It Take to See Results from AI Implementation?",
     a: "Depending on scope, most clients see measurable operational impact within 30 to 60 days of deployment. We define what success looks like before we start, so there is no ambiguity.",
   },
   {
