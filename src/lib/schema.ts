@@ -129,8 +129,8 @@ const FAQ_ITEMS = [
     a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
   },
   {
-    q: "What size businesses do you work with?",
-    a: "We work with businesses generating between $5M and $70M in annual revenue. Our engagements are not suited for pre-revenue companies. We build on existing operations, not speculation.",
+    q: "What Problems Can an AI Consultant Help Me Solve?",
+    a: "Common opportunities include slow response times, workflow bottlenecks, administrative burden, inconsistent processes, and missed revenue opportunities.",
   },
 ]
 
