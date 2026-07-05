@@ -59,6 +59,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
   const [step, setStep] = useState<Step>("form")
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [website, setWebsite] = useState("")  // honeypot — humans never see or fill this
   const [focused, setFocused] = useState<string | null>(null)
 
   const [form, setForm] = useState({
@@ -81,6 +82,11 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
     e.preventDefault()
     if (!form.full_name || !form.business_name || !form.email || !form.inquiry_type || !form.company_size) {
       setError("Please fill in all required fields.")
+      return
+    }
+    if (website) {
+      // bot filled the hidden field — pretend success, store nothing
+      setStep("success")
       return
     }
     setSubmitting(true)
@@ -205,6 +211,16 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
             <SuccessState onClose={() => handleClose(false)} />
           ) : (
             <form onSubmit={handleSubmit} noValidate>
+              <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", height: 0, width: 0, opacity: 0, pointerEvents: "none" }}
+              />
               <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
 
                 {/* Row: Name + Business */}
@@ -397,7 +413,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
                     margin: 0,
                   }}
                 >
-                  We take on a limited number of engagements per quarter.
+                  We take on five new builds per month. Availability is confirmed on your call.
                 </p>
               </div>
             </form>
