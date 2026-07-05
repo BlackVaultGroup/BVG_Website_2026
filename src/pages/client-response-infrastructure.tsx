@@ -8,30 +8,30 @@ import { organizationSchema, buildServiceSchema, buildWebPageSchema, buildBreadc
 const pageSchemas = [
   organizationSchema,
   buildServiceSchema({
-    name: "Client Response Infrastructure",
+    name: "Lead Follow-Up Automation",
     description:
       "AI-driven intake, follow-up automation, and routing systems that ensure every lead receives a fast, qualified response. Designed for businesses that need to scale communication without adding staff.",
-    url: "/client-response-infrastructure",
+    url: "/lead-follow-up-automation",
     serviceType: "Communication Automation and Lead Response Systems",
   }),
   buildWebPageSchema({
-    name: "Client Response Infrastructure — BlackVault Group",
+    name: "Lead Follow-Up Automation — BlackVault Group",
     description:
       "AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response, without adding headcount or manual work to your team.",
-    url: "/client-response-infrastructure",
+    url: "/lead-follow-up-automation",
     breadcrumb: [
       { name: "Home", url: "/" },
-      { name: "Client Response Infrastructure", url: "/client-response-infrastructure" },
+      { name: "Lead Follow-Up Automation", url: "/lead-follow-up-automation" },
     ],
   }),
   buildBreadcrumbSchema([
     { name: "Home", url: "/" },
-    { name: "Client Response Infrastructure", url: "/client-response-infrastructure" },
+    { name: "Lead Follow-Up Automation", url: "/lead-follow-up-automation" },
   ]),
 ]
 
 const content: ServicePageContent = {
-  eyebrow: "CLIENT RESPONSE SYSTEMS",
+  eyebrow: "LEAD FOLLOW-UP AUTOMATION",
   headlineLine1: "Faster response.",
   headlineLine2: "No added overhead.",
   subtext: "AI-driven systems that handle client communication, intake, and follow-up without adding headcount or slowing your team down.",
@@ -71,9 +71,9 @@ export function ClientResponseInfrastructurePage() {
   return (
     <>
       <PageSEO
-        title="Client Response Infrastructure — BlackVault Group"
+        title="Lead Follow-Up Automation for Small Business | BlackVault Group"
         description="AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response, without adding headcount or manual work to your team."
-        canonicalPath="/client-response-infrastructure"
+        canonicalPath="/lead-follow-up-automation"
       />
       <JsonLd schema={pageSchemas} />
       <Navigation />
