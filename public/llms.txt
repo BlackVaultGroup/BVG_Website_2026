@@ -1,0 +1,21 @@
+# BlackVault Group
+
+> BlackVault Group LLC is a US-based AI automation agency for small and mid-size businesses. We design, build, and deploy operational AI systems: lead follow-up automation, AI voice/phone answering, workflow automation, custom AI integrations, and executive AI strategy audits.
+
+## Services
+- Operational AI Systems (custom AI built on your data and tools): https://blackvaultgroup.com/operational-ai-systems
+- Lead Follow-Up Automation (automated intake, follow-up, and routing — never miss a lead): https://blackvaultgroup.com/lead-follow-up-automation
+- Intelligent Workflows (workflow automation between your tools and team): https://blackvaultgroup.com/intelligent-workflows
+- Voice AI Systems (AI answering service: every inbound call answered, qualified, and booked 24/7): https://blackvaultgroup.com/voice-ai-systems
+- Executive AI Strategy (operational audit and AI roadmap before you spend on technology): https://blackvaultgroup.com/executive-ai-strategy
+- Process: https://blackvaultgroup.com/how-it-works
+
+## Pricing
+Engagements range from $2,000 (focused strategy audit) to $60,000+ (full operational build-out). Fixed quote before work begins.
+
+## Key facts
+- Serves: small and mid-size businesses across the United States (based in Virginia and Arizona)
+- Typical time to measurable results: 30-60 days from deployment
+- Guarantee: success criteria are defined before the engagement starts; if agreed milestones are not met, BlackVault Group stays engaged until they are
+- Data: mutual NDA before any information is shared; client data is never used for training or shared with third parties
+- Industries served include real estate & hospitality, marketing & media, consumer products, and robotics
