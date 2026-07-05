@@ -71,7 +71,7 @@ export function VoiceAISystemsPage() {
   return (
     <>
       <PageSEO
-        title="Voice AI Systems — BlackVault Group"
+        title="Voice AI Systems — AI Answering Service for Small Business | BlackVault Group"
         description="AI voice agents trained on your business that answer inbound calls, qualify leads, and book appointments automatically, 24/7, without adding staff."
         canonicalPath="/voice-ai-systems"
       />
