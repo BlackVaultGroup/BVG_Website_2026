@@ -17,7 +17,7 @@ export function CTAClose() {
         </Reveal>
         <Reveal delay={100}>
           <p className="mx-auto mb-10 max-w-[55ch] font-body text-[1.0625rem] font-light leading-[1.75] text-bv-text-secondary">
-            Most businesses are 90 days away from a fundamentally different operation. The question is whether they move first.
+            Most businesses are 90 days away from a fundamentally different operation. We take on five new builds per month so every engagement gets senior attention. Current availability is confirmed on your strategy call.
           </p>
         </Reveal>
         <Reveal delay={200}>
