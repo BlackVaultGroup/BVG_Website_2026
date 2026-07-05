@@ -7,14 +7,8 @@ export const organizationSchema = {
   name: "BlackVault Group",
   alternateName: "BlackVault Group LLC",
   url: BASE_URL,
-  logo: {
-    "@type": "ImageObject",
-    url: `${BASE_URL}/logo.png`,
-    width: 400,
-    height: 80,
-  },
   description:
-    "BlackVault Group designs and deploys operational AI systems for founders and operators. We specialize in workflow automation, client response infrastructure, voice AI, and executive AI strategy.",
+    "BlackVault Group designs and deploys operational AI systems for founders and operators. We specialize in workflow automation, lead follow-up automation, voice AI, and executive AI strategy.",
   areaServed: [
     {
       "@type": "Country",
@@ -36,7 +30,7 @@ export const organizationSchema = {
     "AI Integration",
     "Voice AI",
     "Executive AI Strategy",
-    "Client Response Infrastructure",
+    "Lead Follow-Up Automation",
     "Revenue Operations",
   ],
   sameAs: [
@@ -106,7 +100,7 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
 const FAQ_ITEMS = [
   {
     q: "How Much Does an AI Consultant Cost for Small Businesses?",
-    a: "Costs vary widely depending on the scope of service and business impact.",
+    a: "Most BlackVault Group engagements range from $2,000 for a focused strategy audit to $60,000+ for a full operational build-out. Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins — no hourly billing, no surprises.",
   },
   {
     q: "How Long Does It Take to See Results from AI Implementation?",
@@ -125,7 +119,7 @@ const FAQ_ITEMS = [
     a: "Every engagement is covered by a mutual NDA before any information is shared. Your data is yours. We never train on client data or share it with third parties.",
   },
   {
-    q: "What if the system doesn\u2019t perform as expected?",
+    q: "What if the system doesn’t perform as expected?",
     a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
   },
   {
