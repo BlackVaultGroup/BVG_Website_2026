@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useScheduleCall } from "@/components/schedule-call-provider"
 
 function useClock() {
   const [time, setTime] = useState(() => {
@@ -18,7 +19,7 @@ function useClock() {
 }
 
 const metaStyle: React.CSSProperties = {
-  fontFamily: "'Outfit', sans-serif",
+  fontFamily: "'Jost', 'Outfit', sans-serif",
   fontSize: "0.65rem",
   letterSpacing: "0.12em",
   textTransform: "uppercase" as const,
@@ -33,6 +34,7 @@ const animBase: React.CSSProperties = {
 
 export function Hero() {
   const time = useClock()
+  const { openModal } = useScheduleCall()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -73,7 +75,7 @@ export function Hero() {
         <div>BLACKVAULT GROUP LLC</div>
         <div>MODE: ACTIVE</div>
         <div>LOCATION: UNITED STATES</div>
-        <div>CURRENT OBJECTIVE: ARCHITECT OUTCOMES</div>
+        <div>SERVING: SMALL &amp; MID-SIZE BUSINESSES</div>
       </div>
 
       <div
@@ -90,8 +92,8 @@ export function Hero() {
         }}
       >
         <div>STATUS: OPERATIONAL</div>
-        <div>ACCESS LEVEL: VERIFIED</div>
-        <div>AUTHORIZED: EXECUTIVES ONLY</div>
+        <div>RESPONSE TIME: 1 BUSINESS DAY</div>
+        <div>NEW BUILDS: FIVE PER MONTH</div>
         <div>TIME ACCESSED: {time}</div>
       </div>
 
@@ -105,25 +107,79 @@ export function Hero() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          width: "100%",
+          padding: "0 1.5rem",
           opacity: mounted ? 1 : 0,
           transitionDelay: "300ms",
         }}
       >
         <h1
           style={{
-            fontFamily: "'Bodoni Moda', serif",
-            fontWeight: 300,
-            fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
+            fontFamily: "'Bodoni Moda', 'Cormorant Garamond', serif",
+            fontWeight: 400,
+            fontSize: "clamp(2.4rem, 5vw, 3.75rem)",
             color: "#FFFFFF",
             letterSpacing: "-0.02em",
-            lineHeight: "1.0",
-            whiteSpace: "nowrap",
+            lineHeight: 1.08,
             margin: 0,
+            marginBottom: "1.5rem",
+            textAlign: "center",
+            maxWidth: "18ch",
           }}
         >
-          <span style={{ display: "block" }}>BlackVault</span>
-          <span style={{ display: "block" }}>Group</span>
+          Never miss another lead.
         </h1>
+
+        <p
+          style={{
+            fontFamily: "'Jost', 'Outfit', sans-serif",
+            fontSize: "clamp(0.95rem, 1.4vw, 1.125rem)",
+            fontWeight: 300,
+            lineHeight: 1.7,
+            color: "rgba(255,255,255,0.55)",
+            margin: 0,
+            marginBottom: "2.25rem",
+            textAlign: "center",
+            maxWidth: "54ch",
+          }}
+        >
+          BlackVault Group builds AI systems for small and mid-size businesses —
+          phone answering, lead follow-up, and workflow automation that run 24/7.
+        </p>
+
+        <button
+          onClick={openModal}
+          style={{
+            backgroundColor: "#C19A6B",
+            color: "#0F0B0A",
+            border: "none",
+            borderRadius: "2px",
+            padding: "1rem 2.25rem",
+            fontFamily: "'Jost', 'Outfit', sans-serif",
+            fontSize: "0.8125rem",
+            fontWeight: 500,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            cursor: "pointer",
+            transition: "background-color 0.2s, transform 0.15s",
+            marginBottom: "1.25rem",
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#D4B483"; e.currentTarget.style.transform = "translateY(-1px)" }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#C19A6B"; e.currentTarget.style.transform = "translateY(0)" }}
+        >
+          Schedule a Strategy Call
+        </button>
+
+        <p
+          style={{
+            ...metaStyle,
+            fontSize: "0.7rem",
+            margin: 0,
+            textAlign: "center",
+          }}
+        >
+          ENGAGEMENTS FROM $2,000 — FIXED QUOTE BEFORE ANY WORK BEGINS
+        </p>
       </div>
 
       <div
@@ -142,7 +198,7 @@ export function Hero() {
           transitionDelay: "450ms",
         }}
       >
-        STRATEGIC AI SOLUTIONS FOR BUSINESSES
+        BLACKVAULT GROUP — STRATEGIC AI SYSTEMS FOR BUSINESSES
       </div>
     </section>
   )
