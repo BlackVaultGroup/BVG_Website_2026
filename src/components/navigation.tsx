@@ -5,7 +5,7 @@ import { useScheduleCall } from "@/components/schedule-call-provider"
 
 const SERVICE_DROPDOWN_ITEMS = [
   { label: "Operational AI Systems", path: "/operational-ai-systems" },
-  { label: "Client Response Infrastructure", path: "/client-response-infrastructure" },
+  { label: "Lead Follow-Up Automation", path: "/lead-follow-up-automation" },
   { label: "Intelligent Workflows", path: "/intelligent-workflows" },
   { label: "Voice AI Systems", path: "/voice-ai-systems" },
   { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
@@ -31,6 +31,7 @@ function ServicesDropdown() {
         className="border-none bg-transparent font-body text-sm font-normal tracking-[0.04em] text-bv-text-secondary transition-colors duration-200 hover:text-bv-text-primary cursor-pointer p-0"
         aria-expanded={open}
         aria-haspopup="true"
+        onClick={() => setOpen(!open)}
       >
         Services
       </button>
