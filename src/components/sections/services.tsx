@@ -9,9 +9,9 @@ const SERVICES = [
     path: "/operational-ai-systems",
   },
   {
-    name: "Client Response Infrastructure",
-    desc: "AI-driven intake, follow-up automation, and routing systems so every lead gets a qualified response, around the clock.",
-    path: "/client-response-infrastructure",
+    name: "Lead Follow-Up Automation",
+    desc: "Automated intake, follow-up, and routing so every lead gets a fast, qualified response — around the clock. Never miss a lead.",
+    path: "/lead-follow-up-automation",
   },
   {
     name: "Intelligent Workflows",
