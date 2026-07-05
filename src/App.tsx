@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/hero"
 import { WindowReveal } from "@/components/sections/window-reveal"
 import { Services } from "@/components/sections/services"
 import { RevenueOps } from "@/components/sections/revenue-ops"
+import { Proof } from "@/components/sections/proof"
 import { FAQ } from "@/components/sections/faq"
 import { CTAClose } from "@/components/sections/cta-close"
 import { Footer } from "@/components/sections/footer"
@@ -29,9 +30,9 @@ function ScrollToTop() {
 }
 
 const homePageSchema = buildWebPageSchema({
-  name: "BlackVault Group — Operational AI Systems for Founders and Operators",
+  name: "AI Automation for Small Business — BlackVault Group",
   description:
-    "BlackVault Group designs and deploys operational AI systems for small and mid-size businesses. We build workflow automation, client response infrastructure, voice AI, and custom integrations that improve how operations run.",
+    "BlackVault Group builds AI systems for small and mid-size businesses: lead follow-up automation, AI phone answering, workflow automation, and custom integrations. Engagements from $2,000.",
   url: "/",
 })
 
@@ -56,8 +57,8 @@ function HomePage() {
   return (
     <>
       <PageSEO
-        title="BlackVault Group — Operational AI Systems for Founders and Operators"
-        description="BlackVault Group designs and deploys operational AI systems for small and mid-size businesses. We build workflow automation, client response infrastructure, voice AI, and custom integrations that improve how operations run."
+        title="AI Automation for Small Business — BlackVault Group"
+        description="BlackVault Group builds AI systems for small and mid-size businesses: lead follow-up automation, AI phone answering, workflow automation, and custom integrations. Engagements from $2,000."
         canonicalPath="/"
       />
       <JsonLd schema={[organizationSchema, websiteSchema, homePageSchema, faqSchema]} />
@@ -69,6 +70,8 @@ function HomePage() {
         <Services />
         <SectionSeparator />
         <RevenueOps />
+        <SectionSeparator />
+        <Proof />
         <SectionSeparator />
         <FAQ />
         <CTAClose />
@@ -103,7 +106,7 @@ export function App() {
           }
         />
         <Route
-          path="/client-response-infrastructure"
+          path="/lead-follow-up-automation"
           element={
             <Suspense fallback={<PageLoader />}>
               <ClientResponseInfrastructurePage />
@@ -136,6 +139,7 @@ export function App() {
         />
 
         {/* Redirects from old URLs */}
+        <Route path="/client-response-infrastructure" element={<Navigate to="/lead-follow-up-automation" replace />} />
         <Route path="/ai-strategy" element={<Navigate to="/executive-ai-strategy" replace />} />
         <Route path="/workflow-automation" element={<Navigate to="/intelligent-workflows" replace />} />
         <Route path="/custom-ai-integration" element={<Navigate to="/operational-ai-systems" replace />} />
