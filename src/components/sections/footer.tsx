@@ -10,7 +10,7 @@ const NAV_LINKS = [
 
 const SERVICE_LINKS = [
   { label: "Operational AI Systems", path: "/operational-ai-systems" },
-  { label: "Client Response Infrastructure", path: "/client-response-infrastructure" },
+  { label: "Lead Follow-Up Automation", path: "/lead-follow-up-automation" },
   { label: "Intelligent Workflows", path: "/intelligent-workflows" },
   { label: "Voice AI Systems", path: "/voice-ai-systems" },
   { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
