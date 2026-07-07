@@ -113,7 +113,7 @@ export function Hero() {
           style={{
             fontFamily: "'Bodoni Moda', serif",
             fontWeight: 300,
-            fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
+            fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
             color: "#FFFFFF",
             letterSpacing: "-0.02em",
             lineHeight: "1.0",
@@ -134,7 +134,7 @@ export function Hero() {
           bottom: "3rem",
           left: "50%",
           transform: "translateX(-50%)",
-          fontSize: "0.75rem",
+          fontSize: "0.9rem",
           letterSpacing: "0.18em",
           fontWeight: 400,
           whiteSpace: "nowrap",
