@@ -9,7 +9,7 @@ const PARAGRAPHS = [
 ]
 
 const WHY_PARAGRAPHS = [
-  "Because the businesses that win the next decade will not necessarily be the ones with the biggest teams — they will be the ones with the best systems. Our job is to make that level of operational leverage available to businesses that could never justify an in-house automation team.",
+  "Because the businesses that win the next decade will not necessarily be the ones with the biggest teams. They will be the ones with the best systems. Our job is to make that level of operational leverage available to businesses that could never justify an in-house automation team.",
   "Every engagement starts with success criteria defined in writing, and we stay engaged until the milestones we agreed on are met. We take on five new builds per month so that every client gets senior attention from the two people whose names are on the company.",
 ]
 
