@@ -121,8 +121,8 @@ export function Hero() {
             margin: 0,
           }}
         >
-          <span style={{ display: "block" }}>BlackVaultaa</span>
-          <span style={{ display: "block" }}>Group</span>
+          <span style={{ display: "block" }}>STRATEGIC AI SOLUTIONS</span>
+          <span style={{ display: "block" }}>FOR BUSINESSES</span>
         </h1>
       </div>
 
@@ -142,7 +142,7 @@ export function Hero() {
           transitionDelay: "450ms",
         }}
       >
-        STRATEGIC AI SOLUTIONS FOR BUSINESSES
+         BlackVault Group
       </div>
     </section>
   )
