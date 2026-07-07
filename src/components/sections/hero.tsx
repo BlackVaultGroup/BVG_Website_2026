@@ -122,7 +122,7 @@ export function Hero() {
           }}
         >
           <span style={{ display: "block" }}>STRATEGIC AI SOLUTIONS</span>
-          <span style={{ display: "block" }}>FOR BUSINESSES</span>
+          <span style={{ display: "block", textAlign: "center" }}>FOR BUSINESSES</span>
         </h1>
       </div>
 
