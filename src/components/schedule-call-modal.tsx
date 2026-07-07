@@ -17,10 +17,11 @@ type Step = "form" | "success"
 
 const COMPANY_SIZES = ["solo", "2-10", "11-20", "21-40", "41-60", "61-80"]
 const INQUIRY_TYPES = [
-  { value: "ai-strategy", label: "AI Strategy & Roadmapping" },
-  { value: "workflow-automation", label: "Workflow Automation" },
-  { value: "custom-integration", label: "Custom AI Integration" },
-  { value: "executive-advisory", label: "Strategic AI Partnership" },
+  { value: "operational-ai-systems", label: "Operational AI Systems" },
+  { value: "lead-follow-up-automation", label: "Lead Follow-Up Automation" },
+  { value: "intelligent-workflows", label: "Intelligent Workflows" },
+  { value: "voice-ai-systems", label: "Voice AI Systems" },
+  { value: "executive-ai-strategy", label: "Executive AI Strategy" },
   { value: "general", label: "General Inquiry" },
 ]
 

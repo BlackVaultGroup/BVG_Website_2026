@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 import { Separator } from "@/components/ui/separator"
 
 const NAV_LINKS = [
-  { label: "About", sectionId: "about" },
-  { label: "Services", sectionId: "services" },
-  { label: "Process", sectionId: "how-it-works" },
-  { label: "Contact", sectionId: "contact" },
+  { label: "About", href: "/about", internal: true },
+  { label: "Services", href: "/#services", internal: false },
+  { label: "Process", href: "/#how-it-works", internal: false },
+  { label: "Contact", href: "/#contact", internal: false },
 ]
 
 const SERVICE_LINKS = [
@@ -15,13 +15,6 @@ const SERVICE_LINKS = [
   { label: "Voice AI Systems", path: "/voice-ai-systems" },
   { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
 ]
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id)
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth", block: "start" })
-  }
-}
 
 export function Footer() {
   return (
@@ -46,15 +39,25 @@ export function Footer() {
               Navigate
             </h3>
             <nav className="flex flex-col gap-2.5" aria-label="Site navigation">
-              {NAV_LINKS.map((link) => (
-                <button
-                  key={link.sectionId}
-                  onClick={() => scrollToSection(link.sectionId)}
-                  className="w-fit cursor-pointer border-none bg-transparent p-0 text-left font-body text-sm font-light text-bv-text-muted transition-colors duration-200 hover:text-bv-text-secondary"
-                >
-                  {link.label}
-                </button>
-              ))}
+              {NAV_LINKS.map((link) =>
+                link.internal ? (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </nav>
           </div>
 
@@ -84,18 +87,18 @@ export function Footer() {
             &copy; 2026 BlackVault Group LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <a
-              href="#"
+            <Link
+              to="/privacy-policy"
               className="font-body text-xs font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms-of-service"
               className="font-body text-xs font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

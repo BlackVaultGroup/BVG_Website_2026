@@ -20,6 +20,9 @@ const ClientResponseInfrastructurePage = lazy(() => import("@/pages/client-respo
 const IntelligentWorkflowsPage = lazy(() => import("@/pages/intelligent-workflows").then(m => ({ default: m.IntelligentWorkflowsPage })))
 const VoiceAISystemsPage = lazy(() => import("@/pages/voice-ai-systems").then(m => ({ default: m.VoiceAISystemsPage })))
 const ExecutiveAIStrategyPage = lazy(() => import("@/pages/executive-ai-strategy").then(m => ({ default: m.ExecutiveAIStrategyPage })))
+const AboutPage = lazy(() => import("@/pages/about").then(m => ({ default: m.AboutPage })))
+const PrivacyPolicyPage = lazy(() => import("@/pages/privacy-policy").then(m => ({ default: m.PrivacyPolicyPage })))
+const TermsOfServicePage = lazy(() => import("@/pages/terms-of-service").then(m => ({ default: m.TermsOfServicePage })))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -134,6 +137,31 @@ export function App() {
           element={
             <Suspense fallback={<PageLoader />}>
               <ExecutiveAIStrategyPage />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AboutPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/privacy-policy"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <PrivacyPolicyPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/terms-of-service"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <TermsOfServicePage />
             </Suspense>
           }
         />
