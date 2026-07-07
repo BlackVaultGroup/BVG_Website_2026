@@ -121,7 +121,7 @@ export function Hero() {
             margin: 0,
           }}
         >
-          <span style={{ display: "block" }}>BlackVault</span>
+          <span style={{ display: "block" }}>BlackVaultaa</span>
           <span style={{ display: "block" }}>Group</span>
         </h1>
       </div>
