@@ -5,7 +5,7 @@ import { PageSEO } from "@/components/page-seo"
 const PARAGRAPHS = [
   "BlackVault Group was founded by Aidan and Karsten, two operators who believe small and mid-size businesses deserve the same operational infrastructure that large companies use. Before opening our doors to the public, we spent years building behind the scenes. Designing the systems and automations that quietly power growing companies.",
   "Our work has taken us across industries and borders. We have built and scaled operations for multiple private companies in Arizona, California, Bali, Dubai, and other international markets. We worked with marketing and media firms, real estate ventures, consumer brands, and companies in the robotics industry. Different industries, same pattern: growth stalls wherever operations cannot keep up. Leads go cold waiting for a reply. Owners spend their evenings on work a system should be doing.",
-  "That experience shaped how we operate. We do not start with technology — we start with a diagnosis of your business: where revenue leaks, where time disappears, and where a system would outperform a spreadsheet and a good memory. Only then do we build.",
+  "That experience shaped how we operate. We do not start with technology. We start with a diagnosis of your business: where revenue leaks, where time disappears, and where a system improve. Only then do we build.",
 ]
 
 const WHY_PARAGRAPHS = [
