@@ -20,4 +20,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://blackvaultgroup.com/sitemap.xml
+Sitemap: https://blackvaultgroupllc.com/sitemap.xml

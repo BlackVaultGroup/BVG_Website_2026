@@ -1,27 +1,25 @@
-const BASE_URL = "https://blackvaultgroup.com"
+const BASE_URL = "https://blackvaultgroupllc.com"
 
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${BASE_URL}/#organization`,
-  name: "BlackVault Group",
-  alternateName: "BlackVault Group LLC",
+  name: "BlackVault Group LLC",
+  alternateName: "BlackVault Group",
   url: BASE_URL,
   description:
-    "BlackVault Group designs and deploys operational AI systems for founders and operators. We specialize in workflow automation, lead follow-up automation, voice AI, and executive AI strategy.",
-  areaServed: [
-    {
-      "@type": "Country",
-      name: "United States",
-    },
-    {
-      "@type": "AdministrativeArea",
-      name: "Virginia",
-    },
-    {
-      "@type": "AdministrativeArea",
-      name: "Arizona",
-    },
+    "BlackVault Group LLC designs and deploys operational AI systems for small and mid-sized businesses. We specialize in workflow automation, lead follow-up automation, voice AI, and executive AI strategy.",
+  foundingLocation: {
+    "@type": "Place",
+    name: "Hampton Roads, Virginia",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United States",
+  },
+  founder: [
+    { "@type": "Person", name: "Aidan" },
+    { "@type": "Person", name: "Karsten" },
   ],
   knowsAbout: [
     "Operational AI Systems",
@@ -31,8 +29,13 @@ export const organizationSchema = {
     "Voice AI",
     "Executive AI Strategy",
     "Lead Follow-Up Automation",
-    "Revenue Operations",
   ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Sales",
+    url: `${BASE_URL}/#contact`,
+    availableLanguage: ["English"],
+  },
   sameAs: [
     "https://www.linkedin.com/company/blackvaultgroup",
     "https://twitter.com/BlackVaultGroup",
