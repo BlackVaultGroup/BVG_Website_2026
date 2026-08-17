@@ -14,6 +14,11 @@ import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
 import { organizationSchema, websiteSchema, buildWebPageSchema, buildFAQSchema } from "@/lib/schema"
 
+const ServicesPage = lazy(() => import("@/pages/services").then(m => ({ default: m.ServicesPage })))
+const PricingPage = lazy(() => import("@/pages/pricing").then(m => ({ default: m.PricingPage })))
+const HamptonRoadsPage = lazy(() => import("@/pages/hampton-roads").then(m => ({ default: m.HamptonRoadsPage })))
+const ResourcesPage = lazy(() => import("@/pages/resources").then(m => ({ default: m.ResourcesPage })))
+const ContactPage = lazy(() => import("@/pages/contact").then(m => ({ default: m.ContactPage })))
 const HowItWorksPage = lazy(() => import("@/pages/how-it-works").then(m => ({ default: m.HowItWorksPage })))
 const OperationalAISystemsPage = lazy(() => import("@/pages/operational-ai-systems").then(m => ({ default: m.OperationalAISystemsPage })))
 const ClientResponseInfrastructurePage = lazy(() => import("@/pages/client-response-infrastructure").then(m => ({ default: m.ClientResponseInfrastructurePage })))
@@ -33,9 +38,9 @@ function ScrollToTop() {
 }
 
 const homePageSchema = buildWebPageSchema({
-  name: "AI Automation for Small Business — BlackVault Group",
+  name: "BlackVault Group — Practical AI Systems for Small Business",
   description:
-    "BlackVault Group builds AI systems for small and mid-size businesses: lead follow-up automation, AI phone answering, workflow automation, and custom integrations. Engagements from $2,000.",
+    "BlackVault Group builds practical systems that stop leads from going cold, catch calls you'd otherwise miss, and cut the manual follow-up work eating your week.",
   url: "/",
 })
 
@@ -46,7 +51,7 @@ function PageLoader() {
     <div
       style={{
         minHeight: "100vh",
-        backgroundColor: "#0C0A08",
+        backgroundColor: "#0F0B0A",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -60,8 +65,8 @@ function HomePage() {
   return (
     <>
       <PageSEO
-        title="AI Automation for Small Business — BlackVault Group"
-        description="BlackVault Group builds AI systems for small and mid-size businesses: lead follow-up automation, AI phone answering, workflow automation, and custom integrations. Engagements from $2,000."
+        title="BlackVault Group — Practical AI Systems for Small Business"
+        description="BlackVault Group builds practical systems that stop leads from going cold, catch calls you'd otherwise miss, and cut the manual follow-up work eating your week."
         canonicalPath="/"
       />
       <JsonLd schema={[organizationSchema, websiteSchema, homePageSchema, faqSchema]} />
@@ -90,6 +95,50 @@ export function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
+
+        {/* Primary navigation routes */}
+        <Route
+          path="/services"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <ServicesPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <PricingPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/hampton-roads"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <HamptonRoadsPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/resources"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <ResourcesPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <ContactPage />
+            </Suspense>
+          }
+        />
+
+        {/* Secondary routes */}
         <Route
           path="/how-it-works"
           element={
@@ -98,10 +147,8 @@ export function App() {
             </Suspense>
           }
         />
-
-        {/* Primary service routes */}
         <Route
-          path="/operational-ai-systems"
+          path="/services/operational-ai-systems"
           element={
             <Suspense fallback={<PageLoader />}>
               <OperationalAISystemsPage />
@@ -109,7 +156,7 @@ export function App() {
           }
         />
         <Route
-          path="/lead-follow-up-automation"
+          path="/services/lead-follow-up-automation"
           element={
             <Suspense fallback={<PageLoader />}>
               <ClientResponseInfrastructurePage />
@@ -117,7 +164,7 @@ export function App() {
           }
         />
         <Route
-          path="/intelligent-workflows"
+          path="/services/intelligent-workflows"
           element={
             <Suspense fallback={<PageLoader />}>
               <IntelligentWorkflowsPage />
@@ -125,7 +172,7 @@ export function App() {
           }
         />
         <Route
-          path="/voice-ai-systems"
+          path="/services/voice-ai-systems"
           element={
             <Suspense fallback={<PageLoader />}>
               <VoiceAISystemsPage />
@@ -133,14 +180,13 @@ export function App() {
           }
         />
         <Route
-          path="/executive-ai-strategy"
+          path="/services/executive-ai-strategy"
           element={
             <Suspense fallback={<PageLoader />}>
               <ExecutiveAIStrategyPage />
             </Suspense>
           }
         />
-
         <Route
           path="/about"
           element={
@@ -167,11 +213,16 @@ export function App() {
         />
 
         {/* Redirects from old URLs */}
-        <Route path="/client-response-infrastructure" element={<Navigate to="/lead-follow-up-automation" replace />} />
-        <Route path="/ai-strategy" element={<Navigate to="/executive-ai-strategy" replace />} />
-        <Route path="/workflow-automation" element={<Navigate to="/intelligent-workflows" replace />} />
-        <Route path="/custom-ai-integration" element={<Navigate to="/operational-ai-systems" replace />} />
-        <Route path="/strategic-ai-partnership" element={<Navigate to="/executive-ai-strategy" replace />} />
+        <Route path="/operational-ai-systems" element={<Navigate to="/services/operational-ai-systems" replace />} />
+        <Route path="/lead-follow-up-automation" element={<Navigate to="/services/lead-follow-up-automation" replace />} />
+        <Route path="/client-response-infrastructure" element={<Navigate to="/services/lead-follow-up-automation" replace />} />
+        <Route path="/intelligent-workflows" element={<Navigate to="/services/intelligent-workflows" replace />} />
+        <Route path="/voice-ai-systems" element={<Navigate to="/services/voice-ai-systems" replace />} />
+        <Route path="/executive-ai-strategy" element={<Navigate to="/services/executive-ai-strategy" replace />} />
+        <Route path="/ai-strategy" element={<Navigate to="/services/executive-ai-strategy" replace />} />
+        <Route path="/workflow-automation" element={<Navigate to="/services/intelligent-workflows" replace />} />
+        <Route path="/custom-ai-integration" element={<Navigate to="/services/operational-ai-systems" replace />} />
+        <Route path="/strategic-ai-partnership" element={<Navigate to="/services/executive-ai-strategy" replace />} />
       </Routes>
     </BrowserRouter>
   )

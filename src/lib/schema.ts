@@ -8,34 +8,19 @@ export const organizationSchema = {
   alternateName: "BlackVault Group LLC",
   url: BASE_URL,
   description:
-    "BlackVault Group designs and deploys operational AI systems for founders and operators. We specialize in workflow automation, lead follow-up automation, voice AI, and executive AI strategy.",
+    "BlackVault Group builds practical AI systems for small and mid-size businesses: lead follow-up automation, voice AI, workflow automation, and custom integrations.",
   areaServed: [
     {
       "@type": "Country",
       name: "United States",
     },
-    {
-      "@type": "AdministrativeArea",
-      name: "Virginia",
-    },
-    {
-      "@type": "AdministrativeArea",
-      name: "Arizona",
-    },
   ],
   knowsAbout: [
-    "Operational AI Systems",
-    "Workflow Automation",
-    "Business Process Automation",
-    "AI Integration",
-    "Voice AI",
-    "Executive AI Strategy",
     "Lead Follow-Up Automation",
-    "Revenue Operations",
-  ],
-  sameAs: [
-    "https://www.linkedin.com/company/blackvaultgroup",
-    "https://twitter.com/BlackVaultGroup",
+    "Voice AI Systems",
+    "Workflow Automation",
+    "AI Integration",
+    "Executive AI Strategy",
   ],
 }
 
@@ -74,7 +59,7 @@ export function buildServiceSchema(opts: ServiceSchemaOptions) {
     areaServed: opts.areaServed ?? "United States",
     audience: {
       "@type": "Audience",
-      audienceType: "Business owners, founders, and executives",
+      audienceType: "Small and mid-size business owners and operators",
     },
   }
 }
@@ -99,32 +84,28 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
 
 const FAQ_ITEMS = [
   {
-    q: "How Much Does an AI Consultant Cost for Small Businesses?",
-    a: "Most BlackVault Group engagements range from $2,000 for a focused strategy audit to $60,000+ for a full operational build-out. Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins — no hourly billing, no surprises.",
-  },
-  {
-    q: "How Long Does It Take to See Results from AI Implementation?",
-    a: "Depending on scope, most clients see measurable operational impact within 30 to 60 days of deployment. We define what success looks like before we start, so there is no ambiguity.",
-  },
-  {
     q: "What Can an AI Consultant Actually Do for My Small Business?",
-    a: "A qualified consultant identifies where revenue, time, and efficiency are being lost before recommending systems designed to improve operational performance.",
+    a: "We help businesses understand what should be improved, what should be automated, and where the greatest opportunities for operational improvement exist. The work ranges from lead follow-up automation to workflow automation to voice AI systems.",
   },
   {
-    q: "Can AI Consulting Help Me Save Money?",
-    a: "Yes. Depending on the opportunity, AI can reduce operational costs, increase team capacity, improve response times, and help capture revenue that may otherwise be lost.",
+    q: "How Do You Price Your Services?",
+    a: "Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins — no hourly billing, no surprises. See our Pricing page for the engagement tiers we offer.",
   },
   {
-    q: "How do you handle data security and confidentiality?",
+    q: "How Long Does It Take to See Results?",
+    a: "It depends on scope. We define what success looks like before we start, so there is no ambiguity about what we're working toward. Timelines are agreed upon as part of the engagement.",
+  },
+  {
+    q: "How Do You Handle Data Security and Confidentiality?",
     a: "Every engagement is covered by a mutual NDA before any information is shared. Your data is yours. We never train on client data or share it with third parties.",
   },
   {
-    q: "What if the system doesn’t perform as expected?",
+    q: "What If the System Doesn't Perform as Expected?",
     a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
   },
   {
-    q: "What Problems Can an AI Consultant Help Me Solve?",
-    a: "Common opportunities include slow response times, workflow bottlenecks, administrative burden, inconsistent processes, and missed revenue opportunities.",
+    q: "How Do I Know If My Business Has Operational Bottlenecks?",
+    a: "If progress depends on specific people, leads are slipping, or teams spend significant time on manual work, operational bottlenecks may exist. A strategy audit can identify where the greatest opportunities are.",
   },
 ]
 

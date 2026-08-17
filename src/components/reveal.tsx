@@ -14,12 +14,14 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
     const el = ref.current
     if (!el) return
 
+    el.classList.add("reveal-hidden")
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-5")
+            entry.target.classList.add("reveal-visible")
+            entry.target.classList.remove("reveal-hidden")
             observer.unobserve(entry.target)
           }
         })
@@ -34,10 +36,7 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
     <div
       ref={ref}
-      className={cn(
-        "opacity-0 translate-y-5 transition-all duration-600 ease-out",
-        className
-      )}
+      className={cn("reveal-base", className)}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
