@@ -1,40 +1,92 @@
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden"
-      style={{ backgroundColor: "#0F0B0A" }}
+      style={{
+        position: "relative",
+        minHeight: "100vh",
+        backgroundColor: "#0F0B0A",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       <div
-        className="pointer-events-none absolute inset-0"
         style={{
-          background:
-            "radial-gradient(ellipse 70% 50% at 50% 55%, rgba(193,154,107,0.08) 0%, transparent 70%)",
+          position: "absolute",
+          inset: 0,
+          background: "radial-gradient(circle 600px at 50% 60%, rgba(193,154,107,0.10) 0%, transparent 100%)",
+          pointerEvents: "none",
         }}
-        aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px"
         style={{
-          background:
-            "linear-gradient(to right, transparent, rgba(193,154,107,0.25), transparent)",
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          padding: "2rem 1.5rem",
+          maxWidth: "800px",
         }}
-        aria-hidden="true"
-      />
-      <div className="relative flex max-w-[640px] flex-col items-center px-6 py-24 text-center">
-        <p className="mb-6 font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">
-          Practical AI systems for small and mid-sized businesses
+      >
+        <p
+          style={{
+            fontFamily: "'Outfit', sans-serif",
+            fontSize: "0.75rem",
+            fontWeight: 500,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "rgba(193,154,107,0.7)",
+            marginBottom: "1.75rem",
+          }}
+        >
+          BlackVault Group LLC
         </p>
         <h1
-          className="m-0 mb-6 font-display text-[clamp(2rem,5.5vw,3.25rem)] font-normal leading-[1.1] tracking-[-0.02em] text-bv-text-primary"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 300,
+            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            color: "#FFFFFF",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.1,
+            margin: 0,
+            marginBottom: "1.75rem",
+          }}
         >
-          Respond to new leads while they are still ready to talk.
+          Stop losing leads to slow follow-up.
         </h1>
-        <p className="mb-8 max-w-[480px] font-body text-[clamp(1rem,1.4vw,1.0625rem)] font-light leading-[1.75] text-bv-text-secondary">
-          BlackVault builds lead-response, phone-answering, and workflow automation systems that help small and mid-sized businesses follow up faster and reduce repetitive work.
+        <p
+          style={{
+            fontFamily: "'Outfit', sans-serif",
+            fontSize: "clamp(1rem, 1.4vw, 1.125rem)",
+            fontWeight: 300,
+            lineHeight: 1.75,
+            color: "rgba(161,161,170,0.85)",
+            maxWidth: "520px",
+            margin: 0,
+            marginBottom: "2.5rem",
+          }}
+        >
+          We build practical systems that catch the calls you'd otherwise miss, keep leads from going cold, and cut the manual follow-up work eating your week.
         </p>
         <a
           href="/contact"
-          className="inline-block rounded-sm bg-bv-accent px-8 py-4 font-body text-sm font-medium tracking-[0.06em] text-bv-bg-primary transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent-hover active:translate-y-0"
+          style={{
+            display: "inline-block",
+            borderRadius: "2px",
+            border: "1px solid rgba(193,154,107,0.35)",
+            backgroundColor: "transparent",
+            padding: "0.875rem 2rem",
+            fontFamily: "'Outfit', sans-serif",
+            fontSize: "0.8125rem",
+            fontWeight: 500,
+            letterSpacing: "0.06em",
+            color: "#C19A6B",
+            textDecoration: "none",
+            transition: "border-color 0.2s, background-color 0.2s, color 0.2s",
+          }}
         >
           Talk through your workflow
         </a>

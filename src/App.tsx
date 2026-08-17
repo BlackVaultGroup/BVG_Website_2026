@@ -2,9 +2,9 @@ import { lazy, Suspense, useEffect } from "react"
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom"
 import { Navigation } from "@/components/navigation"
 import { Hero } from "@/components/sections/hero"
-import { ProblemRecognition } from "@/components/sections/problem-recognition"
+import { WindowReveal } from "@/components/sections/window-reveal"
 import { Services } from "@/components/sections/services"
-import { EngagementProcess } from "@/components/sections/engagement-process"
+import { RevenueOps } from "@/components/sections/revenue-ops"
 import { Proof } from "@/components/sections/proof"
 import { FAQ } from "@/components/sections/faq"
 import { CTAClose } from "@/components/sections/cta-close"
@@ -40,7 +40,7 @@ function ScrollToTop() {
 const homePageSchema = buildWebPageSchema({
   name: "BlackVault Group — Practical AI Systems for Small Business",
   description:
-    "BlackVault builds lead-response, phone-answering, and workflow automation systems that help small and mid-sized businesses follow up faster and reduce repetitive work.",
+    "BlackVault Group builds practical systems that stop leads from going cold, catch calls you'd otherwise miss, and cut the manual follow-up work eating your week.",
   url: "/",
 })
 
@@ -66,19 +66,18 @@ function HomePage() {
     <>
       <PageSEO
         title="BlackVault Group — Practical AI Systems for Small Business"
-        description="BlackVault builds lead-response, phone-answering, and workflow automation systems that help small and mid-sized businesses follow up faster and reduce repetitive work."
+        description="BlackVault Group builds practical systems that stop leads from going cold, catch calls you'd otherwise miss, and cut the manual follow-up work eating your week."
         canonicalPath="/"
       />
       <JsonLd schema={[organizationSchema, websiteSchema, homePageSchema, faqSchema]} />
       <Navigation />
       <main>
         <Hero />
-        <SectionSeparator />
-        <ProblemRecognition />
+        <WindowReveal />
         <SectionSeparator />
         <Services />
         <SectionSeparator />
-        <EngagementProcess />
+        <RevenueOps />
         <SectionSeparator />
         <Proof />
         <SectionSeparator />
