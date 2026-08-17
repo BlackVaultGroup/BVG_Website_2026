@@ -5,31 +5,32 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion"
 import { Reveal } from "@/components/reveal"
+import { Link } from "react-router-dom"
 
 const FAQ_ITEMS = [
   {
-    q: "What Can an AI Consultant Actually Do for My Small Business?",
-    a: "We help businesses understand what should be improved, what should be automated, and where the greatest opportunities for operational improvement exist. The work ranges from lead follow-up automation to workflow automation to voice AI systems.",
+    q: "How much does it cost?",
+    a: "Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins. No hourly billing, no surprises. See our pricing page for the engagement tiers we offer.",
   },
   {
-    q: "How Do You Price Your Services?",
-    a: "Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins — no hourly billing, no surprises. See our Pricing page for the engagement tiers we offer.",
+    q: "How long until the system is live?",
+    a: "It depends on scope. We agree on a timeline as part of the engagement. A single lead-response system is faster than a full operational build-out spanning multiple systems and integrations. We tell you the timeline before we start.",
   },
   {
-    q: "How Long Does It Take to See Results?",
-    a: "It depends on scope. We define what success looks like before we start, so there is no ambiguity about what we're working toward. Timelines are agreed upon as part of the engagement.",
+    q: "What if the system does not work as expected?",
+    a: "We define success criteria before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard, not a sales promise.",
   },
   {
-    q: "How Do You Handle Data Security and Confidentiality?",
+    q: "Do I need to change my existing tools?",
+    a: "No. We build around your current stack. If a tool is holding you back, we will say so and explain why, but we do not require you to switch platforms to work with us.",
+  },
+  {
+    q: "How do you handle data security?",
     a: "Every engagement is covered by a mutual NDA before any information is shared. Your data is yours. We never train on client data or share it with third parties.",
   },
   {
-    q: "What If the System Doesn't Perform as Expected?",
-    a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
-  },
-  {
-    q: "How Do I Know If My Business Has Operational Bottlenecks?",
-    a: "If progress depends on specific people, leads are slipping, or teams spend significant time on manual work, operational bottlenecks may exist. A strategy audit can identify where the greatest opportunities are.",
+    q: "Is this a good fit for my business?",
+    a: "If you rely on leads coming in, calls coming in, or manual follow-up to close business, the systems we build are relevant. We work with small and mid-sized businesses across industries. Book a call and we will tell you honestly whether we can help.",
   },
 ]
 
@@ -39,12 +40,12 @@ export function FAQ() {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <Reveal>
           <p className="mb-3 font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">
-            COMMON QUESTIONS
+            Common questions
           </p>
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="m-0 mb-10 font-display text-[clamp(2rem,4vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.01em] text-bv-text-primary">
-            Answered directly.
+          <h2 className="m-0 mb-12 font-display text-[clamp(2rem,4vw,3.25rem)] font-normal leading-[1.1] tracking-[-0.01em] text-bv-text-primary">
+            Questions buyers actually ask.
           </h2>
         </Reveal>
 
@@ -73,17 +74,24 @@ export function FAQ() {
           <Reveal delay={300}>
             <div className="sticky top-[120px] rounded-sm border border-border bg-bv-bg-secondary p-10">
               <p className="mb-6 font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">
-                OUR COMMITMENT
+                Our commitment
               </p>
               <h3 className="mb-6 font-display text-2xl font-normal leading-[1.2] tracking-[-0.01em] text-bv-text-primary">
-                If we don't hit the metrics, we stay until we do.
+                If we do not hit the metrics, we stay until we do.
               </h3>
               <p className="mb-10 font-body text-[0.9375rem] font-light leading-[1.75] text-bv-text-secondary">
-                Every engagement begins with clearly defined success criteria. We don't walk away at deployment, we stay engaged until the outcomes we agreed upon are realized.
+                Every engagement begins with clearly defined success criteria. We do not walk away at deployment. We stay engaged until the outcomes we agreed upon are realized.
               </p>
               <div className="mb-10 h-px w-10 bg-bv-accent" />
-              <p className="font-body text-[0.8125rem] font-light text-bv-text-muted">
+              <p className="mb-2 font-body text-[0.8125rem] font-light text-bv-text-muted">
                 No hourly billing. No vague deliverables. Fixed scope, fixed price, defined outcomes.
+              </p>
+              <p className="mt-6 font-body text-[0.8125rem] font-light text-bv-text-muted">
+                See{" "}
+                <Link to="/pricing" className="text-bv-accent underline-offset-4 hover:underline">
+                  pricing
+                </Link>{" "}
+                for engagement tiers.
               </p>
             </div>
           </Reveal>

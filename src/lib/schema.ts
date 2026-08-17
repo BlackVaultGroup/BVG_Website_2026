@@ -8,7 +8,7 @@ export const organizationSchema = {
   alternateName: "BlackVault Group LLC",
   url: BASE_URL,
   description:
-    "BlackVault Group builds practical AI systems for small and mid-size businesses: lead follow-up automation, voice AI, workflow automation, and custom integrations.",
+    "BlackVault Group builds lead-response, phone-answering, and workflow automation systems for small and mid-sized businesses.",
   areaServed: [
     {
       "@type": "Country",
@@ -16,11 +16,10 @@ export const organizationSchema = {
     },
   ],
   knowsAbout: [
-    "Lead Follow-Up Automation",
-    "Voice AI Systems",
+    "Lead Response Automation",
+    "AI Phone Answering",
     "Workflow Automation",
-    "AI Integration",
-    "Executive AI Strategy",
+    "Business Process Automation",
   ],
 }
 
@@ -84,28 +83,28 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
 
 const FAQ_ITEMS = [
   {
-    q: "What Can an AI Consultant Actually Do for My Small Business?",
-    a: "We help businesses understand what should be improved, what should be automated, and where the greatest opportunities for operational improvement exist. The work ranges from lead follow-up automation to workflow automation to voice AI systems.",
+    q: "How much does it cost?",
+    a: "Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins. No hourly billing, no surprises. See our pricing page for the engagement tiers we offer.",
   },
   {
-    q: "How Do You Price Your Services?",
-    a: "Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins — no hourly billing, no surprises. See our Pricing page for the engagement tiers we offer.",
+    q: "How long until the system is live?",
+    a: "It depends on scope. We agree on a timeline as part of the engagement. A single lead-response system is faster than a full operational build-out spanning multiple systems and integrations. We tell you the timeline before we start.",
   },
   {
-    q: "How Long Does It Take to See Results?",
-    a: "It depends on scope. We define what success looks like before we start, so there is no ambiguity about what we're working toward. Timelines are agreed upon as part of the engagement.",
+    q: "What if the system does not work as expected?",
+    a: "We define success criteria before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard, not a sales promise.",
   },
   {
-    q: "How Do You Handle Data Security and Confidentiality?",
+    q: "Do I need to change my existing tools?",
+    a: "No. We build around your current stack. If a tool is holding you back, we will say so and explain why, but we do not require you to switch platforms to work with us.",
+  },
+  {
+    q: "How do you handle data security?",
     a: "Every engagement is covered by a mutual NDA before any information is shared. Your data is yours. We never train on client data or share it with third parties.",
   },
   {
-    q: "What If the System Doesn't Perform as Expected?",
-    a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
-  },
-  {
-    q: "How Do I Know If My Business Has Operational Bottlenecks?",
-    a: "If progress depends on specific people, leads are slipping, or teams spend significant time on manual work, operational bottlenecks may exist. A strategy audit can identify where the greatest opportunities are.",
+    q: "Is this a good fit for my business?",
+    a: "If you rely on leads coming in, calls coming in, or manual follow-up to close business, the systems we build are relevant. We work with small and mid-sized businesses across industries. Book a call and we will tell you honestly whether we can help.",
   },
 ]
 
