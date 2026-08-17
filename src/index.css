@@ -50,8 +50,8 @@
   --color-bv-text-secondary: var(--bv-text-secondary);
   --color-bv-text-muted: var(--bv-text-muted);
 
-  --font-display: "Cormorant Garamond", serif;
-  --font-body: "Outfit", sans-serif;
+  --font-display: "Bodoni Moda", serif;
+  --font-body: "Jost", sans-serif;
 }
 
 :root {
@@ -141,7 +141,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Outfit", sans-serif;
+    font-family: "Jost", sans-serif;
     font-weight: 300;
     line-height: 1.75;
     overflow-x: hidden;
@@ -180,28 +180,4 @@
 @keyframes mistBlink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.15; }
-}
-
-.reveal-base {
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-hidden {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal-base {
-    transition: none;
-  }
-  .reveal-hidden {
-    opacity: 1;
-    transform: none;
-  }
 }

@@ -3,14 +3,14 @@ import { Reveal } from "@/components/reveal"
 const VALUES = [
   {
     title: "Strategic Clarity",
-    desc: "We begin with your business problem, not a tool. Every engagement starts with a precise diagnosis of where leads, calls, and time are being lost.",
+    desc: "We begin with your business problem, not a tool. Every engagement starts with a precise diagnosis.",
   },
   {
-    title: "Senior Execution",
+    title: "Precision Execution",
     desc: "No handoffs to junior teams. Senior-level architects build and deploy every system.",
   },
   {
-    title: "Defined Outcomes",
+    title: "Measurable Outcomes",
     desc: "We define success metrics before we start. If we miss them, we stay until we don't.",
   },
 ]
@@ -26,7 +26,7 @@ export function ValueProposition() {
         </Reveal>
         <Reveal delay={100}>
           <h2 className="m-0 mb-10 max-w-[22ch] font-display text-[clamp(2rem,4vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.01em] text-bv-text-primary">
-            We don't sell AI. We build systems that solve business problems.
+            We don&apos;t sell AI. We architect outcomes.
           </h2>
         </Reveal>
 

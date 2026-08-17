@@ -2,16 +2,16 @@ import { Reveal } from "@/components/reveal"
 
 const OPS = [
   {
-    name: "Stop Leads Going Cold",
-    desc: "Automated intake, follow-up, and routing so every lead gets a fast, qualified response — around the clock.",
+    name: "Instant Engagement",
+    desc: "Every inbound lead contacted within minutes. Automated, consistent, zero delay. No lead goes cold.",
   },
   {
-    name: "Catch Calls You'd Otherwise Miss",
-    desc: "Every inbound call answered, qualified, and routed automatically by a voice agent trained on your business.",
+    name: "Persistent Pursuit",
+    desc: "Multi-channel AI follow-up that never drops a lead. Email, SMS, and voice until they convert or opt out.",
   },
   {
-    name: "Cut Manual Follow-Up Work",
-    desc: "Logic-driven workflow automation that runs between your tools and your team without supervision.",
+    name: "Conversational AI",
+    desc: "Intelligent agents that qualify, nurture, and book, performing at the level of your best representative.",
   },
 ]
 
@@ -21,12 +21,12 @@ export function RevenueOps() {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <Reveal>
           <p className="mb-3 font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">
-            THE PROBLEM
+            THE ENGINE
           </p>
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="m-0 mb-10 max-w-[28ch] font-display text-[clamp(2rem,4vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.01em] text-bv-text-primary">
-            Most businesses lose revenue to slow response and manual follow-up.
+          <h2 className="m-0 mb-10 max-w-[22ch] font-display text-[clamp(2rem,4vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.01em] text-bv-text-primary">
+            Most firms build AI. We build revenue.
           </h2>
         </Reveal>
 
