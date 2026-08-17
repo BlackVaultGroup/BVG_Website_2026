@@ -4,29 +4,29 @@ import { ArrowRight } from "lucide-react"
 
 const SERVICES = [
   {
-    name: "Operational AI Systems",
-    desc: "Custom AI infrastructure built around your data, stack, and workflows — not a generic platform.",
-    path: "/operational-ai-systems",
-  },
-  {
     name: "Lead Follow-Up Automation",
-    desc: "Automated intake, follow-up, and routing so every lead gets a fast, qualified response — around the clock. Never miss a lead.",
-    path: "/lead-follow-up-automation",
-  },
-  {
-    name: "Intelligent Workflows",
-    desc: "Eliminate the manual work between your tools and your team. Logic-driven workflow automation that runs without supervision.",
-    path: "/intelligent-workflows",
+    desc: "Automated intake, follow-up, and routing so every lead gets a fast, qualified response — around the clock.",
+    path: "/services/lead-follow-up-automation",
   },
   {
     name: "Voice AI Systems",
     desc: "Every inbound call answered, qualified, and routed automatically by a voice agent trained on your business.",
-    path: "/voice-ai-systems",
+    path: "/services/voice-ai-systems",
+  },
+  {
+    name: "Intelligent Workflows",
+    desc: "Eliminate the manual work between your tools and your team. Logic-driven workflow automation that runs without supervision.",
+    path: "/services/intelligent-workflows",
+  },
+  {
+    name: "Operational AI Systems",
+    desc: "Custom AI infrastructure built around your data, stack, and workflows — not a generic platform.",
+    path: "/services/operational-ai-systems",
   },
   {
     name: "Executive AI Strategy",
     desc: "A precise operational audit and AI roadmap before a single dollar is committed to technology.",
-    path: "/executive-ai-strategy",
+    path: "/services/executive-ai-strategy",
   },
 ]
 
@@ -36,12 +36,12 @@ export function Services() {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <Reveal>
           <p className="mb-3 font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">
-            Capabilities
+            What We Build
           </p>
         </Reveal>
         <Reveal delay={100}>
           <h2 className="m-0 mb-10 font-display text-[clamp(2rem,4vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.01em] text-bv-text-primary">
-            Designed to improve how businesses operate.
+            Systems that solve the problems costing you revenue.
           </h2>
         </Reveal>
 
