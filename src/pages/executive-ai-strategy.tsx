@@ -79,8 +79,8 @@ export function ExecutiveAIStrategyPage() {
   return (
     <>
       <PageSEO
-        title="Executive AI Strategy — AI Audit & Roadmap for Small Business | BlackVault Group"
-        description="Senior AI strategy for founders and operators making high-stakes decisions. We assess your operation and map exactly where AI creates leverage before a single dollar is committed."
+        title="AI Strategy Consulting for Small Business | BlackVault Group"
+        description="Assess where AI fits, what to prioritize, and whether to build, buy, pilot, or wait before committing budget to an implementation."
         canonicalPath="/executive-ai-strategy"
       />
       <JsonLd schema={pageSchemas} />

@@ -9,6 +9,9 @@ interface PageSEOProps {
   canonicalPath: string
   ogImage?: string
   noIndex?: boolean
+  type?: "website" | "article"
+  publishedTime?: string
+  modifiedTime?: string
 }
 
 export function PageSEO({
@@ -17,6 +20,9 @@ export function PageSEO({
   canonicalPath,
   ogImage = DEFAULT_OG_IMAGE,
   noIndex = false,
+  type = "website",
+  publishedTime,
+  modifiedTime,
 }: PageSEOProps) {
   const url = `${BASE_URL}${canonicalPath}`
 
@@ -33,7 +39,7 @@ export function PageSEO({
       )}
 
       {/* Open Graph */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:site_name" content="BlackVault Group" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -42,6 +48,9 @@ export function PageSEO({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="en_US" />
+      {type === "article" && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {type === "article" && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {type === "article" && <meta property="article:author" content="BlackVault Group LLC" />}
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />

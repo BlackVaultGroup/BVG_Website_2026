@@ -1,4 +1,6 @@
 const BASE_URL = "https://blackvaultgroupllc.com"
+import { ARTICLES, type Article } from "@/content/articles"
+import { FAQ_ITEMS } from "@/content/faqs"
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -17,10 +19,6 @@ export const organizationSchema = {
     "@type": "Country",
     name: "United States",
   },
-  founder: [
-    { "@type": "Person", name: "Aidan" },
-    { "@type": "Person", name: "Karsten" },
-  ],
   knowsAbout: [
     "Operational AI Systems",
     "Workflow Automation",
@@ -36,10 +34,6 @@ export const organizationSchema = {
     url: `${BASE_URL}/#contact`,
     availableLanguage: ["English"],
   },
-  sameAs: [
-    "https://www.linkedin.com/company/blackvaultgroup",
-    "https://twitter.com/BlackVaultGroup",
-  ],
 }
 
 export const websiteSchema = {
@@ -100,37 +94,6 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
   }
 }
 
-const FAQ_ITEMS = [
-  {
-    q: "How Much Does an AI Consultant Cost for Small Businesses?",
-    a: "Most BlackVault Group engagements range from $2,000 for a focused strategy audit to $60,000+ for a full operational build-out. Scope drives the price: which systems we build, how many tools we integrate, and what it costs to run them. You receive a fixed quote before any work begins — no hourly billing, no surprises.",
-  },
-  {
-    q: "How Long Does It Take to See Results from AI Implementation?",
-    a: "Depending on scope, most clients see measurable operational impact within 30 to 60 days of deployment. We define what success looks like before we start, so there is no ambiguity.",
-  },
-  {
-    q: "What Can an AI Consultant Actually Do for My Small Business?",
-    a: "A qualified consultant identifies where revenue, time, and efficiency are being lost before recommending systems designed to improve operational performance.",
-  },
-  {
-    q: "Can AI Consulting Help Me Save Money?",
-    a: "Yes. Depending on the opportunity, AI can reduce operational costs, increase team capacity, improve response times, and help capture revenue that may otherwise be lost.",
-  },
-  {
-    q: "How do you handle data security and confidentiality?",
-    a: "Every engagement is covered by a mutual NDA before any information is shared. Your data is yours. We never train on client data or share it with third parties.",
-  },
-  {
-    q: "What if the system doesn’t perform as expected?",
-    a: "We define success before we start. If agreed milestones are not met, we stay engaged until they are. That is our standard.",
-  },
-  {
-    q: "What Problems Can an AI Consultant Help Me Solve?",
-    a: "Common opportunities include slow response times, workflow bottlenecks, administrative burden, inconsistent processes, and missed revenue opportunities.",
-  },
-]
-
 export function buildFAQSchema() {
   return {
     "@context": "https://schema.org",
@@ -144,6 +107,39 @@ export function buildFAQSchema() {
         text: item.a,
       },
     })),
+  }
+}
+
+export function buildCollectionPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${BASE_URL}/articles#collection`,
+    url: `${BASE_URL}/articles`,
+    name: "AI Automation Articles for Small Business",
+    description: "Practical guides for evaluating AI consulting, implementation, delivery, and ownership.",
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    publisher: { "@id": `${BASE_URL}/#organization` },
+    mainEntity: { "@type": "ItemList", itemListElement: ARTICLES.map((article, index) => ({ "@type": "ListItem", position: index + 1, url: `${BASE_URL}/articles/${article.slug}`, name: article.title })) },
+  }
+}
+
+export function buildArticleSchema(article: Article) {
+  const url = `${BASE_URL}/articles/${article.slug}`
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: article.title,
+    description: article.description,
+    image: `${BASE_URL}${article.image}`,
+    datePublished: article.published,
+    dateModified: article.modified,
+    author: { "@type": "Organization", "@id": `${BASE_URL}/#organization`, name: "BlackVault Group LLC" },
+    publisher: { "@id": `${BASE_URL}/#organization` },
+    mainEntityOfPage: { "@id": `${url}#webpage` },
+    url,
+    inLanguage: "en-US",
   }
 }
 

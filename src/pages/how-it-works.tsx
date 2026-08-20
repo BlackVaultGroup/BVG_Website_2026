@@ -99,8 +99,8 @@ export function HowItWorksPage() {
   return (
     <>
       <PageSEO
-        title="How BlackVault Group Works — Process and Methodology"
-        description="BlackVault Group begins every engagement with an operational audit before recommending anything. Learn how we assess, design, build, and deploy AI systems for founders and operators."
+        title="How Our AI Automation Process Works | BlackVault Group"
+        description="See how BlackVault assesses operations, identifies worthwhile automation opportunities, designs systems, tests them, and prepares teams for ownership."
         canonicalPath="/how-it-works"
       />
       <JsonLd schema={howItWorksSchemas} />

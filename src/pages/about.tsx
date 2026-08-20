@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { buildBreadcrumbSchema, buildWebPageSchema } from "@/lib/schema"
 
 const PARAGRAPHS = [
   "BlackVault Group was founded by Aidan and Karsten, two operators who believe small and mid-size businesses deserve the same operational infrastructure that large companies use. Before opening our doors to the public, we spent years building behind the scenes. Designing the systems and automations that quietly power growing companies.",
@@ -17,10 +19,11 @@ export function AboutPage() {
   return (
     <>
       <PageSEO
-        title="About Us — BlackVault Group"
-        description="BlackVault Group was founded by Aidan and Karsten. We build AI systems and automations for small and mid-size businesses, with experience across the US, Dubai, and international markets."
+        title="About BlackVault Group LLC | AI Automation Consultants"
+        description="Learn how BlackVault Group LLC approaches practical AI automation for small and mid-sized businesses from Hampton Roads to qualified clients nationwide."
         canonicalPath="/about"
       />
+      <JsonLd schema={[buildWebPageSchema({ name: "About BlackVault Group LLC", description: "How BlackVault Group approaches practical AI automation for small and mid-sized businesses.", url: "/about" }), buildBreadcrumbSchema([{ name: "Home", url: "/" }, { name: "About", url: "/about" }])]} />
       <Navigation />
       <main style={{ minHeight: "100vh", backgroundColor: "#0C0A08", paddingTop: "72px" }}>
         <div

@@ -106,6 +106,12 @@ export function Navigation() {
             How it Works
           </Link>
           <ServicesDropdown />
+          <Link
+            to="/articles"
+            className="font-body text-sm font-normal tracking-[0.04em] text-bv-text-secondary no-underline transition-colors duration-200 hover:text-bv-text-primary"
+          >
+            Articles
+          </Link>
           <a
             href="/#contact"
             className="font-body text-sm font-normal tracking-[0.04em] text-bv-text-secondary no-underline transition-colors duration-200 hover:text-bv-text-primary"
@@ -188,6 +194,14 @@ export function Navigation() {
             </div>
           )}
         </div>
+
+        <Link
+          to="/articles"
+          onClick={() => setMenuOpen(false)}
+          className="font-body text-lg font-normal text-bv-text-secondary no-underline transition-colors duration-200 hover:text-bv-text-primary"
+        >
+          Articles
+        </Link>
 
         <a
           href="/#contact"

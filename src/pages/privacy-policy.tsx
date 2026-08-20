@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { buildWebPageSchema } from "@/lib/schema"
 
 const SECTIONS: { h: string; body: string[] }[] = [
   {
@@ -12,7 +14,7 @@ const SECTIONS: { h: string; body: string[] }[] = [
   {
     h: "Information We Collect",
     body: [
-      "When you submit our strategy call request form, we collect the information you provide: your full name, business name, email address, phone number (optional), company size, area of interest, preferred meeting time (optional), and any notes you include.",
+      "When you submit our strategy call request form, we collect the information you provide: your full name, business name, email address, phone number (optional), company size, area of interest, and any notes you include.",
       "Like most websites, our hosting infrastructure may automatically log basic technical information such as IP address, browser type, and pages visited. We do not use advertising cookies or cross-site tracking.",
     ],
   },
@@ -70,10 +72,11 @@ export function PrivacyPolicyPage() {
   return (
     <>
       <PageSEO
-        title="Privacy Policy — BlackVault Group"
-        description="How BlackVault Group collects, uses, and protects your information."
+        title="Privacy Policy | BlackVault Group LLC"
+        description="Read how BlackVault Group LLC describes website inquiries, scheduling information, service providers, data handling, and privacy choices."
         canonicalPath="/privacy-policy"
       />
+      <JsonLd schema={buildWebPageSchema({ name: "Privacy Policy", description: "BlackVault Group LLC website privacy information.", url: "/privacy-policy" })} />
       <Navigation />
       <main style={{ minHeight: "100vh", backgroundColor: "#0C0A08", paddingTop: "72px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(4rem, 8vw, 6rem) 1.5rem clamp(4rem, 8vw, 7rem)" }}>

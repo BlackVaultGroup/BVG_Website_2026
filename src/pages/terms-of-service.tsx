@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/sections/footer"
 import { PageSEO } from "@/components/page-seo"
+import { JsonLd } from "@/components/json-ld"
+import { buildWebPageSchema } from "@/lib/schema"
 
 const SECTIONS: { h: string; body: string[] }[] = [
   {
@@ -63,10 +65,11 @@ export function TermsOfServicePage() {
   return (
     <>
       <PageSEO
-        title="Terms of Service — BlackVault Group"
-        description="The terms that govern use of the BlackVault Group website."
+        title="Terms of Service | BlackVault Group LLC"
+        description="Review the terms that govern use of the BlackVault Group LLC website and its general informational content."
         canonicalPath="/terms-of-service"
       />
+      <JsonLd schema={buildWebPageSchema({ name: "Terms of Service", description: "Terms governing use of the BlackVault Group LLC website.", url: "/terms-of-service" })} />
       <Navigation />
       <main style={{ minHeight: "100vh", backgroundColor: "#0C0A08", paddingTop: "72px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(4rem, 8vw, 6rem) 1.5rem clamp(4rem, 8vw, 7rem)" }}>

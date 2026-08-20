@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react"
+import { Suspense, useEffect } from "react"
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom"
 import { Navigation } from "@/components/navigation"
 import { Hero } from "@/components/sections/hero"
@@ -13,16 +13,18 @@ import { SectionSeparator } from "@/components/section-separator"
 import { PageSEO } from "@/components/page-seo"
 import { JsonLd } from "@/components/json-ld"
 import { organizationSchema, websiteSchema, buildWebPageSchema, buildFAQSchema } from "@/lib/schema"
-
-const HowItWorksPage = lazy(() => import("@/pages/how-it-works").then(m => ({ default: m.HowItWorksPage })))
-const OperationalAISystemsPage = lazy(() => import("@/pages/operational-ai-systems").then(m => ({ default: m.OperationalAISystemsPage })))
-const ClientResponseInfrastructurePage = lazy(() => import("@/pages/client-response-infrastructure").then(m => ({ default: m.ClientResponseInfrastructurePage })))
-const IntelligentWorkflowsPage = lazy(() => import("@/pages/intelligent-workflows").then(m => ({ default: m.IntelligentWorkflowsPage })))
-const VoiceAISystemsPage = lazy(() => import("@/pages/voice-ai-systems").then(m => ({ default: m.VoiceAISystemsPage })))
-const ExecutiveAIStrategyPage = lazy(() => import("@/pages/executive-ai-strategy").then(m => ({ default: m.ExecutiveAIStrategyPage })))
-const AboutPage = lazy(() => import("@/pages/about").then(m => ({ default: m.AboutPage })))
-const PrivacyPolicyPage = lazy(() => import("@/pages/privacy-policy").then(m => ({ default: m.PrivacyPolicyPage })))
-const TermsOfServicePage = lazy(() => import("@/pages/terms-of-service").then(m => ({ default: m.TermsOfServicePage })))
+import { HowItWorksPage } from "@/pages/how-it-works"
+import { OperationalAISystemsPage } from "@/pages/operational-ai-systems"
+import { ClientResponseInfrastructurePage } from "@/pages/client-response-infrastructure"
+import { IntelligentWorkflowsPage } from "@/pages/intelligent-workflows"
+import { VoiceAISystemsPage } from "@/pages/voice-ai-systems"
+import { ExecutiveAIStrategyPage } from "@/pages/executive-ai-strategy"
+import { AboutPage } from "@/pages/about"
+import { PrivacyPolicyPage } from "@/pages/privacy-policy"
+import { TermsOfServicePage } from "@/pages/terms-of-service"
+import { ArticlesPage } from "@/pages/articles"
+import { ArticleDetailPage } from "@/pages/article-detail"
+import { NotFoundPage } from "@/pages/not-found"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -33,9 +35,9 @@ function ScrollToTop() {
 }
 
 const homePageSchema = buildWebPageSchema({
-  name: "AI Automation for Small Business — BlackVault Group",
+  name: "AI Automation for Small Business | BlackVault Group",
   description:
-    "BlackVault Group builds AI systems for small and mid-size businesses: lead follow-up automation, AI phone answering, workflow automation, and custom integrations. Engagements from $2,000.",
+    "BlackVault Group designs practical AI systems for lead response, phone answering, repetitive workflows, and operational bottlenecks in small and mid-sized businesses.",
   url: "/",
 })
 
@@ -60,8 +62,8 @@ function HomePage() {
   return (
     <>
       <PageSEO
-        title="AI Automation for Small Business — BlackVault Group"
-        description="BlackVault Group builds AI systems for small and mid-size businesses: lead follow-up automation, AI phone answering, workflow automation, and custom integrations. Engagements from $2,000."
+        title="AI Automation for Small Business | BlackVault Group"
+        description="BlackVault Group designs practical AI systems for lead response, phone answering, repetitive workflows, and operational bottlenecks in small and mid-sized businesses."
         canonicalPath="/"
       />
       <JsonLd schema={[organizationSchema, websiteSchema, homePageSchema, faqSchema]} />
@@ -84,9 +86,9 @@ function HomePage() {
   )
 }
 
-export function App() {
+export function AppRoutes() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -149,6 +151,8 @@ export function App() {
             </Suspense>
           }
         />
+        <Route path="/articles" element={<Suspense fallback={<PageLoader />}><ArticlesPage /></Suspense>} />
+        <Route path="/articles/:slug" element={<Suspense fallback={<PageLoader />}><ArticleDetailPage /></Suspense>} />
         <Route
           path="/privacy-policy"
           element={
@@ -172,9 +176,14 @@ export function App() {
         <Route path="/workflow-automation" element={<Navigate to="/intelligent-workflows" replace />} />
         <Route path="/custom-ai-integration" element={<Navigate to="/operational-ai-systems" replace />} />
         <Route path="/strategic-ai-partnership" element={<Navigate to="/executive-ai-strategy" replace />} />
+        <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFoundPage /></Suspense>} />
       </Routes>
-    </BrowserRouter>
+    </>
   )
+}
+
+export function App() {
+  return <BrowserRouter><AppRoutes /></BrowserRouter>
 }
 
 export default App

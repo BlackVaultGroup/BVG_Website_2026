@@ -6,7 +6,8 @@ import "./index.css"
 import App from "./App.tsx"
 import { ScheduleCallProvider } from "@/components/schedule-call-provider"
 
-createRoot(document.getElementById("root")!).render(
+const root = document.getElementById("root")!
+const app = (
   <StrictMode>
     <HelmetProvider>
       <ScheduleCallProvider>
@@ -15,3 +16,7 @@ createRoot(document.getElementById("root")!).render(
     </HelmetProvider>
   </StrictMode>
 )
+
+// The prerendered HTML is complete for crawlers and no-JS visitors. React takes
+// ownership on load so third-party UI components can initialize consistently.
+createRoot(root).render(app)

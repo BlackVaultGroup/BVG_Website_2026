@@ -71,8 +71,8 @@ export function OperationalAISystemsPage() {
   return (
     <>
       <PageSEO
-        title="Operational AI Systems — Custom AI for Small Business | BlackVault Group"
-        description="AI systems designed around your actual workflows and existing stack. We build, integrate, and document custom AI infrastructure that scales with your operation."
+        title="Custom AI Systems for Small Business | BlackVault Group"
+        description="Custom AI systems designed around your existing workflows, tools, data, and operating requirements, with clear integration and handoff planning."
         canonicalPath="/operational-ai-systems"
       />
       <JsonLd schema={pageSchemas} />

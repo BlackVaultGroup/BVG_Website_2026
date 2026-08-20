@@ -71,8 +71,8 @@ export function IntelligentWorkflowsPage() {
   return (
     <>
       <PageSEO
-        title="Intelligent Workflows — Workflow Automation for Small Business | BlackVault Group"
-        description="We redesign how work moves through your business by mapping bottlenecks, automating decisions, and deploying workflow systems that eliminate execution lag permanently."
+        title="Workflow Automation for Small Business | BlackVault Group"
+        description="Reduce repetitive work and operational delays by mapping business processes and building reliable workflow automation around the way your team works."
         canonicalPath="/intelligent-workflows"
       />
       <JsonLd schema={pageSchemas} />

@@ -72,7 +72,7 @@ export function ClientResponseInfrastructurePage() {
     <>
       <PageSEO
         title="Lead Follow-Up Automation for Small Business | BlackVault Group"
-        description="AI-powered intake, follow-up, and routing systems that ensure every lead gets a fast, qualified response, without adding headcount or manual work to your team."
+        description="Improve lead intake, response, qualification, routing, and follow-up with systems designed around your existing sales process and CRM."
         canonicalPath="/lead-follow-up-automation"
       />
       <JsonLd schema={pageSchemas} />

@@ -1,23 +1,18 @@
 User-agent: *
 Allow: /
 
-# AI crawlers — allow indexing for LLM retrieval systems
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
 
+# Private credentials are never deployed under a public URL.
+# robots.txt is not a security control; the build fails if secret patterns enter dist.
 Sitemap: https://blackvaultgroupllc.com/sitemap.xml

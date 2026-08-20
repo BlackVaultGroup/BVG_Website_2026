@@ -6,7 +6,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
-import { supabase } from "@/lib/supabase"
+import { isSupabaseConfigured, supabase } from "@/lib/supabase"
 
 interface ScheduleCallModalProps {
   open: boolean
@@ -70,7 +70,6 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
     phone: "",
     company_size: "",
     inquiry_type: "",
-    preferred_meeting_time: "",
     notes: "",
   })
 
@@ -93,6 +92,12 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
     setSubmitting(true)
     setError(null)
 
+    if (!isSupabaseConfigured) {
+      setSubmitting(false)
+      setError("Scheduling is unavailable in this local preview because the database connection is not configured.")
+      return
+    }
+
     const { error: dbError } = await supabase.from("discovery_call_requests").insert({
       full_name: form.full_name,
       business_name: form.business_name,
@@ -100,7 +105,6 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
       phone: form.phone || null,
       company_size: form.company_size,
       inquiry_type: form.inquiry_type,
-      preferred_meeting_time: form.preferred_meeting_time || null,
       notes: form.notes || null,
       status: "new",
     })
@@ -126,7 +130,6 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
           phone: "",
           company_size: "",
           inquiry_type: "",
-          preferred_meeting_time: "",
           notes: "",
         })
         setError(null)
@@ -329,20 +332,6 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
                       ))}
                     </select>
                   </div>
-                </div>
-
-                {/* Preferred Time */}
-                <div style={fieldStyle}>
-                  <label style={labelStyle}>Preferred Meeting Time</label>
-                  <input
-                    type="text"
-                    value={form.preferred_meeting_time}
-                    onChange={(e) => handleChange("preferred_meeting_time", e.target.value)}
-                    onFocus={() => setFocused("preferred_meeting_time")}
-                    onBlur={() => setFocused(null)}
-                    placeholder="e.g. Weekday mornings EST, or a specific date"
-                    style={{ ...inputStyle, ...getFocusStyle("preferred_meeting_time") }}
-                  />
                 </div>
 
                 {/* Notes */}
