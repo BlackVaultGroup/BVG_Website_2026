@@ -12,6 +12,8 @@ Practical AI consulting and automation for small and mid-sized businesses. Based
 - [executive-ai-strategy](https://blackvaultgroupllc.com/executive-ai-strategy)
 - [about](https://blackvaultgroupllc.com/about)
 - [articles](https://blackvaultgroupllc.com/articles)
+- [articles — what-should-my-business-automate-first](https://blackvaultgroupllc.com/articles/what-should-my-business-automate-first)
+- [articles — where-to-start-with-ai-automation](https://blackvaultgroupllc.com/articles/where-to-start-with-ai-automation)
 - [articles — ai-consulting-cost-small-business](https://blackvaultgroupllc.com/articles/ai-consulting-cost-small-business)
 - [articles — what-an-ai-consultant-should-deliver](https://blackvaultgroupllc.com/articles/what-an-ai-consultant-should-deliver)
 - [articles — ai-consultant-vs-in-house](https://blackvaultgroupllc.com/articles/ai-consultant-vs-in-house)

@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion"
 import { Reveal } from "@/components/reveal"
 import { FAQ_ITEMS } from "@/content/faqs"
+import { Link } from "react-router-dom"
 
 export function FAQ() {
   return (
@@ -42,6 +43,14 @@ export function FAQ() {
                 </AccordionItem>
               ))}
             </Accordion>
+            <div className="mt-8">
+              <Link
+                to="/articles"
+                className="inline-flex items-center rounded-sm border border-bv-accent px-6 py-3 font-body text-sm font-medium tracking-[0.05em] text-bv-accent no-underline transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent hover:text-bv-bg-primary"
+              >
+                Explore Popular Questions
+              </Link>
+            </div>
           </Reveal>
 
           <Reveal delay={300}>

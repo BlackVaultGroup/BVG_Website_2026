@@ -22,6 +22,159 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: "what-should-my-business-automate-first",
+    title: "What Should My Business Automate First?",
+    description: "Use a simple profit-first framework to choose the first workflow to automate instead of chasing tools, trends, or the most impressive demo.",
+    category: "Automation Priorities",
+    image: "/articles/what-should-my-business-automate-first.png",
+    imageAlt: "Three business profit paths converging on one prioritized workflow",
+    published: "2026-08-20",
+    modified: "2026-08-20",
+    readingTime: "7 min read",
+    directAnswer: "Automate the repeatable process that has the clearest effect on profit. Start by asking whether the process can help you gain customers, increase the value of each customer, or lower operating costs. Then choose one narrow workflow that happens often, wastes time, causes delays, or loses opportunities. Measure the current result before changing it.",
+    sections: [
+      {
+        heading: "Start with profit, not AI",
+        paragraphs: [
+          "Most owners do not care which agent, model, or automation tool you use. They care whether the business becomes more profitable, reliable, and easier to run. AI is one way to support that goal. It is not the goal by itself.",
+          "This matters because a tool-first project often solves the wrong problem. A good demo can look impressive and still have little value. The first question should be about the business result, not the technology.",
+        ],
+      },
+      {
+        heading: "Use the three-part profit framework",
+        paragraphs: [
+          "A simple way to study profit is to look at three paths. A business can gain more customers, make each customer worth more, or lower the cost of doing the work. Most useful automation projects support at least one of these paths.",
+        ],
+        bullets: [
+          "Gain more customers by improving lead response, follow-up, qualification, or consistent outreach.",
+          "Increase customer value through better onboarding, renewals, useful add-on services, or timely follow-up.",
+          "Lower operating costs by reducing repeated data entry, manual routing, reporting work, and avoidable mistakes.",
+        ],
+      },
+      {
+        heading: "Find the biggest point of friction",
+        paragraphs: [
+          "Look for work that happens often and has a clear effect on one of the three profit paths. Ask where leads wait, where staff copy the same information, where work gets forgotten, and where customers need a faster answer.",
+          "Do not try to improve all three paths at once. Pick the area with the clearest pain and the easiest result to measure. A small win gives the team proof and helps you learn before the project grows.",
+        ],
+      },
+      {
+        heading: "Score possible workflows before choosing",
+        bullets: [
+          "Frequency: Does this work happen every day or every week?",
+          "Value: Does a delay, mistake, or missed step affect revenue or cost?",
+          "Repeatability: Does the process follow a pattern most of the time?",
+          "Readiness: Are the needed data, tools, and owners available?",
+          "Risk: Can a person review sensitive or unusual cases?",
+          "Measurement: Can you compare time, response speed, errors, or completed work before and after?",
+        ],
+      },
+      {
+        heading: "Examples of useful first projects",
+        paragraphs: [
+          "If leads are going cold, start with intake, routing, or follow-up. If the team is buried in administration, start with summaries, data movement, reminders, or routine reports. If marketing stops whenever work gets busy, create a system that turns approved ideas into first drafts for the team to review.",
+          "The goal is not to replace the people who know the business. The goal is to remove low-value steps so those people can spend more time on judgment, customers, and growth.",
+        ],
+      },
+      {
+        heading: "Do not automate a broken or unclear process",
+        paragraphs: [
+          "If nobody can explain the current process, automation may only make the confusion move faster. Map the steps first. Decide who owns the result, which cases need human judgment, and what a correct outcome looks like.",
+          "Sometimes the right first move is a clearer rule, a better form, or a standard software feature. Use AI only when it adds value that simpler automation cannot provide.",
+        ],
+      },
+      {
+        heading: "Define a small first win",
+        paragraphs: [
+          "Choose one workflow, one owner, one starting measurement, and one review date. A first project should be small enough to test safely but important enough to matter. If it works, document it and expand with care. If it does not, you have learned without placing the whole operation at risk.",
+        ],
+      },
+    ],
+    relatedServices: [{ label: "Operational AI Systems", path: "/operational-ai-systems" }, { label: "Workflow Automation", path: "/intelligent-workflows" }],
+  },
+  {
+    slug: "where-to-start-with-ai-automation",
+    title: "Where Should a Small Business Start With AI Automation?",
+    description: "Follow a clear starting process: find one business bottleneck, map the work, choose the simplest solution, run a small pilot, and measure the result.",
+    category: "Getting Started",
+    image: "/articles/where-to-start-with-ai-automation.png",
+    imageAlt: "A clear path from business bottleneck to measured automation result",
+    published: "2026-08-20",
+    modified: "2026-08-20",
+    readingTime: "8 min read",
+    directAnswer: "Start with one business problem that happens often and has a clear cost. Map how the work is done today, decide whether it needs AI or simple automation, and test one narrow workflow. Keep a person in control of important decisions. Measure the result before you add more tools or automate more of the business.",
+    sections: [
+      {
+        heading: "Step 1: Write down the problems you already feel",
+        paragraphs: [
+          "Do not begin by shopping for an AI agent. Spend one week noting where work slows down, gets repeated, or falls through the cracks. Look for missed leads, delayed replies, repeated data entry, scattered notes, manual reminders, and reports that take too long.",
+          "Use plain business language. Write down the problem, who handles it, how often it happens, and what it costs in time, money, or missed opportunities.",
+        ],
+      },
+      {
+        heading: "Step 2: Pick one narrow bottleneck",
+        paragraphs: [
+          "Choose a process that happens often, follows a pattern, and can be measured. Avoid starting with a rare task or a process that changes every day. Also avoid high-risk decisions until the team has experience with smaller systems.",
+          "A good first project may be routing new inquiries, creating a first draft of a follow-up message, summarizing calls, updating records, or reminding the right person when work is waiting.",
+        ],
+      },
+      {
+        heading: "Step 3: Map the current process",
+        bullets: [
+          "What starts the process?",
+          "What information is needed?",
+          "Which person or system handles each step?",
+          "Where do delays and mistakes happen?",
+          "Which cases need human judgment?",
+          "What does a correct finished result look like?",
+        ],
+      },
+      {
+        heading: "Step 4: Decide if the process needs AI",
+        paragraphs: [
+          "Simple automation is best when the rules are fixed. For example, a form submission can create a record and notify a team member without AI. AI becomes useful when the work includes messy text, summaries, classification, drafts, or information that varies from case to case.",
+          "The simplest reliable solution is usually the best place to start. Adding AI to every step can increase cost, risk, and maintenance without improving the result.",
+        ],
+      },
+      {
+        heading: "Step 5: Set a human review point",
+        paragraphs: [
+          "Decide where a person should review, approve, correct, or take over. Customer promises, payments, legal matters, private data, and unusual cases deserve extra care. The system should make escalation easy and show the person the context they need.",
+        ],
+      },
+      {
+        heading: "Step 6: Measure the starting point",
+        bullets: [
+          "How long does the process take now?",
+          "How quickly does a customer or lead get a response?",
+          "How many steps require manual work?",
+          "How often are items missed or corrected?",
+          "How many completed results does the team produce?",
+        ],
+      },
+      {
+        heading: "Step 7: Run a small pilot",
+        paragraphs: [
+          "Test the workflow with a limited group, a limited number of cases, or an internal review period. Include normal examples, missing information, duplicate requests, system outages, and unusual cases. A pilot should prove that the workflow is useful and safe, not just that it can run once.",
+        ],
+      },
+      {
+        heading: "Step 8: Document ownership and maintenance",
+        paragraphs: [
+          "Write down who owns the accounts, permissions, data, instructions, and future changes. The team should know how to pause the system, report a problem, and handle work when a connected tool is unavailable.",
+          "After the pilot, compare the result with the starting measurement. Keep what works, fix what does not, and expand only when the first workflow is stable.",
+        ],
+      },
+      {
+        heading: "A clear starting point lowers fear",
+        paragraphs: [
+          "AI feels confusing when the conversation starts with tools and technical terms. It becomes easier to understand when the team can see one problem, one process, one owner, and one useful result. Clarity helps people trust the change because they know what the system will do and where people remain in control.",
+        ],
+      },
+    ],
+    relatedServices: [{ label: "How Our Process Works", path: "/how-it-works" }, { label: "AI Strategy Consulting", path: "/executive-ai-strategy" }],
+  },
+  {
     slug: "ai-consulting-cost-small-business",
     title: "How Much Does AI Consulting Cost for a Small Business?",
     description: "Learn what shapes AI consulting and implementation costs, how common engagement models differ, and what to review before approving a proposal.",

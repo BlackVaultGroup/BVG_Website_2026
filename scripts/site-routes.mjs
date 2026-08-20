@@ -1,6 +1,6 @@
 export const SITE_ORIGIN = "https://blackvaultgroupllc.com"
 export const ROUTES = [
-  { path: "/", modified: "2026-08-19" },
+  { path: "/", modified: "2026-08-20" },
   { path: "/how-it-works", modified: "2026-08-19" },
   { path: "/operational-ai-systems", modified: "2026-08-19" },
   { path: "/lead-follow-up-automation", modified: "2026-08-19" },
@@ -8,7 +8,9 @@ export const ROUTES = [
   { path: "/voice-ai-systems", modified: "2026-08-19" },
   { path: "/executive-ai-strategy", modified: "2026-08-19" },
   { path: "/about", modified: "2026-08-19" },
-  { path: "/articles", modified: "2026-08-19" },
+  { path: "/articles", modified: "2026-08-20" },
+  { path: "/articles/what-should-my-business-automate-first", modified: "2026-08-20" },
+  { path: "/articles/where-to-start-with-ai-automation", modified: "2026-08-20" },
   { path: "/articles/ai-consulting-cost-small-business", modified: "2026-08-19" },
   { path: "/articles/what-an-ai-consultant-should-deliver", modified: "2026-08-19" },
   { path: "/articles/ai-consultant-vs-in-house", modified: "2026-08-19" },

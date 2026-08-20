@@ -7,6 +7,10 @@ import { getArticle } from "@/content/articles"
 import { buildArticleSchema, buildBreadcrumbSchema } from "@/lib/schema"
 import { NotFoundPage } from "@/pages/not-found"
 
+function formatArticleDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`))
+}
+
 export function ArticleDetailPage() {
   const { slug } = useParams()
   const article = getArticle(slug)
@@ -23,7 +27,7 @@ export function ArticleDetailPage() {
           <p className="mb-4 font-body text-xs font-medium uppercase tracking-[0.16em] text-bv-accent">{article.category}</p>
           <h1 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] font-normal leading-[1.03] text-bv-text-primary">{article.title}</h1>
           <p className="mt-6 max-w-[70ch] font-body text-lg font-light leading-[1.75] text-bv-text-secondary">{article.description}</p>
-          <div className="mt-6 flex flex-wrap gap-3 font-body text-sm text-bv-text-muted"><span>By BlackVault Group LLC</span><span>•</span><time dateTime={article.published}>August 19, 2026</time><span>•</span><span>{article.readingTime}</span></div>
+          <div className="mt-6 flex flex-wrap gap-3 font-body text-sm text-bv-text-muted"><span>By BlackVault Group LLC</span><span>•</span><time dateTime={article.published}>{formatArticleDate(article.published)}</time><span>•</span><span>{article.readingTime}</span></div>
         </header>
         <div className="mx-auto max-w-[1100px] px-6"><img src={article.image} alt={article.imageAlt} width="1200" height="630" className="aspect-[1200/630] w-full rounded-sm border border-border object-cover" /></div>
         <div className="mx-auto max-w-[780px] px-6 py-14 md:py-20">
