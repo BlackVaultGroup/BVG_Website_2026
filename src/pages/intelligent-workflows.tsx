@@ -10,14 +10,14 @@ const pageSchemas = [
   buildServiceSchema({
     name: "Intelligent Workflows",
     description:
-      "End-to-end workflow automation that eliminates manual steps, approval delays, and repeated decisions. We map your processes, build the automation logic, and deploy systems that execute without supervision.",
+      "AI workflow automation and business process automation for repeated work, delayed handoffs, and manual updates. We map your process, build the right logic, and keep people in control of important decisions.",
     url: "/intelligent-workflows",
     serviceType: "Business Process Automation",
   }),
   buildWebPageSchema({
-    name: "Intelligent Workflows — BlackVault Group",
+    name: "Intelligent Workflows | BlackVault Group",
     description:
-      "We redesign how work moves through your business by mapping bottlenecks, automating decisions, and deploying workflow systems that eliminate execution lag permanently.",
+      "Build practical workflow automation around the way your business works. Improve repeated tasks, routing, updates, and handoffs without adding tools that your team cannot manage.",
     url: "/intelligent-workflows",
     breadcrumb: [
       { name: "Home", url: "/" },
@@ -34,11 +34,11 @@ const content: ServicePageContent = {
   eyebrow: "INTELLIGENT WORKFLOWS",
   headlineLine1: "Work that runs",
   headlineLine2: "itself.",
-  subtext: "We redesign how work moves through your business so your team stops managing processes and starts driving outcomes.",
+  subtext: "Business automation and custom AI systems for repeated work, clear handoffs, and better operational follow-through.",
   paragraphs: [
-    "Most operational drag does not come from a lack of tools. It comes from how work moves between them. Approval chains that stall. Data that has to be re-entered manually. Decisions that get made the same way hundreds of times a week by people who should be focused on something else.",
-    "We map every handoff, trigger, and decision point in your critical workflows, then design the logic that eliminates the manual steps. The result is not just automation. It is a fundamentally leaner operation where execution happens at the speed of the trigger, not the speed of whoever is available.",
-    "We build for durability. Every workflow we design is documented, monitored after deployment, and iterated as your operation evolves. No black boxes. No fragile dependencies.",
+    "Most operational drag does not come from a lack of tools. It comes from how work moves between them: approval chains that stall, data that is entered more than once, and routine decisions that take attention away from customers and higher-value work.",
+    "We map the handoffs, triggers, and decision points in a workflow before we build anything. Then we decide whether a clearer rule, standard workflow automation, or an AI-assisted system will help. Important decisions and unusual cases should always have a clear human review point.",
+    "We build for durability. Your team should understand what the workflow does, who owns it, how it is measured, and how to handle an exception. That is how operational automation stays useful as your business changes.",
   ],
   leftCaption: "Process mapping and bottleneck analysis",
   rightCaption: "Automation architecture and deployment",
@@ -52,27 +52,27 @@ const content: ServicePageContent = {
     },
     {
       title: "Decision Logic Design",
-      description: "We translate your repeating decisions into structured logic that runs automatically, consistently, and without human intervention.",
+      description: "We translate repeated decisions into clear logic, with human review and escalation where judgment is still needed.",
     },
     {
       title: "Automation Build",
-      description: "We build and deploy the workflow systems, not just design them. Your team receives working solutions, not blueprints.",
+      description: "We build practical workflow automation around your current tools, so your team receives a system they can use and manage.",
     },
     {
       title: "Monitoring and Iteration",
       description: "After deployment we track performance, identify gaps, and refine systems as your operational needs evolve.",
     },
   ],
-  ctaHeadline: "Stop paying for manual work.",
-  ctaSubtext: "We build the systems that give your team their time back.",
+  ctaHeadline: "Make repeated work easier to run.",
+  ctaSubtext: "Start with the process that costs your team the most time or creates the most delay.",
 }
 
 export function IntelligentWorkflowsPage() {
   return (
     <>
       <PageSEO
-        title="Workflow Automation for Small Business | BlackVault Group"
-        description="Reduce repetitive work and operational delays by mapping business processes and building reliable workflow automation around the way your team works."
+        title="AI Workflow Automation for Business | BlackVault Group"
+        description="Improve repeated work, handoffs, and manual updates with practical AI workflow automation and business process automation built around your team."
         canonicalPath="/intelligent-workflows"
       />
       <JsonLd schema={pageSchemas} />

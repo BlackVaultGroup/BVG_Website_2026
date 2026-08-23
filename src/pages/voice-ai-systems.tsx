@@ -10,14 +10,14 @@ const pageSchemas = [
   buildServiceSchema({
     name: "Voice AI Systems",
     description:
-      "AI voice agents trained on your business that handle inbound calls, qualify leads, and run appointment scheduling without live staff. Deployed with full call analytics and escalation logic.",
+      "AI voice agents and AI phone systems for answering common calls, collecting details, qualifying inquiries, scheduling next steps, and escalating to your team when needed.",
     url: "/voice-ai-systems",
     serviceType: "Voice AI and Conversational Automation",
   }),
   buildWebPageSchema({
-    name: "Voice AI Systems — BlackVault Group",
+    name: "Voice AI Systems | BlackVault Group",
     description:
-      "AI voice agents trained on your business that answer inbound calls, qualify leads, and book appointments automatically, 24/7, without adding staff.",
+      "Voice AI for business: answer common calls, capture lead details, support appointment workflows, and make it easy to reach a person for important or unusual requests.",
     url: "/voice-ai-systems",
     breadcrumb: [
       { name: "Home", url: "/" },
@@ -34,11 +34,11 @@ const content: ServicePageContent = {
   eyebrow: "VOICE AI SYSTEMS",
   headlineLine1: "Every call answered.",
   headlineLine2: "Every lead captured.",
-  subtext: "AI voice agents trained on your business that handle inbound calls, qualify leads, and run appointment workflows without live staff intervention.",
+  subtext: "AI phone agents that support first-call response, lead qualification, appointment workflows, and clear human escalation.",
   paragraphs: [
-    "Inbound call volume is a bottleneck that grows with your business. Every missed call is a missed opportunity and hiring staff to answer phones, qualify callers, and schedule appointments is expensive, inconsistent, and does not scale.",
-    "We build voice AI agents trained specifically on your business — your services, your qualification criteria, your scheduling logic, and your escalation rules. The agent answers every call, gathers the right information, and routes or books based on the outcome, 24 hours a day, without supervision.",
-    "Every voice system we deploy includes full analytics on call volume, qualification rates, conversion, and drop-off. You see exactly how the system performs and where to optimize.",
+    "Calls are often where a new customer decides whether to move forward. When the team is busy, a missed call, slow response, or unclear handoff can leave a good opportunity without a next step.",
+    "We design voice AI around your services, qualification questions, scheduling rules, and escalation path. The system can handle defined first-call tasks, collect useful details, and route the right cases to your team. It should not make promises, guess, or handle sensitive and unusual situations without a person.",
+    "A useful voice AI system gives you a clear view of what happened on calls, which requests need follow-up, and where people take over. You can review the result and improve the process over time.",
   ],
   leftCaption: "Call flow architecture and agent training",
   rightCaption: "Escalation logic and performance analytics",
@@ -52,27 +52,27 @@ const content: ServicePageContent = {
     },
     {
       title: "Voice Agent Training",
-      description: "Your AI agent is trained on your specific services, offers, and business rules so every conversation sounds and operates on-brand.",
+      description: "Your AI phone agent is configured around your services, business rules, and approved answers so it can handle defined first-call tasks consistently.",
     },
     {
       title: "Escalation and Handoff Logic",
-      description: "Clear rules for when the agent transfers to a live team member, so high-value situations always get a human response.",
+      description: "Clear rules for when a person takes over, including important questions, unusual cases, customer promises, and sensitive information.",
     },
     {
       title: "Analytics and Optimization",
-      description: "Ongoing tracking of call volume, conversion, qualification rate, and drop-off to continuously improve system performance.",
+      description: "Review the call flow, follow-up needs, and handoff points so your team can improve the system with real call evidence.",
     },
   ],
-  ctaHeadline: "Stop letting calls go unanswered.",
-  ctaSubtext: "We build voice AI systems that work every hour your business is open.",
+  ctaHeadline: "Make the first call easier to handle.",
+  ctaSubtext: "Start with the call types your team repeats most often and decide where a person should take over.",
 }
 
 export function VoiceAISystemsPage() {
   return (
     <>
       <PageSEO
-        title="AI Phone Answering for Small Business | BlackVault Group"
-        description="Explore AI phone systems for answering calls, gathering information, qualifying inquiries, scheduling appointments, and escalating to a person when needed."
+        title="AI Voice Agents and Phone Systems for Business | BlackVault Group"
+        description="Use AI voice agents for common calls, lead qualification, appointment workflows, and clear human escalation when a customer needs a person."
         canonicalPath="/voice-ai-systems"
       />
       <JsonLd schema={pageSchemas} />

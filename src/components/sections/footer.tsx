@@ -17,12 +17,21 @@ const SERVICE_LINKS = [
   { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
 ]
 
+const SERVICE_AREA_LINKS = [
+  { label: "Virginia Beach", path: "/ai-consulting-virginia-beach" },
+  { label: "Norfolk", path: "/ai-consulting-norfolk" },
+  { label: "Chesapeake", path: "/ai-consulting-chesapeake" },
+  { label: "Hampton", path: "/ai-consulting-hampton" },
+  { label: "Newport News", path: "/ai-consulting-newport-news" },
+  { label: "Williamsburg", path: "/ai-consulting-williamsburg" },
+]
+
 export function Footer() {
   return (
     <footer className="bg-bv-bg-primary">
       <Separator className="bg-border" />
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="grid grid-cols-2 gap-x-16 gap-y-10 py-16 sm:grid-cols-[1fr_1fr_1fr] sm:gap-x-8 lg:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid grid-cols-2 gap-x-10 gap-y-10 py-16 sm:grid-cols-3 sm:gap-x-8 lg:grid-cols-[2fr_1fr_1fr_1fr]">
 
           {/* Brand column */}
           <div className="col-span-2 sm:col-span-1 flex flex-col gap-4">
@@ -31,6 +40,9 @@ export function Footer() {
             </p>
             <p className="max-w-[28ch] font-body text-sm font-light leading-relaxed text-bv-text-muted">
               Operational AI systems for founders and operators who build to scale.
+            </p>
+            <p className="max-w-[31ch] font-body text-xs font-light leading-relaxed text-bv-text-muted">
+              Based in Virginia Beach, serving businesses throughout Hampton Roads and across the U.S.
             </p>
           </div>
 
@@ -74,6 +86,20 @@ export function Footer() {
                   to={link.path}
                   className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary"
                 >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="font-body text-[0.7rem] font-medium uppercase tracking-[0.16em] text-bv-accent">
+              Service Areas
+            </h3>
+            <nav className="flex flex-col gap-2.5" aria-label="Service areas navigation">
+              <Link to="/hampton-roads-ai-consulting" className="w-fit font-body text-sm font-light text-bv-text-primary no-underline transition-colors duration-200 hover:text-bv-accent">Hampton Roads</Link>
+              {SERVICE_AREA_LINKS.map((link) => (
+                <Link key={link.path} to={link.path} className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary">
                   {link.label}
                 </Link>
               ))}

@@ -24,6 +24,7 @@ import { PrivacyPolicyPage } from "@/pages/privacy-policy"
 import { TermsOfServicePage } from "@/pages/terms-of-service"
 import { ArticlesPage } from "@/pages/articles"
 import { ArticleDetailPage } from "@/pages/article-detail"
+import { ServiceAreaPage } from "@/pages/service-area"
 import { NotFoundPage } from "@/pages/not-found"
 
 function ScrollToTop() {
@@ -153,6 +154,13 @@ export function AppRoutes() {
         />
         <Route path="/articles" element={<Suspense fallback={<PageLoader />}><ArticlesPage /></Suspense>} />
         <Route path="/articles/:slug" element={<Suspense fallback={<PageLoader />}><ArticleDetailPage /></Suspense>} />
+        <Route path="/hampton-roads-ai-consulting" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
+        <Route path="/ai-consulting-virginia-beach" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
+        <Route path="/ai-consulting-norfolk" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
+        <Route path="/ai-consulting-chesapeake" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
+        <Route path="/ai-consulting-hampton" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
+        <Route path="/ai-consulting-newport-news" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
+        <Route path="/ai-consulting-williamsburg" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
         <Route
           path="/privacy-policy"
           element={

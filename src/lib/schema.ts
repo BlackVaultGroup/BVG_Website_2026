@@ -95,16 +95,19 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
 }
 
 export function buildFAQSchema() {
+  return buildFAQPageSchema(FAQ_ITEMS.map((item) => ({ question: item.q, answer: item.a })))
+}
+
+export function buildFAQPageSchema(items: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${BASE_URL}/#faq`,
-    mainEntity: FAQ_ITEMS.map((item) => ({
+    mainEntity: items.map((item) => ({
       "@type": "Question",
-      name: item.q,
+      name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.a,
+        text: item.answer,
       },
     })),
   }
