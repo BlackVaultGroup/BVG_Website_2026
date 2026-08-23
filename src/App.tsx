@@ -156,11 +156,6 @@ export function AppRoutes() {
         <Route path="/articles/:slug" element={<Suspense fallback={<PageLoader />}><ArticleDetailPage /></Suspense>} />
         <Route path="/hampton-roads-ai-consulting" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
         <Route path="/ai-consulting-virginia-beach" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
-        <Route path="/ai-consulting-norfolk" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
-        <Route path="/ai-consulting-chesapeake" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
-        <Route path="/ai-consulting-hampton" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
-        <Route path="/ai-consulting-newport-news" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
-        <Route path="/ai-consulting-williamsburg" element={<Suspense fallback={<PageLoader />}><ServiceAreaPage /></Suspense>} />
         <Route
           path="/privacy-policy"
           element={

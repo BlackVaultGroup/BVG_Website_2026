@@ -17,15 +17,6 @@ const SERVICE_LINKS = [
   { label: "Executive AI Strategy", path: "/executive-ai-strategy" },
 ]
 
-const SERVICE_AREA_LINKS = [
-  { label: "Virginia Beach", path: "/ai-consulting-virginia-beach" },
-  { label: "Norfolk", path: "/ai-consulting-norfolk" },
-  { label: "Chesapeake", path: "/ai-consulting-chesapeake" },
-  { label: "Hampton", path: "/ai-consulting-hampton" },
-  { label: "Newport News", path: "/ai-consulting-newport-news" },
-  { label: "Williamsburg", path: "/ai-consulting-williamsburg" },
-]
-
 export function Footer() {
   return (
     <footer className="bg-bv-bg-primary">
@@ -98,11 +89,7 @@ export function Footer() {
             </h3>
             <nav className="flex flex-col gap-2.5" aria-label="Service areas navigation">
               <Link to="/hampton-roads-ai-consulting" className="w-fit font-body text-sm font-light text-bv-text-primary no-underline transition-colors duration-200 hover:text-bv-accent">Hampton Roads</Link>
-              {SERVICE_AREA_LINKS.map((link) => (
-                <Link key={link.path} to={link.path} className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary">
-                  {link.label}
-                </Link>
-              ))}
+              <Link to="/ai-consulting-virginia-beach" className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary">Virginia Beach</Link>
             </nav>
           </div>
         </div>
