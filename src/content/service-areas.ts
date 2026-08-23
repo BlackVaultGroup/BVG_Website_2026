@@ -14,6 +14,7 @@ export type ServiceArea = {
   introduction: string[]
   localHeading: string
   localContext: string
+  hubFocus?: string
   industries: string[]
   problems: string[]
   faqs: AreaFaq[]
@@ -30,7 +31,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     directAnswer: "BlackVault Group helps Hampton Roads businesses find the work that slows growth, then design practical AI, automation, and voice systems around it. We begin with the business result, such as faster lead response, fewer missed calls, or less repeated admin work, before choosing any tool.",
     introduction: [
       "Hampton Roads businesses work across a connected regional economy. A customer may call from Virginia Beach, a team may work from Norfolk, and a field crew may serve the Peninsula. Important details can get lost when leads, calls, notes, and follow-up live in different places.",
-      "BlackVault is based in Virginia Beach and serves fit-based businesses throughout Hampton Roads and across the United States. Our work stays focused on useful operating results: helping teams respond faster, keep work moving, and spend less time on repeated tasks.",
+      "BlackVault is based in Virginia Beach and serves fit-based businesses throughout Hampton Roads and across the United States. When an on-site working session or process review will help, we can come to your business. Our work stays focused on useful operating results: helping teams respond faster, keep work moving, and spend less time on repeated tasks.",
     ],
     localHeading: "A regional system needs clear handoffs",
     localContext: "Hampton Roads has businesses tied to professional services, visitor-facing work, logistics, skilled trades, health services, manufacturing, and public-facing operations. The industries differ, but the operational problems are often familiar: missed inquiries, scattered records, delayed updates, and too much manual follow-up. A good system gives the right person the right context at the right time.",
@@ -56,6 +57,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     localHeading: "Built for a broad local business mix",
     localContext: "Virginia Beach has a diverse business base that includes visitor-facing businesses, professional services, technology, logistics, manufacturing, retail, and local service companies. We do not use one generic system for all of them. We look for a focused workflow that matches your customer journey, your team, and the tools you already use.",
+    hubFocus: "Built locally for businesses balancing service volume, visitors, and fast response.",
     industries: ["Home and field services", "Hospitality and visitor services", "Professional services", "Property and real estate teams", "Retail and customer service", "Operations and logistics"],
     problems: ["After-hours calls do not receive a useful first response", "New inquiries sit while staff are serving current customers", "Appointment, estimate, or intake details are copied by hand", "Marketing and follow-up lose momentum during busy weeks", "Owners cannot see where leads or tasks are getting stuck"],
     faqs: [
@@ -78,6 +80,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     localHeading: "Keep service moving without losing the human handoff",
     localContext: "Norfolk is a regional center for commerce, professional services, health services, transportation, customer-facing teams, and public-facing work. These businesses often need reliable routing, fast updates, and a clear record of what has already happened. We build systems that support the people responsible for the next decision.",
+    hubFocus: "Better handoffs for teams coordinating customers, operations, and field work.",
     industries: ["Professional and business services", "Health and client service teams", "Logistics and transportation", "Property and facilities teams", "Field service operations", "Customer support teams"],
     problems: ["A customer has to repeat information after changing channels", "Team members cannot see the latest status of a request", "New leads are not routed to the right person quickly", "Routine updates take time away from customer work", "A busy phone line hides valuable service opportunities"],
     faqs: [
@@ -100,6 +103,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     localHeading: "Start with the work your team repeats",
     localContext: "Chesapeake businesses include field-service providers, construction and trade teams, logistics operations, property services, professional offices, and customer-facing companies. Many need better coordination between inquiry, scheduling, dispatch, job status, and follow-up. A well-designed workflow can make that path visible and easier to manage.",
+    hubFocus: "Automation for dispatch, estimates, scheduling, and field-service follow-up.",
     industries: ["Home and field services", "Construction and trade teams", "Logistics and dispatch", "Property services", "Professional offices", "Customer-facing local businesses"],
     problems: ["A lead is not contacted until the crew is back in the office", "Estimate requests are tracked in messages, notes, and memory", "A job update does not reach the next person on time", "Dispatch or scheduling work is copied across systems", "Customers call for a status update that the team has to search for"],
     faqs: [
@@ -122,6 +126,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     localHeading: "Designed for process-heavy operations",
     localContext: "Hampton's economic development priorities include advanced manufacturing, aerospace, defense-related work, logistics, health services, professional services, hospitality, and technology. Those fields have different requirements, but they all benefit from clear records, defined approvals, and a dependable way to escalate exceptions to a person.",
+    hubFocus: "Reliable systems for process-heavy operations with clear human review.",
     industries: ["Advanced manufacturing", "Aerospace and defense-adjacent services", "Logistics and operations", "Healthcare and client services", "Professional services", "Hospitality and visitor services"],
     problems: ["Important details are buried in calls, email, or notes", "Approval steps are unclear or happen too late", "Staff spend time compiling routine updates", "A customer request requires several manual handoffs", "Teams need a safer way to handle exceptions and sensitive information"],
     faqs: [
@@ -144,6 +149,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     localHeading: "Make operational details easier to use",
     localContext: "Newport News has businesses connected to manufacturing, maritime and industrial work, professional services, health services, education, skilled trades, and customer-facing operations. These teams often need dependable coordination between the people doing the work and the people communicating with customers. The right system should reduce searching, copying, and waiting.",
+    hubFocus: "Operational visibility for teams managing jobs, updates, and customer communication.",
     industries: ["Manufacturing and industrial services", "Skilled trades and field operations", "Professional services", "Healthcare and client services", "Education and training teams", "Property and facilities operations"],
     problems: ["Job, customer, and status information is spread across several tools", "Staff have to write the same update more than once", "A customer waits because the right person does not see the request", "Supervisors spend time gathering routine information", "Teams need a clear audit trail for what happened next"],
     faqs: [
@@ -166,6 +172,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     ],
     localHeading: "Support the experience your customers remember",
     localContext: "Williamsburg's economy is shaped by tourism, hospitality, retail, education, professional services, health services, and local businesses that serve both residents and visitors. These teams need systems that help them respond consistently without turning every interaction into a generic script. Automation should protect the human experience, not erase it.",
+    hubFocus: "Consistent customer response during busy visitor and service periods.",
     industries: ["Hospitality and lodging", "Restaurants and visitor services", "Retail and destination businesses", "Education and training", "Professional services", "Health and wellness services"],
     problems: ["A busy period makes it hard to answer every inquiry quickly", "Staff repeat the same booking or service questions", "Follow-up varies depending on who is working", "Customer details are not easy to find before a conversation", "Marketing and customer communication stop when operations get busy"],
     faqs: [
