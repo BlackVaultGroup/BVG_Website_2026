@@ -61,7 +61,7 @@ const SERVICES = [
     eyebrow: "STRATEGY",
     heading: "AI Strategy & Roadmapping",
     body: "If you are looking to understand where AI actually fits in your business, this is where we start. We audit your workflows, revenue gaps, and operational structure before recommending anything. Every engagement begins with a precise diagnosis, not a pitch.",
-    cta: "Schedule a Strategy Call",
+    cta: "Book a call",
     image: "/ai-strategy.webp",
     imageLeft: true,
   },
@@ -283,7 +283,7 @@ export function HowItWorksPage() {
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.88" }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1" }}
           >
-            Schedule a Strategy Call
+            Book a call
           </button>
         </div>
       </RevealSection>

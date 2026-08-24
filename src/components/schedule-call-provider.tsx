@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 import { ScheduleCallModal } from "@/components/schedule-call-modal"
 
 interface ScheduleCallContextValue {
@@ -15,6 +16,11 @@ export function useScheduleCall() {
 
 export function ScheduleCallProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
 
   return (
     <ScheduleCallContext.Provider value={{ openModal: () => setOpen(true) }}>

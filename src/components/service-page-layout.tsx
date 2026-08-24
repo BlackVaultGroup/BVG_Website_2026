@@ -409,7 +409,7 @@ function ClosingCTA({ headline, subtext }: { headline: string; subtext: string }
             onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#D4A030" }}
             onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#B8861A" }}
           >
-            Schedule a Strategy Call
+            Book a call
           </button>
           <div style={{ height: "1px", backgroundColor: "rgba(184,134,26,0.2)", marginTop: "3rem" }} />
         </div>

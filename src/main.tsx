@@ -1,18 +1,21 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { HelmetProvider } from "react-helmet-async"
+import { BrowserRouter } from "react-router-dom"
 
 import "./index.css"
-import App from "./App.tsx"
+import { AppRoutes } from "./App.tsx"
 import { ScheduleCallProvider } from "@/components/schedule-call-provider"
 
 const root = document.getElementById("root")!
 const app = (
   <StrictMode>
     <HelmetProvider>
-      <ScheduleCallProvider>
-        <App />
-      </ScheduleCallProvider>
+      <BrowserRouter>
+        <ScheduleCallProvider>
+          <AppRoutes />
+        </ScheduleCallProvider>
+      </BrowserRouter>
     </HelmetProvider>
   </StrictMode>
 )

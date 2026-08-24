@@ -16,6 +16,12 @@ dist
 dist-ssr
 *.local
 
+# Environment files can contain credentials. Keep only explicitly safe templates.
+.env
+.env.*
+!.env.example
+!.env.sample
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,4 +32,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env

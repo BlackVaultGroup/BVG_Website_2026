@@ -25,7 +25,7 @@ export function CTAClose() {
             onClick={openModal}
             className="inline-block rounded-sm bg-bv-accent px-6 py-4 font-body text-sm font-medium tracking-[0.06em] text-bv-bg-primary transition-all duration-200 hover:-translate-y-px hover:bg-bv-accent-hover active:translate-y-0 cursor-pointer border-none"
           >
-            Schedule a Strategy Call
+            Book a call
           </button>
         </Reveal>
       </div>

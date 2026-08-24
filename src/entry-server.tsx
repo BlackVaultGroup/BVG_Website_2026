@@ -19,9 +19,11 @@ export async function render(url: string) {
     stream.on("error", reject)
     const { pipe, abort } = renderToPipeableStream(
       <HelmetProvider context={helmetContext}>
-        <ScheduleCallProvider>
-          <StaticRouter location={url}><AppRoutes /></StaticRouter>
-        </ScheduleCallProvider>
+        <StaticRouter location={url}>
+          <ScheduleCallProvider>
+            <AppRoutes />
+          </ScheduleCallProvider>
+        </StaticRouter>
       </HelmetProvider>,
       {
         onAllReady() { settled = true; pipe(stream) },

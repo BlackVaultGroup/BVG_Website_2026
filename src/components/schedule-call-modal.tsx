@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { lazy, Suspense, useState } from "react"
 import {
   Dialog,
   DialogContent,
@@ -6,17 +6,24 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
+import {
+  COMPANY_SIZES,
+  strategyCallRequestSchema,
+} from "@/lib/intake"
 import { isSupabaseConfigured, supabase } from "@/lib/supabase"
+
+const CalBookingEmbed = lazy(() =>
+  import("@/components/cal-booking-embed").then((module) => ({ default: module.CalBookingEmbed })),
+)
 
 interface ScheduleCallModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
 
-type Step = "form" | "success"
+type Step = "form" | "booking" | "bot-success"
 
-const COMPANY_SIZES = ["solo", "2-10", "11-20", "21-40", "41-60", "61-80"]
-const INQUIRY_TYPES = [
+const INQUIRY_OPTIONS = [
   { value: "operational-ai-systems", label: "Operational AI Systems" },
   { value: "lead-follow-up-automation", label: "Lead Follow-Up Automation" },
   { value: "intelligent-workflows", label: "Intelligent Workflows" },
@@ -62,6 +69,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
   const [error, setError] = useState<string | null>(null)
   const [website, setWebsite] = useState("")  // honeypot — humans never see or fill this
   const [focused, setFocused] = useState<string | null>(null)
+  const [bookingPrefill, setBookingPrefill] = useState<{ name: string; email: string } | null>(null)
 
   const [form, setForm] = useState({
     full_name: "",
@@ -80,15 +88,23 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!form.full_name || !form.business_name || !form.email || !form.inquiry_type || !form.company_size) {
-      setError("Please fill in all required fields.")
-      return
-    }
     if (website) {
       // bot filled the hidden field — pretend success, store nothing
-      setStep("success")
+      setStep("bot-success")
       return
     }
+
+    const result = strategyCallRequestSchema.safeParse(form)
+    if (!result.success) {
+      const invalidField = result.error.issues[0]?.path[0]
+      setError(
+        invalidField === "email"
+          ? "Please enter a valid email address."
+          : "Please check the required fields and try again.",
+      )
+      return
+    }
+
     setSubmitting(true)
     setError(null)
 
@@ -98,16 +114,9 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
       return
     }
 
-    const { error: dbError } = await supabase.from("discovery_call_requests").insert({
-      full_name: form.full_name,
-      business_name: form.business_name,
-      email: form.email,
-      phone: form.phone || null,
-      company_size: form.company_size,
-      inquiry_type: form.inquiry_type,
-      notes: form.notes || null,
-      status: "new",
-    })
+    const { error: dbError } = await supabase
+      .from("discovery_call_requests")
+      .insert(result.data)
 
     setSubmitting(false)
 
@@ -116,7 +125,8 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
       return
     }
 
-    setStep("success")
+    setBookingPrefill({ name: result.data.full_name, email: result.data.email })
+    setStep("booking")
   }
 
   function handleClose(open: boolean) {
@@ -132,6 +142,8 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
           inquiry_type: "",
           notes: "",
         })
+        setWebsite("")
+        setBookingPrefill(null)
         setError(null)
       }, 300)
     }
@@ -149,7 +161,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
         className="p-0 gap-0 overflow-hidden border-0"
         style={{
           backgroundColor: "#120E0C",
-          maxWidth: "min(680px, calc(100vw - 2rem))",
+          maxWidth: step === "booking" ? "min(1040px, calc(100vw - 2rem))" : "min(680px, calc(100vw - 2rem))",
           maxHeight: "90vh",
           display: "flex",
           flexDirection: "column",
@@ -177,7 +189,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
               marginBottom: "0.6rem",
             }}
           >
-            BlackVault Group — Strategy Call Request
+            {step === "booking" ? "BlackVault Group — Select a Time" : "BlackVault Group — Strategy Call Request"}
           </div>
           <DialogHeader>
             <DialogTitle
@@ -191,7 +203,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
               }}
               className="text-left"
             >
-              Begin Your Engagement
+              {step === "booking" ? "Book Your Strategy Call" : "Begin Your Engagement"}
             </DialogTitle>
             <DialogDescription
               style={{
@@ -204,15 +216,21 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
               }}
               className="text-left"
             >
-              We review every submission personally. Expect a response within one business day.
+              {step === "booking"
+                ? "Your request was saved. Choose an available time below to complete your booking."
+                : "Tell us about your business first, then you will choose an available call time."}
             </DialogDescription>
           </DialogHeader>
         </div>
 
         {/* Scrollable body */}
         <div style={{ overflowY: "auto", flex: 1, padding: "1.75rem 2rem 2rem" }}>
-          {step === "success" ? (
+          {step === "bot-success" ? (
             <SuccessState onClose={() => handleClose(false)} />
+          ) : step === "booking" && bookingPrefill ? (
+            <Suspense fallback={<CalendarLoadingState />}>
+              <CalBookingEmbed name={bookingPrefill.name} email={bookingPrefill.email} />
+            </Suspense>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
               <input
@@ -327,7 +345,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
                       required
                     >
                       <option value="" disabled style={{ backgroundColor: "#1A1510" }}>Select service</option>
-                      {INQUIRY_TYPES.map((t) => (
+                      {INQUIRY_OPTIONS.map((t) => (
                         <option key={t.value} value={t.value} style={{ backgroundColor: "#1A1510", color: "#F2EDE6" }}>{t.label}</option>
                       ))}
                     </select>
@@ -390,7 +408,7 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
                   onMouseEnter={(e) => { if (!submitting) e.currentTarget.style.backgroundColor = "#D4B483" }}
                   onMouseLeave={(e) => { if (!submitting) e.currentTarget.style.backgroundColor = "#C19A6B" }}
                 >
-                  {submitting ? "Submitting..." : "Request Strategy Call"}
+                  {submitting ? "Submitting…" : "Submit"}
                 </button>
 
                 <p
@@ -411,6 +429,27 @@ export function ScheduleCallModal({ open, onOpenChange }: ScheduleCallModalProps
         </div>
       </DialogContent>
     </Dialog>
+  )
+}
+
+function CalendarLoadingState() {
+  return (
+    <div
+      role="status"
+      style={{
+        minHeight: "min(760px, 72vh)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1rem",
+        backgroundColor: "#0F0B0A",
+        color: "#A1A1AA",
+        fontFamily: "'Jost', sans-serif",
+      }}
+    >
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-[rgba(193,154,107,0.25)] border-t-[#C19A6B]" />
+      Loading available times…
+    </div>
   )
 }
 

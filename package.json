@@ -8,7 +8,7 @@
     "generate:discovery": "node scripts/generate-discovery-files.mjs public",
     "build": "npm run generate:discovery && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/generate-discovery-files.mjs dist && node scripts/verify-public-build.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/verify-routes.mjs && node scripts/verify-public-build.mjs",
+    "test": "vitest run && node scripts/verify-routes.mjs && node scripts/verify-public-build.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -47,6 +47,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.2.0",
     "typescript": "~5.9.3",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "vitest": "4.1.11"
   }
 }

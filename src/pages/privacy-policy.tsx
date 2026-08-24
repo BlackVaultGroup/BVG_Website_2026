@@ -16,6 +16,7 @@ const SECTIONS: { h: string; body: string[] }[] = [
     body: [
       "When you submit our strategy call request form, we collect the information you provide: your full name, business name, email address, phone number (optional), company size, area of interest, and any notes you include.",
       "Like most websites, our hosting infrastructure may automatically log basic technical information such as IP address, browser type, and pages visited. We do not use advertising cookies or cross-site tracking.",
+      "After your request is saved, you may use an embedded Cal.com calendar to choose a meeting time. We pass your name and email address to Cal.com to prefill its required booking fields. Cal.com may also process your selected time zone, appointment details, IP address, browser information, and other technical data needed to provide the booking experience.",
     ],
   },
   {
@@ -27,7 +28,7 @@ const SECTIONS: { h: string; body: string[] }[] = [
   {
     h: "Where Your Information Is Stored",
     body: [
-      "Form submissions are stored securely in our database, hosted by Supabase. Our website fonts are delivered by Google Fonts, which may log the IP address of requests as part of serving those files. We use service providers only to operate this website and our business, and each processes data on our behalf.",
+      "Form submissions are stored in our database, hosted by Supabase. Scheduled appointment information is processed and stored by Cal.com. The Cal.com embed is loaded only after a successful form submission; opening it may allow Cal.com to use cookies or similar browser storage needed for preferences, security, session handling, and the booking service. Our website fonts are delivered by Google Fonts, which may log the IP address of requests as part of serving those files. We use these service providers to operate this website and our business.",
     ],
   },
   {
@@ -106,7 +107,7 @@ export function PrivacyPolicyPage() {
               marginBottom: "clamp(2.5rem, 5vw, 4rem)",
             }}
           >
-            Effective July 5, 2026
+            Effective August 19, 2026
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "2.25rem" }}>
