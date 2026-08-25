@@ -24,7 +24,7 @@ export const FAQ_ITEMS = [
     a: "Access should be limited to what the approved scope requires. Credentials belong in secure environment or secret-management systems, never in public website code. Every implementation should document permissions, human review, failure handling, and who owns each account.",
   },
   {
-    q: "When should a business delay an AI project?",
+    q: "When should a business delay an AI automation project?",
     a: "Delay the project when the underlying process is unclear, there is no accountable owner, the required data is unavailable, the risk controls are undefined, or a simpler process or software change would solve the problem more reliably.",
   },
 ] as const
