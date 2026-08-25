@@ -33,7 +33,7 @@ export function Footer() {
               Operational AI systems for founders and operators who build to scale.
             </p>
             <p className="max-w-[31ch] font-body text-xs font-light leading-relaxed text-bv-text-muted">
-              Based in Virginia Beach, serving businesses throughout Hampton Roads and across the U.S.
+              Based in Norfolk, serving businesses throughout Hampton Roads and across the U.S.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export function Footer() {
             </h3>
             <nav className="flex flex-col gap-2.5" aria-label="Service areas navigation">
               <Link to="/hampton-roads-ai-consulting" className="w-fit font-body text-sm font-light text-bv-text-primary no-underline transition-colors duration-200 hover:text-bv-accent">Hampton Roads</Link>
-              <Link to="/ai-consulting-virginia-beach" className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary">Virginia Beach</Link>
+              <Link to="/ai-consulting-norfolk" className="w-fit font-body text-sm font-light text-bv-text-muted no-underline transition-colors duration-200 hover:text-bv-text-secondary">Norfolk</Link>
             </nav>
           </div>
         </div>

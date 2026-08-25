@@ -15,6 +15,31 @@ const SERVICE_LINKS = [
   { label: "Voice AI Systems", path: "/voice-ai-systems" },
 ]
 
+const HAMPTON_ROADS_IMAGES = {
+  regionalNetwork: "/images/service-areas/hampton-roads-regional-network.png",
+  practicalWorkflow: "/images/service-areas/hampton-roads-practical-workflow.png",
+  regionalBridge: "/images/service-areas/hampton-roads-regional-bridge.png",
+}
+
+const NORFOLK_IMAGES = {
+  regionalNetwork: "/images/service-areas/norfolk-harbor-operations.png",
+  practicalWorkflow: "/images/service-areas/norfolk-business-operations.png",
+  regionalBridge: "/images/service-areas/norfolk-portsmouth-connection.png",
+}
+
+type BackgroundOverlay = "standard" | "hamptonHero"
+
+function BackgroundImage({ src, position = "center", overlay = "standard" }: { src: string; position?: string; overlay?: BackgroundOverlay }) {
+  const overlayClassName = overlay === "hamptonHero"
+    ? "bg-[linear-gradient(90deg,rgba(12,10,8,0.55)_0%,rgba(12,10,8,0.49)_46%,rgba(12,10,8,0.35)_100%)]"
+    : "bg-[linear-gradient(90deg,rgba(12,10,8,0.84)_0%,rgba(12,10,8,0.76)_46%,rgba(12,10,8,0.54)_100%)]"
+
+  return <>
+    <div aria-hidden="true" className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: `url(${src})`, backgroundPosition: position }} />
+    <div aria-hidden="true" className={`absolute inset-0 ${overlayClassName}`} />
+  </>
+}
+
 function ContactButton() {
   const { openModal } = useScheduleCall()
   return <button type="button" onClick={openModal} className="rounded-sm bg-bv-accent px-6 py-3 font-body text-sm font-medium text-bv-bg-primary transition-colors hover:bg-bv-accent-hover">Request a strategy call</button>
@@ -28,6 +53,8 @@ export function ServiceAreaPage() {
 
   const path = `/${area.slug}`
   const isHub = area.slug === "hampton-roads-ai-consulting"
+  const isNorfolk = area.slug === "ai-consulting-norfolk"
+  const areaImages = isHub ? HAMPTON_ROADS_IMAGES : isNorfolk ? NORFOLK_IMAGES : null
   const schemas = [
     buildServiceSchema({ name: `AI Consulting and Automation in ${area.name}`, description: area.description, url: path, serviceType: "AI Consulting and Business Automation", areaServed: `${area.name}, Virginia` }),
     buildWebPageSchema({ name: area.title, description: area.description, url: path, breadcrumb: [{ name: "Home", url: "/" }, ...(isHub ? [] : [{ name: "Hampton Roads AI Consulting", url: "/hampton-roads-ai-consulting" }]), { name: area.name, url: path }] }),
@@ -39,8 +66,9 @@ export function ServiceAreaPage() {
     <JsonLd schema={schemas} />
     <Navigation />
     <main className="min-h-screen bg-bv-bg-primary pt-[72px]">
-      <header className="border-b border-border bg-bv-bg-secondary">
-        <div className="mx-auto max-w-[1100px] px-6 py-20 md:py-28">
+      <header className={areaImages ? "relative isolate overflow-hidden border-b border-border" : "border-b border-border bg-bv-bg-secondary"}>
+        {areaImages && <BackgroundImage src={areaImages.regionalNetwork} position="center right" overlay={isHub ? "hamptonHero" : "standard"} />}
+        <div className={areaImages ? "relative z-10 mx-auto max-w-[1100px] px-6 py-20 md:py-28" : "mx-auto max-w-[1100px] px-6 py-20 md:py-28"}>
           <nav aria-label="Breadcrumb" className="mb-8 font-body text-sm text-bv-text-muted"><Link to="/" className="text-bv-text-muted">Home</Link>{!isHub && <><span aria-hidden="true"> / </span><Link to="/hampton-roads-ai-consulting" className="text-bv-text-muted">Hampton Roads</Link></>}<span aria-hidden="true"> / </span><span>{area.name}</span></nav>
           <p className="mb-4 font-body text-xs font-medium uppercase tracking-[0.16em] text-bv-accent">{area.eyebrow}</p>
           <h1 className="max-w-[900px] font-display text-[clamp(2.8rem,6vw,5.3rem)] font-normal leading-[1.02] text-bv-text-primary">{area.headline}</h1>
@@ -49,21 +77,24 @@ export function ServiceAreaPage() {
         </div>
       </header>
 
-      <section className="mx-auto grid max-w-[1100px] gap-12 px-6 py-20 md:grid-cols-[1.3fr_.7fr] md:py-28">
-        <div>
-          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.12] text-bv-text-primary">Start with the work, not the tool.</h2>
-          {area.introduction.map((paragraph) => <p key={paragraph} className="mt-6 font-body text-base font-light leading-[1.85] text-bv-text-secondary">{paragraph}</p>)}
+      <section>
+        <div className="mx-auto grid max-w-[1100px] gap-12 px-6 py-20 md:grid-cols-[1.3fr_.7fr] md:py-28">
+          <div>
+            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.12] text-bv-text-primary">Start with the work, not the tool.</h2>
+            {area.introduction.map((paragraph) => <p key={paragraph} className="mt-6 font-body text-base font-light leading-[1.85] text-bv-text-secondary">{paragraph}</p>)}
+          </div>
+          <aside className="h-fit border border-border bg-bv-bg-secondary p-7">
+            <p className="font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">Relevant services</p>
+            <nav className="mt-5 flex flex-col gap-3" aria-label="Relevant services">
+              {SERVICE_LINKS.map((service) => <Link key={service.path} to={service.path} className="font-body text-sm text-bv-text-primary no-underline transition-colors hover:text-bv-accent">{service.label} <span aria-hidden="true">→</span></Link>)}
+            </nav>
+          </aside>
         </div>
-        <aside className="h-fit border border-border bg-bv-bg-secondary p-7">
-          <p className="font-body text-xs font-medium uppercase tracking-[0.14em] text-bv-accent">Relevant services</p>
-          <nav className="mt-5 flex flex-col gap-3" aria-label="Relevant services">
-            {SERVICE_LINKS.map((service) => <Link key={service.path} to={service.path} className="font-body text-sm text-bv-text-primary no-underline transition-colors hover:text-bv-accent">{service.label} <span aria-hidden="true">→</span></Link>)}
-          </nav>
-        </aside>
       </section>
 
-      <section className="border-y border-border bg-bv-bg-secondary">
-        <div className="mx-auto max-w-[1100px] px-6 py-20 md:py-28">
+      <section className={areaImages ? "relative isolate overflow-hidden border-y border-border" : "border-y border-border bg-bv-bg-secondary"}>
+        {areaImages && <BackgroundImage src={areaImages.practicalWorkflow} position="center right" />}
+        <div className={areaImages ? "relative z-10 mx-auto max-w-[1100px] px-6 py-20 md:py-28" : "mx-auto max-w-[1100px] px-6 py-20 md:py-28"}>
           <p className="font-body text-xs font-medium uppercase tracking-[0.16em] text-bv-accent">LOCAL CONTEXT</p>
           <h2 className="mt-4 max-w-[760px] font-display text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.12] text-bv-text-primary">{area.localHeading}</h2>
           <p className="mt-6 max-w-[850px] font-body text-base font-light leading-[1.85] text-bv-text-secondary">{area.localContext}</p>
@@ -82,7 +113,7 @@ export function ServiceAreaPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-bv-bg-secondary"><div className="mx-auto max-w-[900px] px-6 py-20 text-center"><h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-normal text-bv-text-primary">Find the first useful improvement.</h2><p className="mx-auto mt-5 max-w-[660px] font-body text-base font-light leading-[1.8] text-bv-text-secondary">Bring the process that is creating the most friction. We will help you decide whether AI, automation, a clearer rule, or a better use of your current tools is the right next step.</p><div className="mt-8"><ContactButton /></div></div></section>
+      <section className={areaImages ? "relative isolate overflow-hidden border-t border-border" : "border-t border-border bg-bv-bg-secondary"}>{areaImages && <BackgroundImage src={areaImages.regionalBridge} position="center right" />}<div className={areaImages ? "relative z-10 mx-auto max-w-[900px] px-6 py-20 text-center" : "mx-auto max-w-[900px] px-6 py-20 text-center"}><h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-normal text-bv-text-primary">Find the first useful improvement.</h2><p className="mx-auto mt-5 max-w-[660px] font-body text-base font-light leading-[1.8] text-bv-text-secondary">Bring the process that is creating the most friction. We will help you decide whether AI, automation, a clearer rule, or a better use of your current tools is the right next step.</p><div className="mt-8"><ContactButton /></div></div></section>
 
       {isHub && <section className="mx-auto max-w-[1100px] px-6 py-20 md:py-28"><p className="font-body text-xs font-medium uppercase tracking-[0.16em] text-bv-accent">HOW THE REGION WORKS</p><h2 className="mt-4 max-w-[800px] font-display text-[clamp(2rem,4vw,3rem)] font-normal text-bv-text-primary">Different cities. Different operational pressure.</h2><p className="mt-5 max-w-[760px] font-body text-base font-light leading-[1.8] text-bv-text-secondary">The goal is not to force every business into the same AI system. It is to understand the work your team repeats and build the right level of support around it.</p><div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{REGIONAL_CITY_FOCUSES.map((city) => <article key={city.name} className="border border-border bg-bv-bg-secondary p-5"><p className="font-body text-base font-medium text-bv-text-primary">{city.name}</p><p className="mt-3 font-body text-sm font-light leading-[1.7] text-bv-text-secondary">{city.focus}</p></article>)}</div></section>}
     </main>

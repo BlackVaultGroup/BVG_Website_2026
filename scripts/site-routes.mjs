@@ -9,7 +9,7 @@ export const ROUTES = [
   { path: "/executive-ai-strategy", modified: "2026-08-19" },
   { path: "/about", modified: "2026-08-19" },
   { path: "/hampton-roads-ai-consulting", modified: "2026-08-23" },
-  { path: "/ai-consulting-virginia-beach", modified: "2026-08-23" },
+  { path: "/ai-consulting-norfolk", modified: "2026-08-23" },
   { path: "/articles", modified: "2026-08-20" },
   { path: "/articles/what-should-my-business-automate-first", modified: "2026-08-20" },
   { path: "/articles/where-to-start-with-ai-automation", modified: "2026-08-20" },
